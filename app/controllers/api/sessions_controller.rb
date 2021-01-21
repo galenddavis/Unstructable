@@ -7,17 +7,22 @@ class Api::SessionsController < ApplicationController
         )
         if @user
             login!(@user)
-            render '/'
+            debugger
+            render '/api/users/show'
         else
-            render json: ["Sorry, we can\'t find that account, or your password didn\'t match. Please try again!"]
+            render json: ["Sorry, we can\'t find that account, or your password didn\'t match. Please try again!"], status: 401
+        end
     end
 
     def destroy
-        if current_user
+        @user = current_user
+        if @user
+            debugger
             logout!
-            render '/'
+            render '/api/users/show'
         else
             render json: ["can't logout, no current user"], status: 404
+        end
 
     end
 end

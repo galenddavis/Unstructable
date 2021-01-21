@@ -1,10 +1,12 @@
 class Api::UsersController < ApplicationController
 
     def create
+        debugger
         @user = User.new(user_params)
+        debugger
         if @user.save
             login!(@user)
-            render :show
+            render '/api/users/show' # will be changed to '/' this is just for testing. 
         else
             render json: @user.errors.full_messages, status: 401
         end
@@ -13,7 +15,8 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(
-            :username, :password, :occupation, :email, :location, :user_bio. :website)
+        params.require(:user).permit(:username, :password, :occupation, :email, :location, :user_bio, :website)
     end
 end
+
+
