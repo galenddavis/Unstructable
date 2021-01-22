@@ -1,21 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
+import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 
 
-// const options = [
-//     { value: 'hobbyist', label: 'Hobbyist' },
-//     { value: 'student', label: 'Student' },
-//     { value: 'teacher (Ages 5-7)', label: 'Teacher (Ages 5-7)' },
-//     { value: 'teacher (Ages 8-10)', label: 'Teacher (Ages 8-10)' },
-//     { value: 'teacher (Ages 11-13)', label: 'Teacher (Ages 11-13)' },
-//     { value: 'teacher (Ages 14-17)', label: 'Teacher (Ages 14-17)' },
-//     { value: 'teacher (Ages 18+)', label: 'Teacher (Ages 18+ )' },
-//     { value: 'parent', label: 'Parent' },
-//     { value: 'professional', label: 'Professional' },
-//     { value: 'robot', label: 'Robot' },
-//     { value: 'mad Scientist', label: 'Mad Scientist' },
-// ]
+const countries = [ "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Svalbard and Jan Mayen",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syrian Arab Republic",
+        "Taiwan, Province of China",
+        "Tajikistan",
+        "Tanzania, United Republic of",
+        "Thailand",
+        "Timor-Leste",
+        "Togo",
+        "Tokelau",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Turks and Caicos Islands",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States",
+        "United States Minor Outlying Islands",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Venezuela",
+        "Viet Nam",
+        "Virgin Islands, British",
+        "Virgin Islands, US",
+        "Wallis and Futuna",
+        "Western Sahara",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+    ]
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -39,14 +69,17 @@ class SignupForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state)
-        this.props.submitForm(user)
+        this.props.submitForm(user).then(() => this.props.history.push('/'))
     }
 
     render() {
         // const errors = this.props.errors.map(error => {
         //     return (<li>{error}</li>)
         // })
-        debugger
+        // debugger
+        const loc = countries.map(place => {
+            return <option value={place} key={place}>{place}</option>
+        })
         return (
             <div>
                <form onSubmit={this.handleSubmit}>
@@ -54,18 +87,21 @@ class SignupForm extends React.Component {
                    {/* I think my login needs to be changed so that errors will be specific to username or password */}
                    <input 
                         type="text"
+                        placeholder='Email'
                         value={this.state.email}
                         onChange={this.update('email')}
                     />
                     
                     <input 
                         type="text"
+                        placeholder='Username'
                         value={this.state.username}
                         onChange={this.update('username')}
                     />
 
                     <input 
                         type="password"
+                        placeholder='Password'
                         value={this.state.password}
                         onChange={this.update('password')}
                     />
@@ -73,6 +109,7 @@ class SignupForm extends React.Component {
                     <select
                         value={this.state.value}
                         onChange={this.update('occupation')}>
+                            <option value="About You" disabled>About You</option>
                             <option value="hobbyist">Hobbyist</option>
                             <option value="student">Student</option>
                             <option value="teacher (Ages 5-7)">Teacher (Ages 5-7)</option>
@@ -85,8 +122,22 @@ class SignupForm extends React.Component {
                             <option value="mad scientist">Mad Scientist</option>
                     </select>
 
+                    <select
+                        value={this.state.value}
+                        onChange={this.update('location')}>
+                            {loc}
+                    </select>
 
-                    <button>Sign Up</button>
+                    
+                    {/* <CountryDropdown 
+                    value={this.state.country}
+                    onChange={this.update('location')}
+                    /> */}
+                    {/* hard code this/ Don't use libary.  */}
+                   
+
+                    <p className='legal'>'By clicking "Sign Me Up" you agree to our Terms and to our Privacy Statement.</p>
+                    <button>Sign Me Up!</button>
                     <p>Already a member?
                         <Link to='/login'>Log In</Link>
                     </p>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
-        debugger
+        // debugger
         super(props)
         this.state = {
             username: "",
@@ -19,19 +19,19 @@ class LoginForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state)
-        debugger
+        // debugger
         this.props.submitForm(user)
     }
 
     render() {
-        debugger
-        // const errors = this.props.errors.map(error => {
-        //     return (<li>{error}</li>)
-        // })
+        // debugger
+        const errors = this.props.errors.map(error => {
+            return (<li>{error}</li>)
+        })
         return (
             <div>
                <form onSubmit={this.handleSubmit}>
-                   {/* <ul>{errors}</ul>  */}
+                   <ul>{errors}</ul> 
                    {/* I think my login needs to be changed so that errors will be specific to username or password */}
                     <input 
                         type="text"
