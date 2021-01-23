@@ -23,14 +23,14 @@ class UseDropDown extends React.Component {
     }
 
     render() {
-        const { logout } = this.props
+        const { logout } = this.props;
         debugger
         return (
-            <div>
+            <div onFocus={this.handleClick} 
+                onBlur={this.handleClick}>
+                
                 <button 
-                    onFocus={this.handleClick} 
-                    onBlur={this.handleClick}>
-                    DropDown { this.state.show ? <DropDownMenu /> : null}
+                >DropDown { this.state.show ? <DropDownMenu logout={logout}/> : null}
                 </button>
             
             </div>

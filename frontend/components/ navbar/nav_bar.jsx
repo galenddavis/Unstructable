@@ -19,14 +19,15 @@ class NavBar extends React.Component {
 
     render() {
         const { loggedIn } = this.props;
+
         const catLinks = categ.map(cat => {
             return <Link to='/' key={cat}>{cat}</Link>
         })
+        const { logout } = this.props
 
         const authButtons = loggedIn ? 
         ( <div className='userAuth'>
-                <UseDropDown />
-                {/* <button onClick={this.handleLogout}>Log Out</button> */}
+                <UseDropDown logout={logout}/>
             </div>) : ( <div>
                 <Link to='/login'>Log In</Link>
                 <Link to='/signup'>Sign Up</Link>
