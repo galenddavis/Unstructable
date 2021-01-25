@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script src="https://kit.fontawesome.com/df63dd5d45.js" crossorigin="anonymous"></script>
     <% if current_user %>
       <script>
         window.currentUser = { 
@@ -24,27 +25,6 @@
         window.feature = "<%= image_url('splash-pic.jpg') %>";
       </script>
 
-      <script type="text/javascript">
-        window.home = "<%= image_url('home.png') %>";
-      </script>
-      <script type="text/javascript">
-        window.bike = "<%= image_url('bike.png') %>";
-      </script>
-      <script type="text/javascript">
-        window.book = "<%= image_url('book.png') %>";
-      </script>
-      <script type="text/javascript">
-        window.circuit = "<%= image_url('circuit.png') %>";
-      </script>
-      <script type="text/javascript">
-        window.meal = "<%= image_url('meal.png') %>";
-      </script>
-      <script type="text/javascript">
-        window.scissors = "<%= image_url('scissors.png') %>";
-      </script>
-      <script type="text/javascript">
-        window.wrench = "<%= image_url('wrench.png') %>";
-      </script>
 
 
   </head>

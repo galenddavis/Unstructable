@@ -6,7 +6,6 @@ import { login } from '../../actions/session_actions'
 
 
 
-const categ = ['Workshop', 'Craft', 'Cooking', 'Living', 'Outside', 'Teachers']
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -28,9 +27,9 @@ class NavBar extends React.Component {
     render() {
         const { loggedIn } = this.props;
 
-        const catLinks = categ.map(cat => {
-            return <Link to='/' key={cat} className='categories'>{cat}</Link>
-        })
+        // const catLinks = categ.map(cat => {
+        //     return <Link to='/' key={cat} className='categories'>{cat}</Link>
+        // })
         const { logout } = this.props
 
         const authButtons = loggedIn ? 
@@ -39,72 +38,99 @@ class NavBar extends React.Component {
             </div>) : ( <div className='login-logout'>
                             <Link to='/login' className='userAuth'>Log In</Link>
                             <Link to='/signup' className='userAuth'>Sign Up</Link>
-                            <span onClick={this.dummyLogin}>Demo User</span>
+                            <span className='dummy' onClick={this.dummyLogin}>Demo User</span>
                         </div> )
 
         return (
            <div className='constant-elements'>
                    <section className="hi-top">
                         <span>
-                        <Link to='/'><img src={window.home} alt=""/></Link>
-                        {/* <img src={window.home} alt=""/> */}
-                            {catLinks}
+                            <i className="fas fa-house-damage"></i>
+                            <Link to='/'></Link>
+                            <Link to='/'>Circuits</Link>
+                            <Link to='/'>Workshop</Link>
+                            <Link to='/'>Craft</Link>
+                            <Link to='/'>Cooking</Link>
+                            <Link to='/'>Living</Link>
+                            <Link to='/'>Outside</Link>
+                            <Link to='/'>Teachers</Link>
                         </span> 
                         <span>
                             {authButtons}
                         </span>
                    </section>
                         <section className='title-bar'>
-                            <span>
-                                <Link to='/' className='logo'><img src={window.logoURL} alt=""/></Link>
-                                <Link to='/' className='title'>unstructable</Link>
-                                <Link to='/' className='projects'>Projects</Link>
+                            <span className='head-left'>
+                                <div className='logo'>
+                                    <Link to='/'><img src={window.logoURL} alt=""/></Link>
+                                </div>
+                                <div className='text'>
+                                    <Link to='/' className='title'>unstructable</Link>
+                                    <Link to='/' className='projects'>Projects</Link>
+                                </div>
                             </span>
-                
-                            <span>
+                            <span className='head-right'>
                                 <Link to='/' className='right-side'>PUBLISH</Link>
                                 <input 
-                                    type="search" 
-                                    placeholder="Let's Make..."
-                                    className='search-bar'/>
+                                type="search" 
+                                placeholder="Let's Make..."
+                                className='search-bar'
+                                />
+                                <button>
+                                    <i className="fas fa-search"></i>
+                                </button>
+
                                 {/* <button>Projects</button> */}
                             </span>
                         </section>
 
-                    <section className='main-image'>
-                        <img src={window.feature} alt="" />
-                    </section>
+                            <span className='main-image'>
+                                <img src={window.feature} alt="" />
+                            </span>
 
-                    <div>
+                    <div className='future-index'>
                         <h1>This is where the project Index will be</h1>
                     </div>
 
+    {/* FOOTER */}
+
                 <section className='footer'>
+                <span className='line-break'>
                     <img src={window.logoURL} alt=""/>
-                    <span className='foot-1'>
-                        <label className='col-names'>Categories
-                            {catLinks}
-                        </label>
+                    
+                    <span className='foot-left'>
+                            <label className='col-names'>Categories</label>
+                        
+                                <Link to='/'><i className="fas fa-microchip"></i> Circuits</Link>
+                                <Link to='/'><i className="fas fa-wrench"></i> Workshop</Link>
+                                <Link to='/'><i className="fas fa-cut"></i> Craft</Link>
+                                <Link to='/'><i className="fas fa-blender"></i> Cooking</Link>
+                                <Link to='/'><i className="fas fa-house-damage"></i> Living</Link>
+                                <Link to='/'><i className="fas fa-bicycle"></i> Outside</Link>
+                                <Link to='/'><i className="fas fa-journal-whills"></i> Teachers</Link>
+                            
+                        
                     </span>
                     
-                    <div className="about">
-                        <span className='foot-1'>
-                            <label className='col-names'>About Us
-                                <Link to='/'>Who We Are</Link>
-                                <Link to='/'>Why Publish?</Link>
-                                <Link to='/'>Jobs</Link>
-                            </label>
-                        </span>
-                        
-                        <span className='foot-1'>
-                            <label className='col-names'>Resources
-                                <Link to='/'>Sitemap</Link>
-                                <Link to='/'>Help</Link>
-                                <Link to='/'>Contact</Link>
-                            </label>
-                        </span>
-                    </div>
-
+                    
+                        {/* <span className="about"> */}
+                            <div className='info'>
+                                <label className='col-names'>About Us</label>
+                                    <Link to='/'>Who Am I?</Link>
+                                    <Link to='/'>Why I Code</Link>
+                                    <Link to='/'>Jobs</Link>
+                            </div>
+                            
+                            <div className='resources'>
+                                <label className='col-names'>Resources</label>
+                                    <Link to='/'><i className="fab fa-instagram"></i> Instagram</Link>
+                                    <Link to='/'><i className="fab fa-linkedin"></i> LinkedIn</Link>
+                                    <Link to='/'><i className="fas fa-envelope"></i> Email</Link>
+                                
+                            </div>
+                        {/* </span> */}
+                  
+                </span>
                 </section>
            </div>
         ) 

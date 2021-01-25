@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const countries = [ "Spain",
+const countries = [ "Country", "Spain",
         "Sri Lanka",
         "Sudan",
         "Suriname",
@@ -105,7 +105,7 @@ class SignupForm extends React.Component {
                     <select
                         value={this.state.value}
                         onChange={this.update('occupation')}>
-                            <option value="About You" disabled>About You</option>
+                            <option value="About You">About You</option>
                             <option value="hobbyist">Hobbyist</option>
                             <option value="student">Student</option>
                             <option value="teacher (Ages 5-7)">Teacher (Ages 5-7)</option>
