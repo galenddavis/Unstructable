@@ -11,10 +11,10 @@ class UseDropDown extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleLogout(e) {
-        e.preventDefault();
-        this.props.logout();
-    }
+    // handleLogout(e) {
+    //     e.preventDefault();
+    //     this.props.logout();
+    // }
 
     handleClick(event) {
         debugger

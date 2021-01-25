@@ -25,13 +25,13 @@ class LoginForm extends React.Component {
 
     render() {
         // debugger
-        // const errors = this.props.errors.map(error => {
-        //     return (<li>{error}</li>)
-        // })
+        const errors = this.props.errors.map(error => {
+            return (<li>{error}</li>)
+        })
         return (
             <div>
                <form onSubmit={this.handleSubmit}>
-                   {/* <ul>{errors}</ul>  */}
+                   <ul>{errors}</ul> 
                    {/* I think my login needs to be changed so that errors will be specific to username or password */}
                     <input 
                         type="text"

@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
         # debugger
         if @user.save
             login!(@user)
-            render '/api/users/show' # will be changed to '/' this is just for testing. 
+            render '/api/users/show' 
         else
             render json: @user.errors.full_messages, status: 401
         end

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Select from 'react-select';
-import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 
 
 const countries = [ "Spain",
@@ -73,18 +71,16 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        // const errors = this.props.errors.map(error => {
-        //     return (<li>{error}</li>)
-        // })
-        // debugger
+        const errors = this.props.errors.map(error => {
+            return (<li>{error}</li>)
+        })
         const loc = countries.map(place => {
             return <option value={place} key={place}>{place}</option>
         })
         return (
             <div>
                <form onSubmit={this.handleSubmit}>
-                   {/* <ul>{errors}</ul>  */}
-                   {/* I think my login needs to be changed so that errors will be specific to username or password */}
+                   <ul>{errors}</ul> 
                    <input 
                         type="text"
                         placeholder='Email'
