@@ -37,57 +37,75 @@ class NavBar extends React.Component {
         ( <div className='userAuth'>
                 <UseDropDown logout={logout} className='userAuth'/>
             </div>) : ( <div className='login-logout'>
-                <Link to='/login' className='userAuth'>Log In</Link>
-                <Link to='/signup' className='userAuth'>Sign Up</Link>
-                <span onClick={this.dummyLogin}>Demo User</span>
-            </div> )
+                            <Link to='/login' className='userAuth'>Log In</Link>
+                            <Link to='/signup' className='userAuth'>Sign Up</Link>
+                            <span onClick={this.dummyLogin}>Demo User</span>
+                        </div> )
 
         return (
            <div className='constant-elements'>
-                   <div className="hi-top">
-                       <img src={window.home} alt=""/>
-                        {catLinks} 
-                        {authButtons}
-                   </div>
-                        <div className='title-bar'>
+                   <section className="hi-top">
+                        <span>
+                        <Link to='/'><img src={window.home} alt=""/></Link>
+                        {/* <img src={window.home} alt=""/> */}
+                            {catLinks}
+                        </span> 
+                        <span>
+                            {authButtons}
+                        </span>
+                   </section>
+                        <section className='title-bar'>
+                            <span>
                                 <Link to='/' className='logo'><img src={window.logoURL} alt=""/></Link>
                                 <Link to='/' className='title'>unstructable</Link>
                                 <Link to='/' className='projects'>Projects</Link>
+                            </span>
+                
+                            <span>
+                                <Link to='/' className='right-side'>PUBLISH</Link>
                                 <input 
                                     type="search" 
                                     placeholder="Let's Make..."
                                     className='search-bar'/>
                                 {/* <button>Projects</button> */}
-                                <Link to='/' className='right-side'>PUBLISH</Link>
-                        </div>
-               
-                {/* <img src="/app/assets/images/3D-printed-gremlins.jpg" alt=""/> */} {/* Handle input when we hit ccs*/}
-                
-                <div className='footer'>
+                            </span>
+                        </section>
+
+                    <section className='main-image'>
+                        <img src={window.feature} alt="" />
+                    </section>
+
+                    <div>
+                        <h1>This is where the project Index will be</h1>
+                    </div>
+
+                <section className='footer'>
                     <img src={window.logoURL} alt=""/>
-                    <div className='foot-1'>
+                    <span className='foot-1'>
                         <label className='col-names'>Categories
                             {catLinks}
                         </label>
-                    </div>
+                    </span>
                     
-                    <div className='foot-1'>
-                        <label className='col-names'>About Us
-                            <Link to='/'>Who We Are</Link>
-                            <Link to='/'>Why Publish?</Link>
-                            <Link to='/'>Jobs</Link>
-                        </label>
-                    </div>
-                    
-                    <div className='foot-1'>
-                        <label className='col-names'>Resources
-                            <Link to='/'>Sitemap</Link>
-                            <Link to='/'>Help</Link>
-                            <Link to='/'>Contact</Link>
-                        </label>
+                    <div className="about">
+                        <span className='foot-1'>
+                            <label className='col-names'>About Us
+                                <Link to='/'>Who We Are</Link>
+                                <Link to='/'>Why Publish?</Link>
+                                <Link to='/'>Jobs</Link>
+                            </label>
+                        </span>
+                        
+                        <span className='foot-1'>
+                            <label className='col-names'>Resources
+                                <Link to='/'>Sitemap</Link>
+                                <Link to='/'>Help</Link>
+                                <Link to='/'>Contact</Link>
+                            </label>
+                        </span>
                     </div>
 
-                </div>
+                </section>
            </div>
         ) 
     }

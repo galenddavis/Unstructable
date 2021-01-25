@@ -1,152 +1,183 @@
 
 
-.constant-elements a {
-    text-decoration: none;
-}
+// .constant-elements a {
+//     text-decoration: none;
+// }
+
+// .main-image {
+//     width: 100%;
+//     height: 400px;
+//     overflow: hidden;
+
+//     img {
+//         width: 100%;
+//         margin: -550px 0px 0 0px;
+        
+//     }
+
+// }
 
 
-.hi-top {
-    background-color: #555555;
-    height: 37px;
-    position: relative;
-    display: inline-flex;
-    width: 100%;
-    align-items: center;
-
-    img {
-        height: 20px;
+// .hi-top {
+//     background-color: #555555;
+//     height: 37px;
+//     width: 100%;
+//     color: #cccccc;
+//     font-size: 13px;
+//     font-weight: 400;
+//     align-items: center;
+//     display: flex;
+//     justify-content: space-between;
+    
+//     img {
+//         height: 20px;
         
-    };
+//     };
     
     
-    a {
-        // margin: 14px 5px;
-        //    padding: 6px 5px;
-        font-size: 13px;
-        display: inline-flex;
-        font-weight: 400;
+//     a {
+//             margin: 14px 5px;
+//                padding: 6px 5px;
+//         }
         
         
-    }
-    
-    .categories {
-        color: #cccccc;
-        text-decoration: none;
-        // position: absolute;
-        //    justify-content: left;
+        
+//         .categories {
+//         color: #cccccc;
+//         // position: absolute;
+//            align-self: center;
          
-     } 
+//      } 
      
-     .login-logout a {
-         display: inline-flex;
-        //  align-items: center;
-        //  border: black 2px solid;
+//      .login-logout a {
+//          display: inline-flex;
+//         //  align-items: center;
+//         //  border: black 2px solid;
 
         
-    }
+        
+        
+//     }
     
     
-    .userAuth {
-        // text-decoration: none;
-        color: #cccccc;
-        // padding: 3px;
-        //  float: right;
-        // border: black 2px solid;
-        padding: 0px 8px;
-        border-right: white 1px solid;
+//     .userAuth {
+//         // text-decoration: none;
+//         color: #cccccc;
+//         // padding: 3px;
+//         //  float: right;
+//         // border: black 2px solid;
+//         padding: 0px 8px;
+//         border-right: white 1px solid;
+//         margin-right: 15px;
         
         
         
-        :last-child a {
-            border-right: none;
-        }
+//         :last-child a {
+//             border-right: none;
+//         }
+
          
-         
-     }
+//      }
  
- }
+//  }
 
 
 
-.title-bar {
-    background: #eeeeee;
-    height: 89px;
-    position: relative;
-    display: inline-block;
-    top: 0px;
-    width: 100%;
-    // border: solid black 2px;
+// .title-bar {
+//     background: #eeeeee;
+//     height: 89px;
+//     position: relative;     
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     top: 0px;
+//     width: 100%;
+//     // border: solid black 2px;
+
+//     div {
+//         border: black solid 2px;
+//     }
     
     
-    .title {
-        font-size: 23px;
-        font-weight: 700;
-        position: relative;
-        bottom: 37px;
-    }
+//     .title {
+//         font-size: 23px;
+//         font-weight: 700;
+//         position: relative;
+//         // bottom: 37px;
+//     }
 
-    img {
-        height: 75px;
-        margin: 8px 8px 8px 18px;
-    }
+//     a {
+//         position: relative;
+//         // bottom: 37px;
 
-    .right-side {
-        // border: solid black 2px;
-        display: inline-flex;
-        position: absolute;
-        right: 15px;
-        // top: 25px;
-        // justify-content: center;
-    }
+//     }
 
-    input {
-        border-radius: 4px;
-        position: absolute;
-        top: 29px;
-        height: 33px;
-        right: 25px;
-        justify-content: center;
-        border: solid 1px #cccccc ;
-    }
-}
+//     img {
+//         height: 75px;
+//         margin: 8px 8px 8px 18px;
+//     }
+
+//     .right-side {
+//         // border: solid black 2px;
+//         display: inline-flex;
+//         position: absolute;
+//         right: 15px;
+//         // top: 25px;
+//         // justify-content: center;
+//     }
+
+//     input {
+//         border-radius: 4px;
+//         position: absolute;
+//         top: 29px;
+//         height: 33px;
+//         right: 25px;
+//         justify-content: center;
+//         border: solid 1px #cccccc ;
+//     }
+// }
 
 
 
 
-.footer {
+// .footer {
     
-    background: #555555;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    height: 246px;
-    display: flex;
-    justify-content: space-around;
-    border: solid black 1px;
+//     background: #555555;
+//     position: absolute;
+    
+//     bottom: 0;
+//     width: 100%;
+//     text-align: center;
+//     height: 200px;
+//     display: flex;
+//     justify-content: space-around;
+//     border: solid black 1px;
+
+//     img {
+//         height: 170px;
+//     }
     
     
-    .col-names {
-        position :relative;
-        top: 40px;
-        display: list-item;
-        color: #fffade;
-        list-style: none;
-        border: solid black 1px;
+//     .col-names {
+//         position :relative;
+//         top: 40px;
+//         display: list-item;
+//         color: #fffade;
+//         list-style: none;
+//         border: solid black 1px;
         
         
-        label {
-            font-size: 25px;
-            border: solid black 1px;
-        }
+//         label {
+//             font-size: 25px;
+//             border: solid black 1px;
+//         }
         
-        a {
-            color: #bbbbbb;
-            display: flex;
-            justify-content: space-evenly;
-            margin: 10px;
-            // border: solid black 1px;
-        }
-    }
-} 
+//         a {
+//             color: #bbbbbb;
+//             display: flex;
+//             justify-content: space-evenly;
+//             margin: 10px;
+//             // border: solid black 1px;
+//         }
+//     }
+// } 
