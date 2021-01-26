@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const DropDownMenu = props => (
-    <ul>
+    <ul className='drop-down'>
         <li>
           <p>UserProfile</p>
         </li>

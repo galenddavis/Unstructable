@@ -29,8 +29,8 @@ class UseDropDown extends React.Component {
             <div onFocus={this.handleClick} 
                 onBlur={this.handleClick}>
                 
-                <button 
-                >DropDown { this.state.show ? <DropDownMenu logout={logout}/> : null}
+                <button className='drop-down-button'>
+                    <i className="fas fa-user-circle"></i> { this.state.show ? <DropDownMenu logout={logout}/> : null}
                 </button>
             
             </div>

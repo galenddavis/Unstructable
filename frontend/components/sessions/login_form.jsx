@@ -29,27 +29,31 @@ class LoginForm extends React.Component {
             return (<li>{error}</li>)
         })
         return (
-            <div>
-               <form onSubmit={this.handleSubmit}>
+            <div className='login-page'>
+                <div>
+               <form onSubmit={this.handleSubmit} className='login-form'>
                    <ul>{errors}</ul> 
                    {/* I think my login needs to be changed so that errors will be specific to username or password */}
                     <input 
                         type="text"
+                        placeholder='Email'
                         value={this.state.username}
                         onChange={this.update('username')}
                     />
 
                     <input 
                         type="password"
+                        placeholder='Password'
                         value={this.state.password}
                         onChange={this.update('password')}
                     />
 
                     <button>Log In</button>
-                    <p>New to Instructables?
-                        <Link to='/signup'>Sign Up</Link>
+                    <p>New to Instructables? 
+                        <Link to='/signup'> Sign Up</Link>
                     </p>
                 </form> 
+                </div>
             </div>
         )
     }

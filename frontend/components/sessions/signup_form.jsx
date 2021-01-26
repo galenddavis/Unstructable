@@ -78,31 +78,38 @@ class SignupForm extends React.Component {
             return <option value={place} key={place}>{place}</option>
         })
         return (
-            <div>
-               <form onSubmit={this.handleSubmit}>
+            <div className='signup-page'>
+                <div className='blur'>
+                    {/* ^ Don't need this, but it messes up my CSS when I remove it.  */}
+               <form onSubmit={this.handleSubmit} className='signup-form'>
                    <ul>{errors}</ul> 
+                   <div>
                    <input 
                         type="text"
                         placeholder='Email'
                         value={this.state.email}
                         onChange={this.update('email')}
                     />
+                    </div>
                     
+                    <div>
                     <input 
                         type="text"
                         placeholder='Username'
                         value={this.state.username}
                         onChange={this.update('username')}
                     />
-
+                    </div>
+                    <div>
                     <input 
                         type="password"
                         placeholder='Password'
                         value={this.state.password}
                         onChange={this.update('password')}
                     />
-
-                    <select
+                    </div>
+                    <div className='selectors'>
+                    <select className='select'
                         value={this.state.value}
                         onChange={this.update('occupation')}>
                             <option value="About You">About You</option>
@@ -117,13 +124,13 @@ class SignupForm extends React.Component {
                             <option value="robot">Robot</option>
                             <option value="mad scientist">Mad Scientist</option>
                     </select>
-
-                    <select
+                    
+                    <select className='select'
                         value={this.state.value}
                         onChange={this.update('location')}>
                             {loc}
                     </select>
-
+                    </div>
                     
                     {/* <CountryDropdown 
                     value={this.state.country}
@@ -132,12 +139,13 @@ class SignupForm extends React.Component {
                     {/* hard code this/ Don't use libary.  */}
                    
 
-                    <p className='legal'>'By clicking "Sign Me Up" you agree to our Terms and to our Privacy Statement.</p>
+                    <p className='legal'>By clicking "Sign Me Up" you agree to our Terms and to our Privacy Statement.</p>
                     <button>Sign Me Up!</button>
-                    <p>Already a member?
-                        <Link to='/login'>Log In</Link>
+                    <p>Already a member? 
+                        <Link to='/login'> Log In</Link>
                     </p>
                 </form> 
+                </div>
             </div>
         )
     }
