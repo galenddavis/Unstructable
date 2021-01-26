@@ -13,6 +13,10 @@ class LoginForm extends React.Component {
         this.dummyLogin = this.dummyLogin.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
     update(field) {
         return event => this.setState({ [field]: event.target.value })
     }
