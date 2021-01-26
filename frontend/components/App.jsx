@@ -10,23 +10,24 @@ import Index from './ navbar/index'
 
 
 const App = () => (
-    <div>
+    <section>
         <header>
             <NavBar />
+        </header>
+
+        
             <Switch> 
                 <Route exact path="/" component={Index} />
                 <AuthRoute path="/login" component={login_form_container} />
                 <AuthRoute path="/signup" component={signup_form_container} />
 
             </Switch>
-            {/* <div className='future-index'>
-                <h1>This is where the project index will be</h1>
-            </div> */}
+        
+        
+        <footer>
             <Footer />
-        </header>
-
-
-    </div>
+        </footer>
+    </section>
 )
 
 export default App;

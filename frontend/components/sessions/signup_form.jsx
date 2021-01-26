@@ -58,6 +58,7 @@ class SignupForm extends React.Component {
             website: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.dummyLogin = this.dummyLogin.bind(this);
     }
 
     update(field) {
@@ -70,10 +71,24 @@ class SignupForm extends React.Component {
         this.props.submitForm(user).then(() => this.props.history.push('/'))
     }
 
+    dummyLogin(event) {
+        event.preventDefault();
+        const user = {
+            username: 'guest',
+            password: 'password',
+            occupation: 'robot',
+            email: 'sample@email.com',
+            location: 'Spain'}
+            debugger
+        this.props.login(user);
+    }
+
     render() {
         const errors = this.props.errors.map(error => {
-            return (<li>{error}</li>)
+            return (<li className='error' key={error}>{error}</li>)
         })
+
+        const showErrors = this.props.errors.length ? <ul className='errors-list'>{errors}</ul> : null
         const loc = countries.map(place => {
             return <option value={place} key={place}>{place}</option>
         })
@@ -81,10 +96,21 @@ class SignupForm extends React.Component {
             <div className='signup-page'>
                 <div className='blur'>
                     {/* ^ Don't need this, but it messes up my CSS when I remove it.  */}
+
                <form onSubmit={this.handleSubmit} className='signup-form'>
-                   <ul>{errors}</ul> 
+
+                    <span className='guest' onClick={this.dummyLogin}>Guest Login</span>
+
+                    <div className='divider'>
+                        <span className='whitespace'></span>
+                        <span className='or'>OR</span>
+                        <span className='whitespace'></span>
+                    </div>
+                   {showErrors}
                    <div>
+                   {/* <ul className='errors-list'>{showErrors}</ul>  */}
                    <input 
+                        className='email'
                         type="text"
                         placeholder='Email'
                         value={this.state.email}

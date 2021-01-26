@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.dummyLogin = this.dummyLogin.bind(this);
     }
 
     update(field) {
@@ -20,19 +21,41 @@ class LoginForm extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state)
         // debugger
-        this.props.submitForm(user)
+        this.props.submitForm(user);
+    }
+
+    dummyLogin(event) {
+        event.preventDefault();
+        const user = {
+            username: 'guest',
+            password: 'password',
+            occupation: 'robot',
+            email: 'sample@email.com',
+            location: 'Spain'}
+            debugger
+        this.props.submitForm(user);
     }
 
     render() {
         // debugger
         const errors = this.props.errors.map(error => {
-            return (<li>{error}</li>)
+            return (<li className='error'>{error}</li>)
         })
+        const showErrors = this.props.errors.length ? <ul className='errors-list'>{errors}</ul> : null
         return (
             <div className='login-page'>
                 <div>
                <form onSubmit={this.handleSubmit} className='login-form'>
-                   <ul>{errors}</ul> 
+               <span 
+                className='guest'
+                onClick={this.dummyLogin}>Guest Login</span>
+
+                    <div className='divider'>
+                        <span className='whitespace'></span>
+                        <span className='or'>OR</span>
+                        <span className='whitespace'></span>
+                    </div>
+                   {showErrors}
                    {/* I think my login needs to be changed so that errors will be specific to username or password */}
                     <input 
                         type="text"

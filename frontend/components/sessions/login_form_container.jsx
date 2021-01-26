@@ -3,7 +3,7 @@ import { login } from '../../actions/session_actions'
 import LoginForm from './login_form';
 
 const mSTP = (state) => {
-    debugger
+
    return {
        errors: Object.values(state.errors)
    }

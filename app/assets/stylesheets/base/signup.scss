@@ -1,7 +1,7 @@
 
 .signup-page {
     background: image-url('workstation1.jpg');
-    position: fixed;
+    // position: fixed;
     min-width: 117%;
     min-height: 64%;
     // padding: 500px;
@@ -10,25 +10,37 @@
     display: flex;
     align-content: center;
     text-align: center;
+    height: 900px;
 }
 
 .signup-form {
     backdrop-filter: blur(8px);
     width: 399px;
-    height: 92%;
+    height: 91%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     margin-left: 55px;
+    padding-top: 81px;
+
+    .email {
+        margin-top: 5px;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
 
 
     input {
         height: 40px;
-        width: 360px;
+        width: 356px;
         border-radius: 6px;
         font-size: 16px;
         margin: 9px 0px;
+        padding-left: 12px;
     }
 
     p { 
@@ -45,8 +57,54 @@
     button {
         background-color: #faac18;
         border: none;
-        padding: 14px 143px;
+        padding: 13px 86px;
         border-radius: 6px;
+        color: white;
+        font-size: 18px;
+        width: 364px;
+        cursor: pointer;
+    }
+
+    .divider {
+        color: white;
+
+        .whitespace {
+            height: 1px;
+            width: 1px;
+            border-top: white 1px solid;
+            padding-left: 151px;
+        }
+
+        .or {
+            padding: 11px;
+            position: relative;
+            top: -10px;      
+        }
+    }
+
+    .guest {
+        background-color: #faac18;
+        border: none;
+        padding: 13px 86px;
+        border-radius: 6px;
+        color: white;
+        font-size: 18px;
+        width: 200px;
+        margin: 30px 0px;
+        cursor: pointer;
+    }
+    
+
+    .errors-list {
+        background-color: #CE4127;
+        border-radius: 5px;
+        color: white;
+        font-size: 12px;
+        // position: absolute;
+        top: 217px;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 15px;
     }
 
 }
@@ -62,7 +120,9 @@
         width: 173px;
         border-radius: 6px;
         font-size: 16px;
-        margin: 0px 9px
+        margin: 0px 9px;
+        cursor: pointer;
+        padding-left: 12px;
         
     }
 
