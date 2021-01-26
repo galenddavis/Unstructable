@@ -5,7 +5,7 @@
     min-width: 117%;
     min-height: 64%;
     // padding: 500px;
-    background-size: 75%;
+    background-size: 100%;
     background-position: center;
     display: flex;
     align-content: center;
@@ -13,8 +13,6 @@
 }
 
 .signup-form {
-    border: 2px white solid;
-    background-color: transparent;
     backdrop-filter: blur(8px);
     width: 399px;
     height: 92%;

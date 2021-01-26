@@ -3,8 +3,9 @@
     position: fixed;
     min-width: 139%;
     min-height: 64%;
-    background-size: 76%;
-    background-position-y: -500px;
+    background-size: 100%;
+    // background-position-y: -500px;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-content: center;
@@ -12,8 +13,6 @@
 }
 
 .login-form {
-    border: 2px white solid;
-    // background-color: transparent;
     backdrop-filter: blur(8px);
     width: 399px;
     height: 92%;

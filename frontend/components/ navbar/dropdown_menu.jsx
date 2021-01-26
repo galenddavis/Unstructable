@@ -4,14 +4,10 @@ import { Link } from 'react-router-dom';
 
 
 const DropDownMenu = props => (
-    <ul className='drop-down'>
-        <li>
-          <p>UserProfile</p>
-        </li>
-        <li>
-            <span onClick={() => props.logout()}>Log Out</span>
-        </li>
-    </ul>
+    <section className='drop-down'>
+            <p>Profile</p>
+            <p className='logout-button' onClick={() => props.logout()}>Log Out</p>
+    </section>
 )
 
 export default DropDownMenu;

@@ -67,25 +67,41 @@
     }
 
     .drop-down {
-        border: lightgray 1px solid;
+        border: gray 1px solid;
         box-shadow: 1px 0px 2px lightgrey;
         position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         right: 15px;
-        top: 37px;
+        top: 35px;
         background-color: white;
         min-width: 225px;
         stroke: none;
         z-index: 1;
-        border-radius: 4px;
-        // margin-top: 25px;
+        border-radius: 6px;
+        font-size: 15px;
+        text-align: center;
+        height: 200px;
+        
 
-        // position: absolute;
-        // top: 25px;
-        // width: 50px;
+        p {
+            margin: 15px;
+        }
+
+        .logout-button {
+            border: lightgrey 1px solid;
+            padding: 7px 14px;
+            margin-top: 6px;
+            border-radius: 4px;
+            background-color: #f6f6f6;
+            height: 18px;
+        }
     }
 
     .drop-down-button {
-        // background-color: #555555;
+        background-color: #555555;
+        border: none;
         stroke: none;
 
         .drop-down-button:focus {
@@ -184,7 +200,7 @@
 .future-index {
     // border: black solid 2px;
     width: 100%;
-    height: 500px;
+    height: auto;
     display: flex;
     justify-content: center;
 
