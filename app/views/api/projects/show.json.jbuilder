@@ -1,0 +1,1 @@
+json.extract! @project, :title, :body, :favorites, :views, :category, :creator_id

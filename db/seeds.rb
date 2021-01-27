@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Project.destroy_all
+
 
 u1 = User.create!(
     username: 'guest',
@@ -13,4 +16,13 @@ u1 = User.create!(
     occupation: 'robot',
     email: 'sample@email.com',
     location: 'Spain',
+)
+
+p1 = Project.create!(
+    title: 'Build a DIY Computer out of a Potato',
+    body: 'So my computer broke, and I had too many potatoes.',
+    favorites: 1,
+    views: 1,
+    category: 'circuits',
+    creator_id: u1.id,
 )
