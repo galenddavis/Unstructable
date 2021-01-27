@@ -41,9 +41,10 @@ const Index = () => (
             </div>
         </section>
 
-
-        <h1 className='future-index'>This is where the future index will be</h1>
-
+        <div className='future-index'>
+            {/* <h1>This is where the fun begins</h1> */}
+            <img src="https://thumbs.gfycat.com/FlawedEuphoricClumber-size_restricted.gif" alt=""/>
+        </div>
     </div>
 )
 

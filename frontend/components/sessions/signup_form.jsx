@@ -107,6 +107,7 @@ class SignupForm extends React.Component {
 
                     <div className='divider'>
                         <span className='whitespace'></span>
+                    
                         <span className='or'>OR</span>
                         <span className='whitespace'></span>
                     </div>

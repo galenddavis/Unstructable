@@ -1,0 +1,2 @@
+module Pi::ProjectsHelper
+end
