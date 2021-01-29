@@ -71,7 +71,7 @@ class NavBar extends React.Component {
                         </div>
                     </span>
                     <span className='head-right'>
-                        <Link to='/create' className='right-side'>PUBLISH</Link>
+                        <Link to="/project/new" className='right-side'>PUBLISH</Link>
                         <input 
                         type="search" 
                         placeholder="Let's Make..."
