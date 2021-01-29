@@ -7,7 +7,6 @@ class Api::SessionsController < ApplicationController
         )
         if @user
             login!(@user)
-            #  
             render '/api/users/show'
         else
             render json: ["Sorry, we can\'t find that account, or your password didn\'t match. Please try again!"], status: 401

@@ -2,14 +2,19 @@ class Api::ProjectsController < ApplicationController
 
      def index
         @projects = Project.all
+        debugger
+        render '/api/projects/index' 
      end
 
      def show
         @project = Project.find(params[:id]) 
+        render '/api/projects/show' 
      end
 
      def create
         @project = Project.new(project_params)
+        @project.creator_id = current_user.id
+        debugger
         if @project.save
             render :show
         else
@@ -26,7 +31,7 @@ class Api::ProjectsController < ApplicationController
         end
      end
 
-     def delete
+     def destroy
         @project = Project.find(params[:id])
         @project.destroy
 

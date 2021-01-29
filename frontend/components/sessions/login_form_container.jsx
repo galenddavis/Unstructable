@@ -10,7 +10,7 @@ const mSTP = (state) => {
 }
 
 const mDTP = dispatch => ({
-    submitForm: user  => dispatch(login(user)) ,
+    submitForm: user  => dispatch(login(user)),
     removeErrors: () => dispatch(removeErrors())
 })
 

@@ -17,14 +17,12 @@ class UseDropDown extends React.Component {
     // }
 
     handleClick(event) {
-        debugger
         const newState = !this.state.show
         this.setState({show: newState})
     }
 
     render() {
         const { logout } = this.props;
-        debugger
         return (
             <div onFocus={this.handleClick} 
                 onBlur={this.handleClick}>
