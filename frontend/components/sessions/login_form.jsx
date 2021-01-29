@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
-        // debugger
+        // #debugger
         super(props)
         this.state = {
             username: "",
@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state)
-        debugger
+        #debugger
         this.props.submitForm(user);
     }
 
@@ -36,12 +36,12 @@ class LoginForm extends React.Component {
             occupation: 'robot',
             email: 'sample@email.com',
             location: 'Spain'}
-            debugger
+            #debugger
         this.props.submitForm(user);
     }
 
     render() {
-        // debugger
+        // #debugger
         const errors = this.props.errors.map(error => {
             return (<li className='error'>{error}</li>)
         })
