@@ -10,7 +10,7 @@ class ProjectSubmit extends React.Component {
         this.state = {
             currentForm: 2,
             title: '',
-            body: props.body, 
+            body: 'test', 
             category: ''
         }
         

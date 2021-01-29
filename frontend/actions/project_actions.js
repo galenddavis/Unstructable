@@ -30,37 +30,37 @@ export const removeProjectErrors = () => ({
     type: REMOVE_ERRORS
 })
 
-export const requestProjects = projects => dispatch => (
-    ProjectAPIUtil.fetchProjects(projects).then(
+export const requestProjects = () => dispatch => (
+    ProjectAPIUtil.fetchProjects().then(
         projects => dispatch(receiveAllProjects(projects)),
-        errors => dispatch(receiveProjectErrors(errors))
+        errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
 )
 
 export const requestProject = projectId => dispatch => (
     ProjectAPIUtil.fetchProject(projectId).then(
         project => dispatch(receiveProject(project)),
-        errors => dispatch(receiveProjectErrors(errors))
+        errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
 )
 
 export const createProject = project => dispatch => (
     ProjectAPIUtil.createProject(project).then(
         project => dispatch(receiveProject(project)),
-        errors => dispatch(receiveProjectErrors(errors))
+        errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
 )
 
 export const updateProject = project => dispatch => (
     ProjectAPIUtil.updateProject(project).then(
         project => dispatch(receiveProject(project)),
-        errors => dispatch(receiveProjectErrors(errors))
+        errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
 )
 
 export const deleteProject = projectId => dispatch => (
     ProjectAPIUtil.deleteProject(projectId).then(
         () => dispatch(removeProject(projectId)),
-        errors => dispatch(receiveProjectErrors(errors))
+        errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
 )

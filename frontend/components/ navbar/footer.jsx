@@ -11,13 +11,15 @@ const Footer = () => (
                     <img src={window.logoURL} alt=""/>
                     <span className='foot-left'>
                         <label className='col-names'>Categories</label>
-                        <Link to='/'><i className="fas fa-microchip"></i> Circuits</Link>
-                        <Link to='/'><i className="fas fa-wrench"></i> Workshop</Link>
-                        <Link to='/'><i className="fas fa-cut"></i> Craft</Link>
-                        <Link to='/'><i className="fas fa-blender"></i> Cooking</Link>
-                        <Link to='/'><i className="fas fa-house-damage"></i> Living</Link>
-                        <Link to='/'><i className="fas fa-bicycle"></i> Outside</Link>
-                        <Link to='/'><i className="fas fa-journal-whills"></i> Teachers</Link>
+                        
+                            <Link to='/'><i className="fas fa-microchip"></i> Circuits</Link>
+                            <Link to='/'><i className="fas fa-wrench"></i> Workshop</Link>
+                            <Link to='/'><i className="fas fa-cut"></i> Craft</Link>
+                            <Link to='/'><i className="fas fa-blender"></i> Cooking</Link>
+                            <Link to='/'><i className="fas fa-house-damage"></i> Living</Link>
+                            <Link to='/'><i className="fas fa-bicycle"></i> Outside</Link>
+                            <Link to='/'><i className="fas fa-journal-whills"></i> Teachers</Link>
+                        
                     </span>
                 
                     <div className='info'>

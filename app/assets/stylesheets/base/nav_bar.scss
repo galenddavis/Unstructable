@@ -227,6 +227,16 @@
         height: 140px;
         // justify-content: space-around;
         margin: 31px 41px 0px 41px;
+
+        ul {
+            margin: 13px 7px;
+            display: flex;
+            flex-direction: column;
+
+            a{
+                margin: 7px 0px;
+            }
+        }
     }
 
 
@@ -271,5 +281,6 @@
         color: #bbbbbb;
         font-size: 14px;
         margin: 6px;
+        text-decoration: none;
     }
 } 

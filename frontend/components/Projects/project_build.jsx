@@ -9,7 +9,7 @@ class ProjectBuild extends React.Component {
         this.state = {
             currentForm: 1,
             title: '',
-            body: '', 
+            body: 'test', 
             category: ''
         }
         
@@ -43,12 +43,13 @@ class ProjectBuild extends React.Component {
                             <p>Drag Images From Top Bar</p>
                         </span>
                         <span className='body'>
-                            <input
+                            <p>Intro + Supplies (click to edit)</p>
+                            {/* <input
                                 className='intro' 
                                 type='text'
                                 placeholder='Intro Text'
                                 value={this.props.body}
-                                onChange={this.props.update('body')}/>
+                                onChange={this.props.update('body')}/> */}
                             {/* <p>Intro + Supplies: (click to edit)</p>    */}
                         </span>
                     </li>

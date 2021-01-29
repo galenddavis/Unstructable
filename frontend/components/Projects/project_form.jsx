@@ -10,7 +10,7 @@ class ProjectForm extends React.Component {
         this.state = {
             currentForm: 1,
             title: '',
-            body: '', 
+            body: 'test', 
             category: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);

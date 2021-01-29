@@ -44,9 +44,16 @@
             border: 1px lightgrey solid;
             background-color: #f6f6f6;
         }
+
+        button:hover {
+            background-color: #e6e6e6;
+        }
         .publish {
             background-color: #ea6c00;
             color: white;
+        }
+        .publish:hover {
+            background-color: #d46a0d;
         }
     }
     
@@ -74,7 +81,7 @@
         border-radius: 6px;
         background-color: #f6f6f6;
         height: 142px;
-        width: 90%;
+        width: 102%;
         display: flex;
         align-items: center;
         margin-bottom: 15px;
@@ -90,16 +97,19 @@
         
         .img-upload {
             border: lightgrey 1px solid;
-            width: 35%;
+            width: 62%;
             border-radius: 5px;
-            padding: 0px 100px;
+            padding: 0px 0px;
             background-color: white;
-            box-shadow: inset 0px 0px 5px lightgrey
+            box-shadow: inset 0px 0px 5px lightgrey;
+            color: #aaaaaa;
+            font-size: 20px;
         }
 
         .body {
             margin-right: 48px;
             border: none;
+            font-weight: 600;
         }
 
         .intro {
@@ -124,7 +134,7 @@
     align-items: center;
     // border: blue 1px solid;
     margin: auto;
-    width: 56%;
+    width: 53%;
     margin-top: 15px;
     margin-bottom: 20px;
     height: 600px;
@@ -139,6 +149,7 @@
         border-bottom: lightgrey 1px solid;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        padding-top: 9px;
         
         p {
             margin: 9px 12px;
@@ -153,7 +164,7 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
-    margin: 25px 25px 9px 25px;
+    margin: 25px 25px 0px 25px;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -170,9 +181,16 @@
             border: 1px lightgrey solid;
             background-color: #f6f6f6;
         }
+        button:hover {
+            background-color: #e6e6e6;
+        }
         .publish {
-            background-color: #ea6c00;
+            background-color: #e86c00;
             color: white;
+
+        }
+        .publish:hover {
+            background-color: #d46a0d;
         }
     }
 }

@@ -5,7 +5,7 @@ import configureStore from './store/store'
 
 // test imports
 // import { signup, login, logout } from './util/session_api_util';
-import { fetchProjects, fetchProject, createProject, deleteProject, updateProject } from './util/project_api_util'
+// import { fetchProjects, fetchProject, createProject, deleteProject, updateProject } from './util/project_api_util'
 // import { createTag } from './util/tag_api_util'
 // 
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.login = login;
     // window.logout = logout;
     // window.signup = signup;
-    window.fetchProjects = fetchProjects
+    // window.fetchProjects = fetchProjects
     // window.createProject = createProject
     // window.deleteProject = deleteProject
     // window.fetchProject = fetchProject

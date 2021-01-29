@@ -11,6 +11,7 @@ const projectsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:
+            debugger
             return Object.assign({}, oldstate, action.projects);
         case RECEIVE_PROJECT: 
             newState[action.project.id] = action.project;
