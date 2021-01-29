@@ -26,7 +26,7 @@ class ProjectSubmit extends React.Component {
                         <button onClick={this.props.otherForm}>Back to Edit</button>
                     </span>
                     <span>
-                        <button type='submit'>Publish Now</button>
+                        <button type='submit' className='publish'>Publish Now</button>
                     </span>
                 </section>
                 <div className='container'>

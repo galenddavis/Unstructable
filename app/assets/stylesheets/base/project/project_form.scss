@@ -6,10 +6,8 @@
     flex-direction: column;
     margin: auto;
     width: 56%;
-    // border: green 1px solid;
     margin-top: 15px;
     margin-bottom: 40px;
-    border: blue 1px solid;
     
 }
 
@@ -42,9 +40,13 @@
             margin: 5px 4px;
             padding: 8px;
             font-size: 14px;
-            border-radius: 3px;
+            border-radius: 4px;
             border: 1px lightgrey solid;
             background-color: #f6f6f6;
+        }
+        .publish {
+            background-color: #ea6c00;
+            color: white;
         }
     }
     
@@ -98,6 +100,16 @@
         .body {
             margin-right: 48px;
             border: none;
+        }
+
+        .intro {
+            height: 118px;
+            border: lightgrey 1px solid;
+            width: 35%;
+            border-radius: 5px;
+            padding: 0px 100px;
+            background-color: white;
+            box-shadow: inset 0px 0px 5px lightgrey;
         }
 
     }
@@ -158,6 +170,10 @@
             border: 1px lightgrey solid;
             background-color: #f6f6f6;
         }
+        .publish {
+            background-color: #ea6c00;
+            color: white;
+        }
     }
 }
 
@@ -186,45 +202,3 @@
         height: 23px;
     }
 }
-
-// display: flex;
-//     align-items: center;
-//     flex-direction: column;
-//     // border: green 1px solid;
-//     margin: auto;
-//     width: 56%;
-//     border: green 1px solid;
-//     margin-top: 15px;
-//     margin-bottom: 40px;
-
-
-//     .header {
-//         display: flex;
-//         justify-content: space-between;
-//         position: sticky;
-//         top: 0;
-//         border: 1px lightgrey solid;
-//         border-style: solid solid none;
-//         padding: 9px 222px;
-//         border-top-left-radius: 10px;
-//         border-top-right-radius: 10px;
-//         background-color: #f6f6f6;
-//         margin: 25px 25px 0px 25px;
-//         box-shadow: 0px 4px 5px lightgrey;
-
-       
-//         }
-    
-
-//     .container {
-//         display: flex;
-//         align-content: left;
-//         border-bottom-left-radius: 10px;
-//         border-bottom-right-radius: 10px;
-//         border: 1px green solid;
-//         border-style: solid solid none;
-//         // margin: 0px 25px 0px 25px;
-//         height: 600px;
-//         padding: 9px 215px 9px 9px;
-//         // width: 394px;
-//     }

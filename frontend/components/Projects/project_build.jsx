@@ -32,7 +32,7 @@ class ProjectBuild extends React.Component {
                     </span>
                     <span className='right'>
                         {/* <button>Save</button>  */}
-                        <button onClick={this.props.otherForm}>Publish</button>
+                        <button onClick={this.props.otherForm} className='publish'>Publish</button>
                     </span>
                 </div>
             </section>
@@ -43,12 +43,13 @@ class ProjectBuild extends React.Component {
                             <p>Drag Images From Top Bar</p>
                         </span>
                         <span className='body'>
-                            <input 
-                                type="text"
-                                placeholder='Intro'
+                            <input
+                                className='intro' 
+                                type='text'
+                                placeholder='Intro Text'
                                 value={this.props.body}
                                 onChange={this.props.update('body')}/>
-                            <p>Intro + Supplies: (click to edit)</p>   
+                            {/* <p>Intro + Supplies: (click to edit)</p>    */}
                         </span>
                     </li>
 
@@ -57,7 +58,7 @@ class ProjectBuild extends React.Component {
                             <p>Drag Images From Top Bar</p>
                         </span>
                         <span className='body'>
-                            <p>Intro + Supplies: (click to edit)</p>
+                            <p>Next Step (click to edit)</p>
                         </span>
                     </li>
                 </div>
