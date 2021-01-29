@@ -33,7 +33,6 @@ class ProjectForm extends React.Component {
 
 
     update(field) {
-        #
         return event => this.setState({ 
             [field]: event.target.value
         })

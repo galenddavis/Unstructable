@@ -24,7 +24,6 @@ class LoginForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state)
-        #
         this.props.submitForm(user);
     }
 
@@ -36,7 +35,6 @@ class LoginForm extends React.Component {
             occupation: 'robot',
             email: 'sample@email.com',
             location: 'Spain'}
-            #
         this.props.submitForm(user);
     }
 

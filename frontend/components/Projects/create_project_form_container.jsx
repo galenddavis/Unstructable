@@ -8,7 +8,7 @@ import ProjectForm from './project_form'
 
 
 const mSTP = (state) => {
-    #
+    
     return {
         event: {
            title: '',

@@ -83,7 +83,6 @@ class SignupForm extends React.Component {
             occupation: 'robot',
             email: 'sample@email.com',
             location: 'Spain'}
-            #
         this.props.login(user);
     }
 
