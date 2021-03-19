@@ -1,9 +1,9 @@
 class Api::ProjectsController < ApplicationController
 
      def index
-        @projects = Project.all
-    
-        render '/api/projects/index' 
+      @projects = Project.all
+      #   render '/api/projects/index'
+      render :index 
      end
 
      def show

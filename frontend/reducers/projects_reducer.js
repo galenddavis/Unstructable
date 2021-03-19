@@ -5,14 +5,19 @@ import {
  } from '../actions/project_actions';
 
 
-const projectsReducer = (oldState = {}, action) => {
-    Object.freeze(oldState);
-    const newState = Object.assign({}, oldState)
+ const _NULL_STATE = {
+     projects: []
+ }
 
+const projectsReducer = (state = _NULL_STATE, action) => {
+    Object.freeze(state);
+    // const newState = Object.assign({}, state)
+    debugger
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:
             debugger
-            return Object.assign({}, oldstate, action.projects);
+            return action.projects
+            // return Object.assign({}, state, {projects: action.data});
         case RECEIVE_PROJECT: 
             newState[action.project.id] = action.project;
             return newState;
@@ -20,7 +25,7 @@ const projectsReducer = (oldState = {}, action) => {
             delete[newState[action.projectId]];
             return newState;
         default:
-            return oldState;
+            return state;
     }
 }
 

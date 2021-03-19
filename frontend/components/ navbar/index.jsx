@@ -3,25 +3,30 @@ import { Link } from 'react-router-dom';
 
 class Index extends React.Component {
     constructor(props) {
+        debugger
         super(props)
+
+        
     }
 
-    // componentDidMount() {
-    //     // debugger
-    //     this.props.requestProjects()
-    // }
+    componentDidMount() {
+        debugger
+        this.props.requestProjects()
+    }
 
     render () {
-        // debugger
+        debugger
+        const projectList = this.props.projects === undefined ? null : this.props.projects.map((project) => {
+            return <li>{project.title}</li>
+        })
         // if (Object.values(this.props.projects).length === 0) {
         //     return null
         // }
         // const {projects} = this.props
-        // debugger
         // const projectList = projects.map(project => (
         //     <li>{project}</li>
         // ))
-            // debugger
+            
         return (
         <div className='body'>
             <span className='main-image'>
@@ -36,7 +41,7 @@ class Index extends React.Component {
                         We make it easy to learn how to ALMOST make anything, 
                         one step at a time. From the stovetop to the workshop, 
                         you are sure to be inspired to start something and never
-                        finish it today!
+                        finish it!
                     </span>
                 </div>
 
@@ -63,7 +68,10 @@ class Index extends React.Component {
             <div className='future-index'>
                 <h1>I promise we got projects in the back room.</h1>
                 <h1>I just can't get them to show up.</h1>
-                {/* {projectList} */}
+                <ul>
+                {projectList}
+
+                </ul>
                 
             </div>
         </div>

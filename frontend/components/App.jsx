@@ -6,7 +6,7 @@ import login_form_container from './sessions/login_form_container';
 import signup_form_container from './sessions/signup_form_container';
 import NavBar from './ navbar/nav_bar_container' 
 import Footer from './ navbar/footer'
-import Index from './ navbar/index'
+import Index from './ navbar/index_container'
 import project_create from './Projects/create_project_form_container'
 import project_splash from './Projects/project-splash'
 
