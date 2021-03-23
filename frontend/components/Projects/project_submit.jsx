@@ -42,14 +42,15 @@ class ProjectSubmit extends React.Component {
                     <select className='category'
                         value={this.props.category}
                         onChange={this.props.update('category')}>
-                            <option value='circuits'>Circuits</option>
-                            <option value='workshop'>Workshop</option>
-                            <option value='craft'>Craft</option>
-                            <option value='cooking'>Cooking</option>
-                            <option value='living'>Living</option>
-                            <option value='outside'>Outside</option>
-                            <option value='teachers'>Teachers</option>
+                            <option value='Circuits'>Circuits</option>
+                            <option value='Workshop'>Workshop</option>
+                            <option value='Craft'>Craft</option>
+                            <option value='Cooking'>Cooking</option>
+                            <option value='Living'>Living</option>
+                            <option value='Outside'>Outside</option>
+                            <option value='Teachers'>Teachers</option>
                     </select>
+                    
                 </section>
                 </div>
             </div>

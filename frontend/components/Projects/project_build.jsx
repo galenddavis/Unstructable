@@ -32,7 +32,10 @@ class ProjectBuild extends React.Component {
                     </span>
                     <span className='right'>
                         {/* <button>Save</button>  */}
-                        <button onClick={this.props.otherForm} className='publish'>Publish</button>
+                        <button 
+                            onClick={this.props.otherForm} 
+                            className='publish'>Publish
+                        </button>
                     </span>
                 </div>
             </section>
@@ -52,6 +55,7 @@ class ProjectBuild extends React.Component {
                                 onChange={this.props.update('body')}/> */}
                             {/* <p>Intro + Supplies: (click to edit)</p>    */}
                         </span>
+                        <i class="fas fa-chevron-right"></i>
                     </li>
 
                     <li className='step'>
@@ -61,6 +65,7 @@ class ProjectBuild extends React.Component {
                         <span className='body'>
                             <p>Next Step (click to edit)</p>
                         </span>
+                        <i class="fas fa-chevron-right"></i>
                     </li>
                 </div>
             </ul>

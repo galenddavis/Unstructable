@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import IndexItem from './index_item';
 
 class Index extends React.Component {
     constructor(props) {
@@ -17,7 +18,10 @@ class Index extends React.Component {
     render () {
         debugger
         const projectList = this.props.projects === undefined ? null : this.props.projects.map((project) => {
-            return <li>{project.title}</li>
+            // return <li>{project.title}</li>
+            return <IndexItem 
+            key={project.id}
+            project={project}/>
         })
         // if (Object.values(this.props.projects).length === 0) {
         //     return null
@@ -64,13 +68,13 @@ class Index extends React.Component {
                 </div>
             </section>
 
+            <h1>EXPLORE PROJECTS</h1>
 
-            <div className='future-index'>
-                <h1>I promise we got projects in the back room.</h1>
-                <h1>I just can't get them to show up.</h1>
-                <ul>
-                {projectList}
-
+            <div className='index'>
+                {/* <h1>I promise we got projects in the back room.</h1>
+                <h1>I just can't get them to show up.</h1> */}
+                <ul className='project-index'>
+                    {projectList}
                 </ul>
                 
             </div>

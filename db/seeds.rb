@@ -55,7 +55,7 @@ p1 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -64,7 +64,7 @@ p2 = Project.create!(
     body: 'Boy am I bad at math.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u2.id,
 )
 
@@ -73,7 +73,7 @@ p3 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -82,7 +82,7 @@ p4 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -91,7 +91,7 @@ p5 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -100,7 +100,7 @@ p6 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -109,7 +109,7 @@ p7 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -118,7 +118,7 @@ p8 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -127,7 +127,7 @@ p9 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
@@ -136,7 +136,7 @@ p10 = Project.create!(
     body: 'So my computer broke, and I had too many potatoes.',
     favorites: 1,
     views: 1,
-    category: 'circuits',
+    category: 'Circuits',
     creator_id: u1.id,
 )
 
