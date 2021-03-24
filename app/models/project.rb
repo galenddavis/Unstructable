@@ -10,5 +10,7 @@ class Project < ApplicationRecord
         foreign_key: :project_id,
         class_name: 'Tag'
 
+    has_one_attached :title_photo
+
     
 end
