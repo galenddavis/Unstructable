@@ -4,9 +4,6 @@ import UseDropDown from './use_dropdown'
 import { login } from '../../actions/session_actions'
 
 
-
-
-
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
