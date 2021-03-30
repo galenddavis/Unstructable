@@ -10,7 +10,7 @@ class Project < ApplicationRecord
         foreign_key: :project_id,
         class_name: 'Tag'
 
-    has_many: steps,
+    has_many :steps,
         foreign_key: :project_id,
         class_name: 'Step'
 

@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 Project.destroy_all
 
@@ -61,6 +63,9 @@ p1 = Project.create!(
     creator_id: u1.id,
 )
 
+file1 = open('https://unstructable-seeds.s3.amazonaws.com/01_potato.jpg')
+p1.title_photo.attach(io: file1, filename: '01_potato.jpg')
+
 p2 = Project.create!(
     title: 'Build a program to file your taxes.',
     body: "Boy am I bad at math, but I'm ok at programming so I figured I'd write 
@@ -70,6 +75,9 @@ p2 = Project.create!(
     category: 'Circuits',
     creator_id: u2.id,
 )
+
+file2 = open('https://unstructable-seeds.s3.amazonaws.com/02_robot.png')
+p2.title_photo.attach(io: file2, filename: '02_robot.png')
 
 p3 = Project.create!(
     title: 'Decorate your car Dashboard',
@@ -82,6 +90,9 @@ p3 = Project.create!(
     creator_id: u3.id,
 )
 
+file3 = open('https://unstructable-seeds.s3.amazonaws.com/03_dashboard.jpg')
+p3.title_photo.attach(io: file3, filename: '03_dashboard.jpg')
+
 p4 = Project.create!(
     title: 'Turn your old jeans into a chair',
     body: "I'm sure that many of you, like me, have a collection of jeans that either don't
@@ -93,6 +104,9 @@ p4 = Project.create!(
     creator_id: u4.id,
 )
 
+file4 = open('https://unstructable-seeds.s3.amazonaws.com/04_jeans.jpg')
+p4.title_photo.attach(io: file4, filename: '04_jeans.jpg')
+
 p5 = Project.create!(
     title: 'Homemade Peanut M&Ms',
     body: "Everytime we go out, my kids are always asking me to buy candy, but it's just so 
@@ -102,6 +116,9 @@ p5 = Project.create!(
     category: 'Cooking',
     creator_id: u3.id,
 )
+
+file5 = open('https://unstructable-seeds.s3.amazonaws.com/05_mnms.jpg')
+p5.title_photo.attach(io: file5, filename: '05_mnms.jpg')
 
 p6 = Project.create!(
     title: 'Grow your own Vegetables at home',
@@ -114,6 +131,9 @@ p6 = Project.create!(
     creator_id: u2.id,
 )
 
+file6 = open('https://unstructable-seeds.s3.amazonaws.com/06_plant.jpg')
+p6.title_photo.attach(io: file6, filename: '06_plant.jpg')
+
 p7 = Project.create!(
     title: 'Convert desk into standing desk',
     body: 'I heard that sitting for too long was really bad for your back, but standing desks 
@@ -124,6 +144,9 @@ p7 = Project.create!(
     category: 'Workshop',
     creator_id: u5.id,
 )
+
+file7 = open('https://unstructable-seeds.s3.amazonaws.com/07_desk.jpg')
+p7.title_photo.attach(io: file7, filename: '07_desk.jpg')
 
 p8 = Project.create!(
     title: 'Refinish an old side table',
@@ -136,6 +159,9 @@ p8 = Project.create!(
     creator_id: u2.id,
 )
 
+file8 = open('https://unstructable-seeds.s3.amazonaws.com/08_table.jpg')
+p8.title_photo.attach(io: file8, filename: '08_table.jpg')
+
 p9 = Project.create!(
     title: 'Repurpose dolls as planters',
     body: "My daughter has grown out of her doll phase, but I didn't want to just throw 
@@ -147,6 +173,9 @@ p9 = Project.create!(
     creator_id: u1.id,
 )
 
+file9 = open('https://unstructable-seeds.s3.amazonaws.com/09_dolls.jpg')
+p9.title_photo.attach(io: file9, filename: '09_dolls.jpg')
+
 p10 = Project.create!(
     title: 'Stylish plastic sunglasses',
     body: "This is a fun weekend project to keep my little ones busy while I get a quick nap in on a Sunday. 
@@ -156,4 +185,7 @@ p10 = Project.create!(
     category: 'Crafts',
     creator_id: u5.id,
 )
+
+file10 = open('https://unstructable-seeds.s3.amazonaws.com/10_glasses.jpg')
+p10.title_photo.attach(io: file10, filename: '10_glasses.jpg')
 
