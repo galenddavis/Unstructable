@@ -42,7 +42,7 @@ u4 = User.create!(
     location: 'Spain',
 )
 
-u4 = User.create!(
+u5 = User.create!(
     username: 'Robo-Bot',
     password: 'password',
     occupation: 'robot',
@@ -52,91 +52,108 @@ u4 = User.create!(
 
 p1 = Project.create!(
     title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
+    body: "So my daughter's first grade class was building potato batteries, and 
+    I wanted to make sure that he project put all those other kids in their place.
+    Today I'll be showing you how to build a fully functional potato-gaming PC.",
+    favorites: 15,
+    views: 38,
     category: 'Circuits',
     creator_id: u1.id,
 )
 
 p2 = Project.create!(
-    title: 'Build a program to file your taxes poorly.',
-    body: 'Boy am I bad at math.',
-    favorites: 1,
-    views: 1,
+    title: 'Build a program to file your taxes.',
+    body: "Boy am I bad at math, but I'm ok at programming so I figured I'd write 
+    up a quick python program to do my taxes for me. How hard could it be?",
+    favorites: 0,
+    views: 106,
     category: 'Circuits',
     creator_id: u2.id,
 )
 
 p3 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
+    title: 'Decorate your car Dashboard',
+    body: "Have you ever looked at your car's dashboard and thought it was just super boring?
+    I'm here to show you how, with just a few cheap ingredients, you can spruce up your
+    vehicle!",
     favorites: 1,
-    views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    views: 98,
+    category: 'Crafts',
+    creator_id: u3.id,
 )
 
 p4 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    title: 'Turn your old jeans into a chair',
+    body: "I'm sure that many of you, like me, have a collection of jeans that either don't
+    fit, or are full of holes. Well, with a little sewing know-how, and some ingenuity you 
+    can turn those rags into a stylish piece of furniture.",
+    favorites: 5,
+    views: 16,
+    category: 'Crafts',
+    creator_id: u4.id,
 )
 
 p5 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    title: 'Homemade Peanut M&Ms',
+    body: "Everytime we go out, my kids are always asking me to buy candy, but it's just so 
+    bad for them. I decided to try my hand at making a healthy alternative. Turns out, they love them!",
+    favorites: 150,
+    views: 348,
+    category: 'Cooking',
+    creator_id: u3.id,
 )
 
 p6 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    title: 'Grow your own Vegetables at home',
+    body: "Who likes paying an arm and a leg for veggies that go bad just days after you bring them home? 
+    Lord knows I don't. Well, why pay for what you can grow with a few dollars worth of seeds 
+    and a little bit of dirt from right outside. ",
+    favorites: 45,
+    views: 67,
+    category: 'Cooking',
+    creator_id: u2.id,
 )
 
 p7 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    title: 'Convert desk into standing desk',
+    body: 'I heard that sitting for too long was really bad for your back, but standing desks 
+    can be really bad for your wallet. With this diy, you can take any old desk and raise it up 
+    to whatever height you need it to be.',
+    favorites: 0,
+    views: 2,
+    category: 'Workshop',
+    creator_id: u5.id,
 )
 
 p8 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    title: 'Refinish an old side table',
+    body: "I bought an old sidetable at a junk sale and wanted to give it new life with some 
+    gold spackle. It's a super easy project that anyone can do, perfect for a weekend 
+    project with the kids. ",
+    favorites: 19,
+    views: 53,
+    category: 'Workshop',
+    creator_id: u2.id,
 )
 
 p9 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
-    favorites: 1,
-    views: 1,
-    category: 'Circuits',
+    title: 'Repurpose dolls as planters',
+    body: "My daughter has grown out of her doll phase, but I didn't want to just throw 
+    them away, call me sentimental. Instead, I thought, maybe I can use them out in the garden 
+    as a way to foster some of the smaller plants until they're ready for transplanting.",
+    favorites: 5,
+    views: 0,
+    category: 'Crafts',
     creator_id: u1.id,
 )
 
 p10 = Project.create!(
-    title: 'Build a DIY Computer out of a Potato',
-    body: 'So my computer broke, and I had too many potatoes.',
+    title: 'Stylish plastic sunglasses',
+    body: "This is a fun weekend project to keep my little ones busy while I get a quick nap in on a Sunday. 
+    Using any old soda bottle, you can create a template and cut out a fun and stylish pair of sunglasses.",
     favorites: 1,
     views: 1,
-    category: 'Circuits',
-    creator_id: u1.id,
+    category: 'Crafts',
+    creator_id: u5.id,
 )
 
