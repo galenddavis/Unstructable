@@ -18,18 +18,11 @@ class Index extends React.Component {
     render () {
         debugger
         const projectList = this.props.projects === undefined ? null : this.props.projects.map((project) => {
-            // return <li>{project.title}</li>
             return <IndexItem 
             key={project.id}
-            project={project}/>
+            project={project}
+            />
         })
-        // if (Object.values(this.props.projects).length === 0) {
-        //     return null
-        // }
-        // const {projects} = this.props
-        // const projectList = projects.map(project => (
-        //     <li>{project}</li>
-        // ))
             
         return (
         <div className='body'>
