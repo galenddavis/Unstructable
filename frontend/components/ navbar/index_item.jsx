@@ -11,7 +11,9 @@ class IndexItem extends React.Component {
         return (
             <li className='project'>
                 <div className='thumbnail'>
-                    <img src={window.projectImg} alt=""/>
+                    {/* <img src={window.projectImg} alt=""/> */}
+                    <img src={project.photoUrl} alt=""/>
+                    {/* {project.photoUrl} */}
                 </div>
                 <p>{project.title} by {project.creator_id} in {project.category}</p>
                 {/* <h1>{project.title}</h1>
