@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 
 class IndexItem extends React.Component {
@@ -14,7 +15,7 @@ class IndexItem extends React.Component {
                 <div className='thumbnail'>
                     <img src={project.photoUrl} alt=""/>
                 </div>
-                <p>{project.title} by {project.creator?.username} in {project.category}</p>
+                <p> <Link to={`/project/${project.id}`}>{project.title}</Link> by {project.creator?.username} in {project.category}</p>
             </li>
         )
     }

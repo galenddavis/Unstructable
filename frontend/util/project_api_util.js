@@ -10,12 +10,16 @@ export const fetchProjects = () => {
     )
 }
 
-export const fetchProject = (projectId) => (
-    $.ajax({
-        method: 'GET',
-        url: `/api/projects/${projectId}`
-    })
-)
+export const fetchProject = (projectId) => {
+    debugger
+    return (
+        $.ajax({
+            method: 'GET',
+            url: `/api/projects/${projectId}`,
+            data: {projectId}
+        })
+    )
+}
 
 export const createProject = (project) => (
     $.ajax({
