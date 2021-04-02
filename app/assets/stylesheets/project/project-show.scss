@@ -1,0 +1,46 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.project-show {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    img {
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+
+    .stats {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    h1 {
+        color: #333333;
+        margin: 23px 0px;
+        font-size: 28px;
+    }
+
+    p {
+        color: #999999;
+        margin: 0px 5px 23px 5px;
+    }
+
+    #favorites {
+        color: #c20089;
+    }
+
+    #views {
+        color: #00a1cf;
+    }
+
+    h3 {
+        width: 800px;
+    }
+
+    
+}

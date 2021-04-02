@@ -24,7 +24,7 @@ export const fetchProject = (projectId) => {
 export const createProject = (project) => (
     $.ajax({
         method: 'POST',
-        url: '/api/projects',
+        url: `/api/users/${project.creator_id}/projects`,
         data: {project}
     })
 )
@@ -32,7 +32,7 @@ export const createProject = (project) => (
 export const updateProject = (project) => (
     $.ajax({
         method: 'PATCH',
-        url: `/api/projects/${project.id}`,
+        url: `/api/users/${project.creator_id}/projects/${project.id}`,
         data: {project}
     })
 )
@@ -40,7 +40,7 @@ export const updateProject = (project) => (
 export const deleteProject = (projectId) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/projects/${projectId}`
+        url: `/api/users/${project.creator_id}/projects/${projectId}`
     })
 )
 
