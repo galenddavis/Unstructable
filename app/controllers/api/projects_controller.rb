@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::ProjectsController < ApplicationController
 
      def index
@@ -6,8 +8,10 @@ class Api::ProjectsController < ApplicationController
      end
 
      def show
-        @project = Project.find(params[:id]) 
-        render '/api/projects/show' 
+        @project = Project.find(params[:id])
+        @projects = Project.all 
+        render :show
+      #   render '/api/projects/show' 
      end
 
      def create

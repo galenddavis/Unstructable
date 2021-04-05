@@ -9,6 +9,7 @@ import Footer from './ navbar/footer'
 import Index from './ navbar/index_container'
 import project_create from './Projects/create_project_form_container'
 import project_splash from './Projects/project-splash'
+import ProjectShow from './Projects/project_show_container'
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
                 <AuthRoute path="/signup" component={signup_form_container} />
                 <ProtectedRoute exact path="/create" component={project_splash} />
                 <ProtectedRoute exact path="/project/new" component={project_create} />
+                <Route exact path='/project/:id' component={ProjectShow}/>
             </Switch>
         
         <footer>
