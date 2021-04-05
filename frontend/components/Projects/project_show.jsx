@@ -17,13 +17,14 @@ class ProjectShow extends React.Component {
         debugger
         if (this.props.project === undefined) return null;
         const { project } = this.props
-        const userProjects = this.props.project.creator.projects?.map((other) => {
+        const userProjects = this.props.project.creator.otherProjects?.map((other) => {
             debugger
             let otherProjects = []
             if (other.id !== this.props.project.id) {
-                otherProjects.push(other.title)
+                // otherProjects.push(other.id)
+                return <li><img src={other.photoUrl} alt=""/></li>
             }
-            return otherProjects
+            // return otherProjects
         })
         
         return (
@@ -37,9 +38,12 @@ class ProjectShow extends React.Component {
 
                     </div>
                     <img src={project.photoUrl} alt="potato"/>
-                    <section>
-                        {/* <img src="{project.creator.projects[0].title}" alt=""/> */}
-                        <h1>{userProjects}</h1>
+                    <section className='project-plugs'>
+                        <p>By {project.creator?.username} </p>
+                        <div className='user'>
+                            <p>More by the Author: </p>
+                            <ul className='other-projects'>{userProjects}</ul>
+                        </div>
                     </section>
                     <h3>{project.body}</h3>
                 </div>
