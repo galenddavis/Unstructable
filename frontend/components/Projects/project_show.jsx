@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StepIndex from '../Steps/step_index_container'
 
 
 class ProjectShow extends React.Component {
@@ -46,6 +47,10 @@ class ProjectShow extends React.Component {
                         </div>
                     </section>
                     <h3>{project.body}</h3>
+
+                    <section>
+                        <StepIndex />
+                    </section>
                 </div>
             </div>
         )

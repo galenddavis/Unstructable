@@ -52,11 +52,14 @@ u5 = User.create!(
     location: 'Spain',
 )
 
+
+# ~~~~~~~~~~~~~~~~~~~Project 1~~~~~~~~~~~~~~~~~~~~
+
 p1 = Project.create!(
     title: 'Build a DIY Computer out of a Potato',
     body: "So my daughter's first grade class was building potato batteries, and 
     I wanted to make sure that he project put all those other kids in their place.
-    Today I'll be showing you how to build a fully functional potato-gaming PC.",
+    Today I'll be showing you how to build a fully functional potato-media PC.",
     favorites: 15,
     views: 38,
     category: 'Circuits',
@@ -65,6 +68,51 @@ p1 = Project.create!(
 
 file1 = open('https://unstructable-seeds.s3.amazonaws.com/01_potato.jpg')
 p1.title_photo.attach(io: file1, filename: '01_potato.jpg')
+
+step1 = Step.create!(
+    title: "Get a Potato",
+    body: "Go into your kitchen and grab any old potato. Russet works best, but any will do. 
+    If you can sneak out more than one, great!, but even just a single Idaho should output enough power 
+    to power the equivalent of a raspberry pi.",
+    project_id: 1,
+)
+
+step2 = Step.create!(
+    title: "Google how to build a computer",
+    body: "Computers are complex beasts, and if you aren't sure how they're put together, then you 
+    might need to do a little research into how all the parts fit together. For instance, It didn't 
+    occur to me that I would need a chipset to make this work. Allocate plenty of time to carve one 
+    out of a second potato if need be. ",
+    project_id: 1,
+)
+
+step3 = Step.create!(
+    title: "Figure out how much power your potato can handle",
+    body: "Now we've got the fun stuff. It's time to figure out how much juice we can run through our 
+    little spuddy without french frying him. For instance, when I plugged my little tater into wall power, 
+    it toasted him, and also blew the circuit breaker for half of my apartment complex. ",
+    project_id: 1,
+)
+
+step4 = Step.create!(
+    title: "Do some research into how much raspberry pi's cost",
+    body: "This is taking longer than I thought. I think I might need to rethink how viable this whole 
+    project actually is. Raspberry Pi's apparently can be used to set up a decent little home theater 
+    system. After burning through a couple pounds of potatos and setting a small fire, I think my wife 
+    is starting to think that this DIY project is a bad idea.",
+    project_id: 1,
+)
+
+step5 = Step.create!(
+    title: "Google how to set up your new Raspberry Pi as a home media system",
+    body: "I had to google this. Who would have thought that even setting up a new PC would be this difficult. 
+    If anyone has any experience setting up speaker systems, plz comment below. I'm out of my depth here.",
+    project_id: 1,
+)
+
+
+
+# ~~~~~~~~~~~~~~~~~~~Project 2~~~~~~~~~~~~~~~~~~~~
 
 p2 = Project.create!(
     title: 'Build a program to file your taxes.',
@@ -78,6 +126,9 @@ p2 = Project.create!(
 
 file2 = open('https://unstructable-seeds.s3.amazonaws.com/02_robot.png')
 p2.title_photo.attach(io: file2, filename: '02_robot.png')
+
+
+# ~~~~~~~~~~~~~~~~~~~Project 3~~~~~~~~~~~~~~~~~~~~
 
 p3 = Project.create!(
     title: 'Decorate your car Dashboard',
@@ -93,6 +144,9 @@ p3 = Project.create!(
 file3 = open('https://unstructable-seeds.s3.amazonaws.com/03_dashboard.jpg')
 p3.title_photo.attach(io: file3, filename: '03_dashboard.jpg')
 
+
+# ~~~~~~~~~~~~~~~~~~~Project 4~~~~~~~~~~~~~~~~~~~~
+
 p4 = Project.create!(
     title: 'Turn your old jeans into a chair',
     body: "I'm sure that many of you, like me, have a collection of jeans that either don't
@@ -107,6 +161,9 @@ p4 = Project.create!(
 file4 = open('https://unstructable-seeds.s3.amazonaws.com/04_jeans.jpg')
 p4.title_photo.attach(io: file4, filename: '04_jeans.jpg')
 
+
+# ~~~~~~~~~~~~~~~~~~~Project 5~~~~~~~~~~~~~~~~~~~~
+
 p5 = Project.create!(
     title: 'Homemade Peanut M&Ms',
     body: "Everytime we go out, my kids are always asking me to buy candy, but it's just so 
@@ -119,6 +176,8 @@ p5 = Project.create!(
 
 file5 = open('https://unstructable-seeds.s3.amazonaws.com/05_mnms.jpg')
 p5.title_photo.attach(io: file5, filename: '05_mnms.jpg')
+
+# ~~~~~~~~~~~~~~~~~~~Project 6~~~~~~~~~~~~~~~~~~~~
 
 p6 = Project.create!(
     title: 'Grow your own Vegetables at home',
@@ -134,6 +193,8 @@ p6 = Project.create!(
 file6 = open('https://unstructable-seeds.s3.amazonaws.com/06_plant.jpg')
 p6.title_photo.attach(io: file6, filename: '06_plant.jpg')
 
+# ~~~~~~~~~~~~~~~~~~~Project 7~~~~~~~~~~~~~~~~~~~~
+
 p7 = Project.create!(
     title: 'Convert desk into standing desk',
     body: 'I heard that sitting for too long was really bad for your back, but standing desks 
@@ -147,6 +208,8 @@ p7 = Project.create!(
 
 file7 = open('https://unstructable-seeds.s3.amazonaws.com/07_desk.jpg')
 p7.title_photo.attach(io: file7, filename: '07_desk.jpg')
+
+# ~~~~~~~~~~~~~~~~~~~Project 8~~~~~~~~~~~~~~~~~~~~
 
 p8 = Project.create!(
     title: 'Refinish an old side table',
@@ -162,6 +225,8 @@ p8 = Project.create!(
 file8 = open('https://unstructable-seeds.s3.amazonaws.com/08_table.jpg')
 p8.title_photo.attach(io: file8, filename: '08_table.jpg')
 
+# ~~~~~~~~~~~~~~~~~~~Project 9~~~~~~~~~~~~~~~~~~~~
+
 p9 = Project.create!(
     title: 'Repurpose dolls as planters',
     body: "My daughter has grown out of her doll phase, but I didn't want to just throw 
@@ -175,6 +240,8 @@ p9 = Project.create!(
 
 file9 = open('https://unstructable-seeds.s3.amazonaws.com/09_dolls.jpg')
 p9.title_photo.attach(io: file9, filename: '09_dolls.jpg')
+
+# ~~~~~~~~~~~~~~~~~~~Project 10~~~~~~~~~~~~~~~~~~~~
 
 p10 = Project.create!(
     title: 'Stylish plastic sunglasses',
