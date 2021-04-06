@@ -1,5 +1,6 @@
 json.extract! @project, :id, :title, :body, :favorites, :views, :category, :creator_id, :title_photo, :created_at
 json.photoUrl url_for(@project.title_photo)
+json.steps @project.steps
 
 json.creator do 
     json.extract! @project.creator, :id, :username

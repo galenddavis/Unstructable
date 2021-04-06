@@ -5,7 +5,7 @@ import StepIndex from './step_index'
 const mSTP = (state, ownProps) => {
     debugger
     return {
-        project: state.entities.project[ownProps.match.params.id],
+        project: state.entities.projects[ownProps.match.params.id],
         steps: Object.values(state.entities.steps)
     }
 };

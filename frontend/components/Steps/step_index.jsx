@@ -11,6 +11,13 @@ class StepIndex extends React.Component {
         this.props.requestProjects
     }
 
+    render() {
+        if (this.props.project === undefined) return null;
+        return (
+            <h1>Hey</h1>
+        )
+    }
+
 }
 
 export default StepIndex;
