@@ -1,5 +1,10 @@
 class Api::StepsController < ApplicationController
 
+    def index
+        @steps = Project.find(params[:project_id]).steps
+        render: 'api/steps/index'
+    end
+
     def show
         @step = Step.find(params[:id])
     end

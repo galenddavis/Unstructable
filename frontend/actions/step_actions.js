@@ -1,9 +1,15 @@
 import * as StepAPIUtil from '../util/step_api_util';
 
+export const RECEIVE_ALL_STEPS = 'RECEIVE_ALL_STEPS'
 export const RECEIVE_STEP = 'RECEIVE_STEP'
 export const REMOVE_STEP = 'REMOVE_STEP'
 export const RECEIVE_STEP_ERRORS = 'RECEIVE_STEP_ERRORS'
 export const REMOVE_ERRORS = 'REMOVE_ERRORS'
+
+const receiveAllSteps = (steps) => ({
+    type: RECEIVE_ALL_STEPS,
+    steps
+});
 
 const receiveStep = step => ({
     type: RECEIVE_STEP,
@@ -23,6 +29,13 @@ const receiveStepErrors = errors => ({
 export const removeStepErrors = () => ({
     type: REMOVE_ERRORS
 })
+
+export const requestAllSteps = projectId => dispatch (
+    StepAPIUtil.fetchAllSteps(projectId).then(
+        steps => dispatch(receiveAllSteps(steps)),
+        errors => dispatch(receiveStepErrors(errors))
+    )
+)
 
 export const requestStep = stepId => dispatch => (
     StepAPIUtil.fetchStep(stepId).then(

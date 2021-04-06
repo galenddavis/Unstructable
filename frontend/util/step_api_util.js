@@ -1,30 +1,37 @@
 
+export const fetchAllSteps = (projectId) => {
+    return $.ajax({
+        url: `/api/projects/${projectId}/steps`,
+        method: 'GET'
+    })
+}
+
 export const fetchStep = (stepId) => (
     $.ajax({
         method: 'GET',
-        url: `/api/steps/${stepId}`
+        url: `/api/projects/steps/${stepId}`
     })
 )
 
-export const createStep = (step) => (
+export const createStep = (step, projectId) => (
     $.ajax({
         method: 'POST',
-        url: '/api/steps',
+        url: `/api/projects/${projectId}/steps`,
         data: {step}
     })
 )
 
-export const updateStep = (step) => (
+export const updateStep = (step, projectId) => (
     $.ajax({
         method: 'PATCH',
-        url: `/api/projects/${step.id}`,
+        url: `/api/projects/${projectId}/steps/${step.id}`,
         data: {step}
     })
 )
 
-export const deleteStep = (stepId) => (
+export const deleteStep = (step, projectId) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/steps/${stepId}`
+        url: `/api/projects/${projectId}/steps/${step.id}`
     })
 )

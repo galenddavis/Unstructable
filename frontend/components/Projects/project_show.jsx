@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StepIndex from '../Steps/step_index_container'
+import StepShow from '../Steps/step_show'
 
 
 class ProjectShow extends React.Component {
@@ -16,6 +18,7 @@ class ProjectShow extends React.Component {
     render() {
         debugger
         if (this.props.project === undefined) return null;
+        
         const { project } = this.props
         const userProjects = this.props.project.creator.otherProjects?.map((other) => {
             debugger
@@ -25,6 +28,14 @@ class ProjectShow extends React.Component {
                 return <li><img src={other.photoUrl} alt=""/></li>
             }
             // return otherProjects
+        })
+
+        const steps = project.steps?.map((step, idx) => {
+            return <StepShow
+                key={step.id} 
+                number={idx + 1}
+                step={step}
+                />
         })
         
         return (
@@ -46,6 +57,11 @@ class ProjectShow extends React.Component {
                         </div>
                     </section>
                     <h3>{project.body}</h3>
+
+                    <section>
+                        {/* <StepIndex /> */}
+                        {steps}
+                    </section>
                 </div>
             </div>
         )
