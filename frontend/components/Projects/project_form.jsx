@@ -11,7 +11,8 @@ class ProjectForm extends React.Component {
             currentForm: 1,
             title: '',
             body: 'test', 
-            category: ''
+            category: '',
+            steps: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this)

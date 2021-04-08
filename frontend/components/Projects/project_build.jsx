@@ -55,7 +55,7 @@ class ProjectBuild extends React.Component {
                                 onChange={this.props.update('body')}/> */}
                             {/* <p>Intro + Supplies: (click to edit)</p>    */}
                         </span>
-                        <i class="fas fa-chevron-right"></i>
+                        <i className="fas fa-chevron-right"></i>
                     </li>
 
                     <li className='step'>
@@ -65,7 +65,7 @@ class ProjectBuild extends React.Component {
                         <span className='body'>
                             <p>Next Step (click to edit)</p>
                         </span>
-                        <i class="fas fa-chevron-right"></i>
+                        <i className="fas fa-chevron-right"></i>
                     </li>
                 </div>
             </ul>
