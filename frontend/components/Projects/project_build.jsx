@@ -8,10 +8,20 @@ class ProjectBuild extends React.Component {
         
         this.state = {
             currentForm: 1,
-            title: '',
-            body: 'test', 
-            category: ''
+            project: {
+                title: '',
+                body: '', 
+                category: '',
+                views: 0,
+                favorites: 0,
+                creator_id: this.props.currentUser
+            },
+            steps: []
         }
+        
+    }
+
+    openStep() {
         
     }
 

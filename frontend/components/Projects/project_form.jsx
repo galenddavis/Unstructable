@@ -9,16 +9,20 @@ class ProjectForm extends React.Component {
         
         this.state = {
             currentForm: 1,
-            title: '',
-            body: 'test', 
-            category: '',
+            project: {
+                title: '',
+                body: '', 
+                category: '',
+                views: 0,
+                favorites: 0,
+                creator_id: this.props.currentUser
+            },
             steps: []
         }
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this)
         this.otherForm = this.otherForm.bind(this);
-        // this.nextForm = this.nextForm.bind(this);
-        // this.prevForm = this.prevForm.bind(this);
     }
 
     handleSubmit(event) {
@@ -46,16 +50,16 @@ class ProjectForm extends React.Component {
             <ProjectBuild 
                 currentForm={this.state.currentForm}
                 update={this.update}
-                body={this.state.body}
-                otherForm={this.otherForm} /> ) : (
+                otherForm={this.otherForm}
+                project={this.state.project}
+                steps={this.state.steps} /> ) : (
             <ProjectSubmit 
                 currentForm={this.state.currentForm}
                 handleSubmit={this.handleSubmit}
                 update={this.update}
-                body={this.state.body}
-                title={this.state.title}
-                category={this.state.category}
-                otherForm={this.otherForm} />)
+                otherForm={this.otherForm}
+                project={this.state.project}
+                steps={this.state.steps} />)
 
         return (
             <section>

@@ -17,6 +17,7 @@ const mSTP = (state) => {
         },
         errors: Object.values(state.errors),
         formType: 'Create',
+        currentUser: state.session.id
     }
 }
 
