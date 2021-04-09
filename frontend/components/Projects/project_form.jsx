@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectBuild from './project_build';
 import ProjectSubmit from './project_submit';
+import StepForm from '../Steps/step_form'
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class ProjectForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this)
         this.otherForm = this.otherForm.bind(this);
+        this.editStep = this.editStep.bind(this);
     }
 
     handleSubmit(event) {
@@ -34,6 +36,13 @@ class ProjectForm extends React.Component {
     otherForm(event) {
         const otherForm = this.state.currentForm === 1 ? 2 : 1
         this.setState({currentForm: otherForm}) 
+        
+    }
+
+    editStep(event) {
+        const otherForm = this.state.currentForm === 1 ? 3 : 1
+        this.setState({currentForm: otherForm})
+        debugger
     }
 
 
@@ -45,25 +54,78 @@ class ProjectForm extends React.Component {
 
 
     render() {
+        let formLayout = <ProjectBuild 
+            currentForm={this.state.currentForm}
+            update={this.update}
+            otherForm={this.otherForm}
+            project={this.state.project}
+            steps={this.state.steps} />
 
-        const formLayout = this.state.currentForm === 1 ? (
-            <ProjectBuild 
+        if (this.state.currentForm === 1) {
+            formLayout = <ProjectBuild 
                 currentForm={this.state.currentForm}
-                update={this.update}
+                // update={this.update}
                 otherForm={this.otherForm}
+                editStep={this.editStep}
+                state={this.state}
                 project={this.state.project}
-                steps={this.state.steps} /> ) : (
-            <ProjectSubmit 
+                steps={this.state.steps} />
+
+        } else if (this.state.currentForm === 2) {
+            formLayout = <ProjectSubmit 
                 currentForm={this.state.currentForm}
                 handleSubmit={this.handleSubmit}
                 update={this.update}
                 otherForm={this.otherForm}
                 project={this.state.project}
-                steps={this.state.steps} />)
+                steps={this.state.steps} />
+
+        } else if (this.state.currentForm === 3) {
+            formLayout = <StepForm 
+                currentForm={this.state.currentForm}
+                update={this.update}
+                otherForm={this.otherForm}
+                state={this.state}
+                project={this.state.project}
+                steps={this.state.steps}/>
+        }
+
+        // const formLayout = this.state.currentForm === 1 ? (
+        //     <ProjectBuild 
+        //         currentForm={this.state.currentForm}
+        //         update={this.update}
+        //         otherForm={this.otherForm}
+        //         project={this.state.project}
+        //         steps={this.state.steps} /> ) : (
+        //     <ProjectSubmit 
+        //         currentForm={this.state.currentForm}
+        //         handleSubmit={this.handleSubmit}
+        //         update={this.update}
+        //         otherForm={this.otherForm}
+        //         project={this.state.project}
+        //         steps={this.state.steps} />)
 
         return (
             <section>
-                <form onSubmit={this.handleSubmit}>
+                <form>
+                    <section className='project-form-head'>
+                    {/* <span className='img-upload'>
+                        <p>Click to Add Images</p>
+                    </span> */}
+                    <div className='head-buttons'>
+                        <span className='left'>
+                            <button>Add</button>
+                            <button>More</button>
+                        </span>
+                        <span className='right'>
+                            {/* <button>Save</button>  */}
+                            <button 
+                                onClick={this.state.currentForm === 1 ? this.otherForm : this.handleSubmit} 
+                                className='publish'>Publish
+                            </button>
+                        </span>
+                    </div>
+                </section>
                     {formLayout}
                 </form>
             </section>
