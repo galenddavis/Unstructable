@@ -27,44 +27,24 @@ class ProjectBuild extends React.Component {
 
     render() {
         debugger
-
-        let steps = this.state.steps?.map(step => {
-            return <StepBlurb 
-                step={step}/> 
+        
+        let steps = this.state.steps?.map((step, idx) => {
+            debugger
+            return <StepBlurb
+                key={idx} 
+                step={step}
+                index={idx}
+                editStep={this.props.editStep}
+                updateCurrentStep={this.props.updateCurrentStep}/> 
         })
         return (
             <div className='project-form'>
             
             <ul className='project-form-body'>
                 <div className='steps'>
-                    <li className='intro'>
-                        <span className='img-upload'>
-                            <p>Drag Images From Top Bar</p>
-                        </span>
-                        <span className='body'>
-                            <p onClick={this.props.editStep}>Intro + Supplies (click to edit)</p>
-                            {/* <input
-                                className='intro' 
-                                type='text'
-                                placeholder='Intro Text'
-                                value={this.props.body}
-                                onChange={this.props.update('body')}/> */}
-                            {/* <p>Intro + Supplies: (click to edit)</p>    */}
-                            {steps}
-                        </span>
-                        <i className="fas fa-chevron-right"></i>
-                    </li>
-
-                    {/* <li className='step'>
-                        <span className='img-upload'>
-                            <p>Drag Images From Top Bar</p>
-                        </span>
-                        <span className='body'>
-                            <p>Next Step (click to edit)</p>
-                        </span>
-                        <i className="fas fa-chevron-right"></i>
-                    </li> */}
+                    {steps}
                 </div>
+                <button className='add-step' onClick={this.props.addStep}>Add Step</button>
             </ul>
         </div>
         )

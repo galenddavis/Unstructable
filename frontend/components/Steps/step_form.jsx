@@ -25,23 +25,21 @@ class StepForm extends React.Component {
         })
     }
 
-    
-
-
     render() {
-
+        debugger
+        let currentStep = this.props?.steps[this.props.state.currentStep]
         return (
             <div className='step-form'>
                 <span className='step-body'>
                     <input 
                         type="text"
-                        value={this.state.title}
+                        value={currentStep.title}
                         onChange={this.update('title')}
                     />
                     <input 
                         type="text"
-                        value={this.state.body}
-                        onChange={this.update('body')}
+                        value={currentStep.body}
+                        onChange={e => this.props.update(e.target.value)}
                     />
                 </span>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectBuild from './project_build';
 import ProjectSubmit from './project_submit';
-import StepForm from '../Steps/step_form'
+import StepForm from '../Steps/step_form';
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -10,6 +10,7 @@ class ProjectForm extends React.Component {
         
         this.state = {
             currentForm: 1,
+            currentStep: 0,
             project: {
                 title: 'test',
                 body: '', 
@@ -18,14 +19,16 @@ class ProjectForm extends React.Component {
                 favorites: 0,
                 creator_id: this.props.currentUser
             },
-            steps: []
+            steps: [{title: "Intro + Supplies (Click to Edit)", body: "", project_id: ""}]
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this)
         this.otherForm = this.otherForm.bind(this);
-        this.editStep = this.editStep.bind(this);
+        this.addStep = this.addStep.bind(this);
         this.saveStep = this.saveStep.bind(this)
+        this.editStep = this.editStep.bind(this)
+        this.updateCurrentStep = this.updateCurrentStep.bind(this)
     }
 
     handleSubmit(event) {
@@ -40,7 +43,7 @@ class ProjectForm extends React.Component {
         
     }
 
-    editStep(event) {
+    addStep() {
         const otherForm = this.state.currentForm === 1 ? 3 : 1
         this.setState({currentForm: otherForm})
         debugger
@@ -54,14 +57,22 @@ class ProjectForm extends React.Component {
         this.setState({currentForm: 1})
     }
 
+    editStep(step) {
+        const otherForm = this.state.currentForm === 1 ? 3 : 1
+        this.setState({currentForm: otherForm})
+    }
+
+    updateCurrentStep(index) {
+        this.setState({currentStep: index})
+        this.editStep(index)
+    }
+
 
     update(field) {
         return event => this.setState({ 
             [field]: event.target.value
         })
     }
-    
-
 
     render() {
         let formLayout = <ProjectBuild 
@@ -72,11 +83,14 @@ class ProjectForm extends React.Component {
             steps={this.state.steps} />
 
         if (this.state.currentForm === 1) {
+            debugger
             formLayout = <ProjectBuild 
                 currentForm={this.state.currentForm}
                 // update={this.update}
                 otherForm={this.otherForm}
+                addStep={this.addStep}
                 editStep={this.editStep}
+                updateCurrentStep={this.updateCurrentStep}
                 state={this.state}
                 project={this.state.project}
                 steps={this.state.steps} />
@@ -93,15 +107,16 @@ class ProjectForm extends React.Component {
         } else if (this.state.currentForm === 3) {
             formLayout = <StepForm 
                 currentForm={this.state.currentForm}
+                update={this.update}
                 saveStep={this.saveStep}
                 otherForm={this.otherForm}
                 state={this.state}
                 project={this.state.project}
-                steps={this.state.steps}/>
-        }
+                steps={this.state.steps} />
+        } 
 
-        let headerButton = this.state.currentForm === 3 ? 
-            <button onClick={this.editStep}>Show All</button> : 
+        let headerButton = this.state.currentForm === 3 || 4 ? 
+            <button onClick={this.addStep}>Show All</button> : 
             <button>Add Step</button>
 
         return (
