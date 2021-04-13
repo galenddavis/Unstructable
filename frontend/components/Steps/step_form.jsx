@@ -14,27 +14,36 @@ class StepForm extends React.Component {
         this.update = this.update.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.saveStep(this.state)
+    }
+
     update(field) {
+        console.log(this.state)
         return event => this.setState({ 
             [field]: event.target.value
         })
     }
 
+    
+
 
     render() {
 
         return (
-            <div>
-                <input 
-                    type="text"
-                    value={this.state.title}
-                    onChange={this.update('title')}
-                />
-                <input 
-                    type="text"
-                    value={this.state.body}
-                    onChange={this.update('body')}
-                />
+            <div className='step-form'>
+                <span className='step-body'>
+                    <input 
+                        type="text"
+                        value={this.state.title}
+                        onChange={this.update('title')}
+                    />
+                    <input 
+                        type="text"
+                        value={this.state.body}
+                        onChange={this.update('body')}
+                    />
+                </span>
             </div>
         )
     }

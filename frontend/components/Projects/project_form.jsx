@@ -11,7 +11,7 @@ class ProjectForm extends React.Component {
         this.state = {
             currentForm: 1,
             project: {
-                title: '',
+                title: 'test',
                 body: '', 
                 category: '',
                 views: 0,
@@ -25,6 +25,7 @@ class ProjectForm extends React.Component {
         this.update = this.update.bind(this)
         this.otherForm = this.otherForm.bind(this);
         this.editStep = this.editStep.bind(this);
+        this.saveStep = this.saveStep.bind(this)
     }
 
     handleSubmit(event) {
@@ -45,12 +46,21 @@ class ProjectForm extends React.Component {
         debugger
     }
 
+    saveStep(step) {
+        let { steps } = this.state;
+        debugger
+        steps.push(step);
+        this.setState({steps: steps})
+        this.setState({currentForm: 1})
+    }
+
 
     update(field) {
         return event => this.setState({ 
             [field]: event.target.value
         })
     }
+    
 
 
     render() {
@@ -83,27 +93,16 @@ class ProjectForm extends React.Component {
         } else if (this.state.currentForm === 3) {
             formLayout = <StepForm 
                 currentForm={this.state.currentForm}
-                update={this.update}
+                saveStep={this.saveStep}
                 otherForm={this.otherForm}
                 state={this.state}
                 project={this.state.project}
                 steps={this.state.steps}/>
         }
 
-        // const formLayout = this.state.currentForm === 1 ? (
-        //     <ProjectBuild 
-        //         currentForm={this.state.currentForm}
-        //         update={this.update}
-        //         otherForm={this.otherForm}
-        //         project={this.state.project}
-        //         steps={this.state.steps} /> ) : (
-        //     <ProjectSubmit 
-        //         currentForm={this.state.currentForm}
-        //         handleSubmit={this.handleSubmit}
-        //         update={this.update}
-        //         otherForm={this.otherForm}
-        //         project={this.state.project}
-        //         steps={this.state.steps} />)
+        let headerButton = this.state.currentForm === 3 ? 
+            <button onClick={this.editStep}>Show All</button> : 
+            <button>Add Step</button>
 
         return (
             <section>
@@ -114,7 +113,8 @@ class ProjectForm extends React.Component {
                     </span> */}
                     <div className='head-buttons'>
                         <span className='left'>
-                            <button>Add</button>
+
+                            {headerButton}
                             <button>More</button>
                         </span>
                         <span className='right'>

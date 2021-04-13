@@ -1,4 +1,5 @@
 import React from 'react';
+import StepBlurb from '../Steps/step_blurb'
 import { Link } from 'react-router-dom';
 
 
@@ -25,7 +26,12 @@ class ProjectBuild extends React.Component {
 
 
     render() {
+        debugger
 
+        let steps = this.state.steps?.map(step => {
+            return <StepBlurb 
+                step={step}/> 
+        })
         return (
             <div className='project-form'>
             
@@ -44,6 +50,7 @@ class ProjectBuild extends React.Component {
                                 value={this.props.body}
                                 onChange={this.props.update('body')}/> */}
                             {/* <p>Intro + Supplies: (click to edit)</p>    */}
+                            {steps}
                         </span>
                         <i className="fas fa-chevron-right"></i>
                     </li>
