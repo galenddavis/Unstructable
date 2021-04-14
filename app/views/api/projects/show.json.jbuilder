@@ -1,4 +1,4 @@
-json.extract! @project, :id, :title, :body, :favorites, :views, :category, :creator_id, :title_photo, :created_at
+json.extract! @project, :id, :title, :favorites, :views, :category, :creator_id, :title_photo, :created_at
 json.photoUrl url_for(@project.title_photo)
 json.steps @project.steps
 

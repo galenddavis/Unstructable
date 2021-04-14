@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_201912) do
+ActiveRecord::Schema.define(version: 2021_04_14_042138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,10 @@ ActiveRecord::Schema.define(version: 2021_03_23_201912) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "body", null: false
+    t.string "title"
     t.integer "favorites", default: 0, null: false
     t.integer "views", default: 0, null: false
-    t.string "category", null: false
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "creator_id", null: false
@@ -51,8 +50,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_201912) do
   end
 
   create_table "steps", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "body", null: false
+    t.string "title"
+    t.text "body"
     t.integer "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
