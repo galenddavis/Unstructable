@@ -1,73 +1,50 @@
 import React from 'react';
+import StepBlurb from '../Steps/step_blurb'
 import { Link } from 'react-router-dom';
 
 
 class ProjectBuild extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = this.props.state
         
-        this.state = {
-            currentForm: 1,
-            title: '',
-            body: 'test', 
-            category: ''
-        }
-        
+        // this.state = {
+        //     currentForm: 1,
+        //     project: {
+        //         title: '',
+        //         body: '', 
+        //         category: '',
+        //         views: 0,
+        //         favorites: 0,
+        //         creator_id: this.props.currentUser
+        //     },
+        //     steps: []
+        // }
+
     }
 
-    
 
     render() {
-
+        debugger
+        
+        let steps = this.state.steps?.map((step, idx) => {
+            debugger
+            return <StepBlurb
+                key={idx} 
+                step={step}
+                index={idx}
+                editStep={this.props.editStep}
+                updateCurrentStep={this.props.updateCurrentStep}/> 
+        })
         return (
             <div className='project-form'>
-            <section className='project-form-head'>
-                {/* <span className='img-upload'>
-                    <p>Click to Add Images</p>
-                </span> */}
-                <div className='head-buttons'>
-                    <span className='left'>
-                        <button>Add</button>
-                        <button>More</button>
-                    </span>
-                    <span className='right'>
-                        {/* <button>Save</button>  */}
-                        <button 
-                            onClick={this.props.otherForm} 
-                            className='publish'>Publish
-                        </button>
-                    </span>
-                </div>
-            </section>
+            
             <ul className='project-form-body'>
                 <div className='steps'>
-                    <li className='intro'>
-                        <span className='img-upload'>
-                            <p>Drag Images From Top Bar</p>
-                        </span>
-                        <span className='body'>
-                            <p>Intro + Supplies (click to edit)</p>
-                            {/* <input
-                                className='intro' 
-                                type='text'
-                                placeholder='Intro Text'
-                                value={this.props.body}
-                                onChange={this.props.update('body')}/> */}
-                            {/* <p>Intro + Supplies: (click to edit)</p>    */}
-                        </span>
-                        <i class="fas fa-chevron-right"></i>
-                    </li>
-
-                    <li className='step'>
-                        <span className='img-upload'>
-                            <p>Drag Images From Top Bar</p>
-                        </span>
-                        <span className='body'>
-                            <p>Next Step (click to edit)</p>
-                        </span>
-                        <i class="fas fa-chevron-right"></i>
-                    </li>
+                    {steps}
                 </div>
+                <button className='add-step' onClick={this.props.addStep}>Add Step</button>
             </ul>
         </div>
         )

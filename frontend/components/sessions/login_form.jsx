@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
     dummyLogin(event) {
         event.preventDefault();
         const user = {
-            username: 'guest',
+            username: 'Buster',
             password: 'password',
             occupation: 'robot',
             email: 'sample@email.com',

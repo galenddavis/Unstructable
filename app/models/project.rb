@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
 
-    validates :title, :body, :views, :category, :creator_id, presence: true
+    validates :views, :creator_id, presence: true
 
     belongs_to :creator, 
         foreign_key: :creator_id,

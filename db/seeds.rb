@@ -10,10 +10,11 @@ require 'open-uri'
 
 User.destroy_all
 Project.destroy_all
+Step.destroy_all
 
 
 u1 = User.create!(
-    username: 'guest',
+    username: 'Buster',
     password: 'password',
     occupation: 'robot',
     email: 'sample@email.com',
@@ -57,9 +58,6 @@ u5 = User.create!(
 
 p1 = Project.create!(
     title: 'Build a DIY Computer out of a Potato',
-    body: "So my daughter's first grade class was building potato batteries, and 
-    I wanted to make sure that he project put all those other kids in their place.
-    Today I'll be showing you how to build a fully functional potato-media PC.",
     favorites: 15,
     views: 38,
     category: 'Circuits',
@@ -69,45 +67,53 @@ p1 = Project.create!(
 file1 = open('https://unstructable-seeds.s3.amazonaws.com/01_potato.jpg')
 p1.title_photo.attach(io: file1, filename: '01_potato.jpg')
 
-step1 = Step.create!(
+step10 = Step.create!(
+    title: "",
+    body: "So my daughter's first grade class was building potato batteries, and 
+    I wanted to make sure that he project put all those other kids in their place.
+    Today I'll be showing you how to build a fully functional potato-media PC.",
+    project_id: p1.id,
+)
+
+step11 = Step.create!(
     title: "Get a Potato",
     body: "Go into your kitchen and grab any old potato. Russet works best, but any will do. 
     If you can sneak out more than one, great!, but even just a single Idaho should output enough power 
     to power the equivalent of a raspberry pi.",
-    project_id: 1,
+    project_id: p1.id,
 )
 
-step2 = Step.create!(
+step12 = Step.create!(
     title: "Google how to build a computer",
     body: "Computers are complex beasts, and if you aren't sure how they're put together, then you 
     might need to do a little research into how all the parts fit together. For instance, It didn't 
     occur to me that I would need a chipset to make this work. Allocate plenty of time to carve one 
     out of a second potato if need be. ",
-    project_id: 1,
+    project_id: p1.id,
 )
 
-step3 = Step.create!(
+step13 = Step.create!(
     title: "Figure out how much power your potato can handle",
     body: "Now we've got the fun stuff. It's time to figure out how much juice we can run through our 
     little spuddy without french frying him. For instance, when I plugged my little tater into wall power, 
     it toasted him, and also blew the circuit breaker for half of my apartment complex. ",
-    project_id: 1,
+    project_id: p1.id,
 )
 
-step4 = Step.create!(
+step14 = Step.create!(
     title: "Do some research into how much raspberry pi's cost",
     body: "This is taking longer than I thought. I think I might need to rethink how viable this whole 
     project actually is. Raspberry Pi's apparently can be used to set up a decent little home theater 
     system. After burning through a couple pounds of potatos and setting a small fire, I think my wife 
     is starting to think that this DIY project is a bad idea.",
-    project_id: 1,
+    project_id: p1.id,
 )
 
-step5 = Step.create!(
+step15 = Step.create!(
     title: "Google how to set up your new Raspberry Pi as a home media system",
     body: "I had to google this. Who would have thought that even setting up a new PC would be this difficult. 
     If anyone has any experience setting up speaker systems, plz comment below. I'm out of my depth here.",
-    project_id: 1,
+    project_id: p1.id,
 )
 
 
@@ -116,8 +122,6 @@ step5 = Step.create!(
 
 p2 = Project.create!(
     title: 'Build a program to file your taxes.',
-    body: "Boy am I bad at math, but I'm ok at programming so I figured I'd write 
-    up a quick python program to do my taxes for me. How hard could it be?",
     favorites: 0,
     views: 106,
     category: 'Circuits',
@@ -127,14 +131,18 @@ p2 = Project.create!(
 file2 = open('https://unstructable-seeds.s3.amazonaws.com/02_robot.png')
 p2.title_photo.attach(io: file2, filename: '02_robot.png')
 
+step20 = Step.create!(
+    title: '',
+    body: "Boy am I bad at math, but I'm ok at programming so I figured I'd write 
+    up a quick python program to do my taxes for me. How hard could it be?",
+    project_id: p2.id,
+)
+
 
 # ~~~~~~~~~~~~~~~~~~~Project 3~~~~~~~~~~~~~~~~~~~~
 
 p3 = Project.create!(
     title: 'Decorate your car Dashboard',
-    body: "Have you ever looked at your car's dashboard and thought it was just super boring?
-    I'm here to show you how, with just a few cheap ingredients, you can spruce up your
-    vehicle!",
     favorites: 1,
     views: 98,
     category: 'Crafts',
@@ -144,14 +152,19 @@ p3 = Project.create!(
 file3 = open('https://unstructable-seeds.s3.amazonaws.com/03_dashboard.jpg')
 p3.title_photo.attach(io: file3, filename: '03_dashboard.jpg')
 
+step30 = Step.create!(
+    title: '',
+    body: "Have you ever looked at your car's dashboard and thought it was just super boring?
+    I'm here to show you how, with just a few cheap ingredients, you can spruce up your
+    vehicle!",
+    project_id: p3.id,
+)
+
 
 # ~~~~~~~~~~~~~~~~~~~Project 4~~~~~~~~~~~~~~~~~~~~
 
 p4 = Project.create!(
     title: 'Turn your old jeans into a chair',
-    body: "I'm sure that many of you, like me, have a collection of jeans that either don't
-    fit, or are full of holes. Well, with a little sewing know-how, and some ingenuity you 
-    can turn those rags into a stylish piece of furniture.",
     favorites: 5,
     views: 16,
     category: 'Crafts',
@@ -161,13 +174,19 @@ p4 = Project.create!(
 file4 = open('https://unstructable-seeds.s3.amazonaws.com/04_jeans.jpg')
 p4.title_photo.attach(io: file4, filename: '04_jeans.jpg')
 
+step40 = Step.create!(
+    title: '',
+    body: "I'm sure that many of you, like me, have a collection of jeans that either don't
+    fit, or are full of holes. Well, with a little sewing know-how, and some ingenuity you 
+    can turn those rags into a stylish piece of furniture.",
+    project_id: p4.id,
+)
+
 
 # ~~~~~~~~~~~~~~~~~~~Project 5~~~~~~~~~~~~~~~~~~~~
 
 p5 = Project.create!(
-    title: 'Homemade Peanut M&Ms',
-    body: "Everytime we go out, my kids are always asking me to buy candy, but it's just so 
-    bad for them. I decided to try my hand at making a healthy alternative. Turns out, they love them!",
+    title: "Homemade Peanut M&Ms",
     favorites: 150,
     views: 348,
     category: 'Cooking',
@@ -177,13 +196,17 @@ p5 = Project.create!(
 file5 = open('https://unstructable-seeds.s3.amazonaws.com/05_mnms.jpg')
 p5.title_photo.attach(io: file5, filename: '05_mnms.jpg')
 
+step50 = Step.create!(
+    title: '',
+    body: "Everytime we go out, my kids are always asking me to buy candy, but it's just so 
+    bad for them. I decided to try my hand at making a healthy alternative. Turns out, they love them!",
+    project_id: p5.id,
+)
+
 # ~~~~~~~~~~~~~~~~~~~Project 6~~~~~~~~~~~~~~~~~~~~
 
 p6 = Project.create!(
     title: 'Grow your own Vegetables at home',
-    body: "Who likes paying an arm and a leg for veggies that go bad just days after you bring them home? 
-    Lord knows I don't. Well, why pay for what you can grow with a few dollars worth of seeds 
-    and a little bit of dirt from right outside. ",
     favorites: 45,
     views: 67,
     category: 'Cooking',
@@ -193,13 +216,18 @@ p6 = Project.create!(
 file6 = open('https://unstructable-seeds.s3.amazonaws.com/06_plant.jpg')
 p6.title_photo.attach(io: file6, filename: '06_plant.jpg')
 
+step60 = Step.create!(
+    title: '',
+    body: "Who likes paying an arm and a leg for veggies that go bad just days after you bring them home? 
+    Lord knows I don't. Well, why pay for what you can grow with a few dollars worth of seeds 
+    and a little bit of dirt from right outside. ",
+    project_id: p6.id,
+)
+
 # ~~~~~~~~~~~~~~~~~~~Project 7~~~~~~~~~~~~~~~~~~~~
 
 p7 = Project.create!(
     title: 'Convert desk into standing desk',
-    body: 'I heard that sitting for too long was really bad for your back, but standing desks 
-    can be really bad for your wallet. With this diy, you can take any old desk and raise it up 
-    to whatever height you need it to be.',
     favorites: 0,
     views: 2,
     category: 'Workshop',
@@ -209,13 +237,18 @@ p7 = Project.create!(
 file7 = open('https://unstructable-seeds.s3.amazonaws.com/07_desk.jpg')
 p7.title_photo.attach(io: file7, filename: '07_desk.jpg')
 
+step70 = Step.create!(
+    title: '',
+    body: 'I heard that sitting for too long was really bad for your back, but standing desks 
+    can be really bad for your wallet. With this diy, you can take any old desk and raise it up 
+    to whatever height you need it to be.',
+    project_id: p7.id,
+)
+
 # ~~~~~~~~~~~~~~~~~~~Project 8~~~~~~~~~~~~~~~~~~~~
 
 p8 = Project.create!(
     title: 'Refinish an old side table',
-    body: "I bought an old sidetable at a junk sale and wanted to give it new life with some 
-    gold spackle. It's a super easy project that anyone can do, perfect for a weekend 
-    project with the kids. ",
     favorites: 19,
     views: 53,
     category: 'Workshop',
@@ -225,13 +258,18 @@ p8 = Project.create!(
 file8 = open('https://unstructable-seeds.s3.amazonaws.com/08_table.jpg')
 p8.title_photo.attach(io: file8, filename: '08_table.jpg')
 
+step80 = Step.create!(
+    title: '',
+    body: "I bought an old sidetable at a junk sale and wanted to give it new life with some 
+    gold spackle. It's a super easy project that anyone can do, perfect for a weekend 
+    project with the kids. ",
+    project_id: p8.id,
+)
+
 # ~~~~~~~~~~~~~~~~~~~Project 9~~~~~~~~~~~~~~~~~~~~
 
 p9 = Project.create!(
     title: 'Repurpose dolls as planters',
-    body: "My daughter has grown out of her doll phase, but I didn't want to just throw 
-    them away, call me sentimental. Instead, I thought, maybe I can use them out in the garden 
-    as a way to foster some of the smaller plants until they're ready for transplanting.",
     favorites: 5,
     views: 0,
     category: 'Crafts',
@@ -241,12 +279,18 @@ p9 = Project.create!(
 file9 = open('https://unstructable-seeds.s3.amazonaws.com/09_dolls.jpg')
 p9.title_photo.attach(io: file9, filename: '09_dolls.jpg')
 
+step90 = Step.create!(
+    title: '',
+    body: "My daughter has grown out of her doll phase, but I didn't want to just throw 
+    them away, call me sentimental. Instead, I thought, maybe I can use them out in the garden 
+    as a way to foster some of the smaller plants until they're ready for transplanting.",
+    project_id: p9.id,
+)
+
 # ~~~~~~~~~~~~~~~~~~~Project 10~~~~~~~~~~~~~~~~~~~~
 
 p10 = Project.create!(
     title: 'Stylish plastic sunglasses',
-    body: "This is a fun weekend project to keep my little ones busy while I get a quick nap in on a Sunday. 
-    Using any old soda bottle, you can create a template and cut out a fun and stylish pair of sunglasses.",
     favorites: 1,
     views: 1,
     category: 'Crafts',
@@ -255,4 +299,11 @@ p10 = Project.create!(
 
 file10 = open('https://unstructable-seeds.s3.amazonaws.com/10_glasses.jpg')
 p10.title_photo.attach(io: file10, filename: '10_glasses.jpg')
+
+step100 = Step.create!(
+    title: '',
+    body: "This is a fun weekend project to keep my little ones busy while I get a quick nap in on a Sunday. 
+    Using any old soda bottle, you can create a template and cut out a fun and stylish pair of sunglasses.",
+    project_id: p10.id,
+)
 
