@@ -8,6 +8,7 @@ import NavBar from './ navbar/nav_bar_container'
 import Footer from './ navbar/footer'
 import Index from './ navbar/index_container'
 import project_create from './Projects/create_project_form_container'
+import project_edit from './Projects/edit_project_form_container'
 import project_splash from './Projects/project-splash'
 import ProjectShow from './Projects/project_show_container'
 
@@ -23,8 +24,9 @@ const App = () => (
                 <Route exact path="/" component={Index} />
                 <AuthRoute path="/login" component={login_form_container} />
                 <AuthRoute path="/signup" component={signup_form_container} />
-                <ProtectedRoute exact path="/create" component={project_splash} />
+                <ProtectedRoute exact path="/create" component={project_create} />
                 <ProtectedRoute path="/project/new" component={project_create} />
+                <ProtectedRoute path='/project/edit/:id' component={project_edit} />
                 <Route exact path='/project/:id' component={ProjectShow}/>
             </Switch>
         

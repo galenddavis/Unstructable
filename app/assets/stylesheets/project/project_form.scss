@@ -233,3 +233,63 @@
         background-color: #e6e6e6;
     }
 }
+
+.modal-background {
+    position: absolute;
+    display: none;
+    top: 0%;
+    left: 0%;
+    z-index: 8;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(53, 52, 52, 0.445);
+}
+
+
+
+.project-modal {
+    position: absolute;
+    top: 10%;
+    left: 38%;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    // padding: 50px 50px;
+    height: 250px;
+    width: 300px;
+
+    input {
+        border-left: none;
+        border-right: none;
+        border-top: 1px grey solid;
+        border-bottom: 1px grey solid;
+        height: 30px;
+        width: 90%;
+    }
+
+    button {
+        background-color: #e86c00;
+        color: white;
+        border: 1px #cf6000 solid;
+        border-radius: 6px;
+        padding: 10px 17px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+.title-modal-background-active {
+    display: block;
+}
+
+.title-modal-active {
+    display: flex;
+}
+
+
+
+
+

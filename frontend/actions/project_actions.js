@@ -45,12 +45,13 @@ export const requestProject = projectId => dispatch => (
     )
 )
 
-export const createProject = project => dispatch => (
-    ProjectAPIUtil.createProject(project).then(
+export const createProject = project => dispatch => {
+    debugger
+    return ProjectAPIUtil.createProject(project).then(
         project => dispatch(receiveProject(project)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
-)
+}
 
 export const updateProject = project => dispatch => (
     ProjectAPIUtil.updateProject(project).then(

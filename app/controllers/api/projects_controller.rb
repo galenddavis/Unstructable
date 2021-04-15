@@ -17,6 +17,7 @@ class Api::ProjectsController < ApplicationController
      def create
         @project = Project.new(project_params)
         @project.creator_id = current_user.id
+      #   debugger
     
         if @project.save
             render :show

@@ -12,8 +12,7 @@ class ProjectForm extends React.Component {
             currentForm: 1,
             currentStep: 0,
             project: {
-                title: 'test',
-                body: '', 
+                title: '', 
                 category: '',
                 views: 0,
                 favorites: 0,
