@@ -9,9 +9,9 @@ import {
      projects: []
  }
 
-const projectsReducer = (state = _NULL_STATE, action) => {
+const projectsReducer = (state = {}, action) => {
     Object.freeze(state);
-    const newState = Object.assign({}, state)
+    const newState = Object.assign({})
     debugger
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:

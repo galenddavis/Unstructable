@@ -38,12 +38,13 @@ export const requestProjects = () => dispatch => {
     )
 }
 
-export const requestProject = projectId => dispatch => (
-    ProjectAPIUtil.fetchProject(projectId).then(
+export const requestProject = projectId => dispatch => {
+    debugger
+    return ProjectAPIUtil.fetchProject(projectId).then(
         project => dispatch(receiveProject(project)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )
-)
+}
 
 export const createProject = project => dispatch => {
     debugger
