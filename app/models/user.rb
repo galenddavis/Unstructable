@@ -9,6 +9,10 @@ class User < ApplicationRecord
         foreign_key: :creator_id,
         class_name: 'Project'
 
+    has_many :comments, 
+        foreign_key: :writer_id,
+        class_name: 'Comment'
+
     attr_reader :password
     
     after_initialize :ensure_session_token!

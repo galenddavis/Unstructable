@@ -137,7 +137,7 @@ class ProjectForm extends React.Component {
                             {/* <button>Save</button>  */}
                             <button 
                                 onClick={this.state.currentForm === 1 ? this.otherForm : this.handleSubmit} 
-                                className='publish'>{this.props.project?.title}
+                                className='publish'>{this.state.project?.title}
                             </button>
                         </span>
                     </div>

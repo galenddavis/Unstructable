@@ -9,6 +9,7 @@ end
 # debugger
 
 json.steps @project.steps
+json.comments @project.comments
 
 # debugger
 

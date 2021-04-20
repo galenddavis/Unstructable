@@ -20,14 +20,13 @@ class ProjectShow extends React.Component {
         if (this.props.project === undefined) return null;
         
         const { project } = this.props
-        const userProjects = this.props.project.creator.otherProjects?.map((other) => {
+        let count = 0
+        const userProjects = project.creator.otherProjects?.map((other) => {
             debugger
-            let otherProjects = []
-            if (other.id !== this.props.project.id) {
-                // otherProjects.push(other.id)
-                return <li><img src={other.photoUrl} alt=""/></li>
+            if (other.id !== project.id && count < 2) {
+                count += 1
+                return <li key={other.id}><img src={other.photoUrl} alt=""/></li>
             }
-            // return otherProjects
         })
 
         const steps = project.steps?.map((step, idx) => {

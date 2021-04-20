@@ -44,22 +44,22 @@ export const requestStep = stepId => dispatch => (
     )
 )
 
-export const createStep = step => dispatch => (
-    StepAPIUtil.createStep(step).then(
+export const createStep = (step, projectId) => dispatch => (
+    StepAPIUtil.createStep(step, projectId).then(
         step => dispatch(receiveStep(step)),
         errors => dispatch(receiveStepErrors(errors))
     )
 )
 
-export const updateStep = step => dispatch => (
-    StepAPIUtil.updateStep(step).then(
+export const updateStep = (step, projectId) => dispatch => (
+    StepAPIUtil.updateStep(step, projectId).then(
         step => dispatch(receiveStep(step)),
         errors => dispatch(receiveStepErrors(errors))
     )
 )
 
-export const deleteStep = stepId => dispatch => (
-    StepAPIUtil.deleteStep(stepId).then(
+export const deleteStep = (stepId, projectId) => dispatch => (
+    StepAPIUtil.deleteStep(stepId, projectId).then(
         () => dispatch(removeStep(stepId)),
         errors => dispatch(receiveStepErrors(errors))
     )
