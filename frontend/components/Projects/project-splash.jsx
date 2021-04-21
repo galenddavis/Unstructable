@@ -40,6 +40,7 @@ class ProjectSplash extends React.Component {
     componentDidUpdate(prevProps) {
         debugger
         if (this.props.project !== prevProps.project) {
+            debugger
             const {project} = this.props 
             this.props.history.push(`project/edit/${project.id}`)
         }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import StepIndex from '../Steps/step_index_container'
 import StepShow from '../Steps/step_show'
 import CommentIndexItem from '../Comments/comment_index_item'
+import CommentForm from '../Comments/comment_form'
 
 
 class ProjectShow extends React.Component {
@@ -13,6 +14,7 @@ class ProjectShow extends React.Component {
             comments: []
         }
 
+        this.commentSave = this.commentSave.bind(this);
     }
 
     componentDidMount() {
@@ -21,12 +23,21 @@ class ProjectShow extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.project !== prevProps.project) {
+        debugger
+        if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
             this.setState( {
                 comments: this.props.project.comments
             })
+            console.log(this.state)
         }
     }
+
+    commentSave(comment) {
+        debugger
+        this.props.createComment(comment)
+    }
+
+
 
     render() {
         debugger
@@ -81,6 +92,14 @@ class ProjectShow extends React.Component {
                     <section>
                         {/* <StepIndex /> */}
                         {steps}
+                    </section>
+
+                    <section>
+                        <CommentForm 
+                            projectId={project.id}
+                            writerId={this.props.currentUser}
+                            commentSave={this.commentSave}
+                            />
                     </section>
 
                     <section>

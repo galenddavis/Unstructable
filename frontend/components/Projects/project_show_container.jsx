@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProjectShow from './project_show';
 import { requestProject, updateProject, deleteProject } from '../../actions/project_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => {
     debugger
@@ -17,6 +18,8 @@ const mDTP = dispatch => {
         requestProject: projectId => dispatch(requestProject(projectId)),
         updateProject: project => dispatch(updateProject(project)),
         deleteProject: projectId => dispatch(deleteProject(projectId)),
+        createComment: comment => dispatch(createComment(comment)),
+        deleteComment: commentId => dispatch(deleteComment(commentId))
         
     }
 };

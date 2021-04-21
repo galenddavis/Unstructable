@@ -12,7 +12,6 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-
         if @comment.save
             render :show
         else
@@ -37,7 +36,7 @@ class Api::CommentsController < ApplicationController
     private
     
     def comment_params 
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:body, :project_id, :writer_id)
     end
 
 end

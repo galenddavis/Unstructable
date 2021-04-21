@@ -10,21 +10,22 @@ const receiveComment = comment => ({
 
 const removeComment = commentId => ({
     type: REMOVE_COMMENT,
-    stepId
+    commentId
 }) 
 
-export const createComment = comment => dispatch (
-    CommentAPIUtil.createComment(comment).then(
-        comment => dispatch(recieveComment(comment))
+export const createComment = comment => dispatch => {
+    debugger
+    return CommentAPIUtil.createComment(comment).then(
+        comment => dispatch(receiveComment(comment))
     )
-)
+}
 
-export const updateComment = comment => dispatch (
+export const updateComment = comment => dispatch => (
     CommentAPIUtil.updateComment(comment).then(
         comment => dispatch(receiveComment(comment))
     )
 )
-export const deleteComment = commentId => dispatch (
+export const deleteComment = commentId => dispatch => (
     CommentAPIUtil.deleteComment(commentId).then(
         () => dispatch(removeComment(comment))
     )

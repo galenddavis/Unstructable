@@ -1,23 +1,24 @@
 
-export const createComment = (comment, projectId) => (
-    $.ajax({
+export const createComment = (comment) => {
+    debugger
+    return $.ajax({
         method: 'POST',
-        url: `/api/project/${projectId}/comments`,
+        url: `/api/projects/${comment.project_id}/comments`,
         data: { comment }
     })
-)
+}
 
-export const updateComment = (comment, projectId) => (
+export const updateComment = (comment) => (
     $.ajax({
         method: 'PATCH',
-        url: `/api/project/${projectId}/comments/${comment.id}`,
+        url: `/api/projects/${comment.project_id}/comments/${comment.id}`,
         data: { comment }
     })
 )
 
-export const deleteComment = (comment, projectId) => (
+export const deleteComment = (comment) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/project/${projectId}/comments/${comment.id}`
+        url: `/api/projects/${comment.project_id}/comments/${comment.id}`
     })
 )

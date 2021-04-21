@@ -9,6 +9,7 @@ end
 # debugger
 
 json.steps @project.steps
+
 json.comments @project.comments.each do |comment|
     json.extract! comment, :id, :body, :writer_id
     json.writer comment.writer.username

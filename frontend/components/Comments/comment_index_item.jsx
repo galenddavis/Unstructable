@@ -9,7 +9,8 @@ class CommentIndexItem extends React.Component {
         const {comment} = this.props
         return (
             <div>
-                <h1>{comment.body}</h1>
+                <p>{comment.writer}</p>
+                <p>{comment.body}</p>
             </div>
         )
     }
