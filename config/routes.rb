@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :projects, only: [:index, :show] do
       resources :steps, only: [:index, :show, :create, :update, :destroy]
-      resources :comments, only: [:create, :update, :destroy]
+      resources :comments, only: [:index, :create, :update, :destroy]
 
     end
     resources :tags, only: [:create]

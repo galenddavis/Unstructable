@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => {
         project: state.entities.projects[ownProps.match.params.id],
         currentUser: state.session.id,
         errors: Object.values(state.errors),
-        history: ownProps.history
+        history: ownProps.history,
+        comment: Object.values(state.entities.comments)
     }
 };
 

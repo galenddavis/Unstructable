@@ -1,3 +1,10 @@
+export const fetchAllComments = (projectId) => {
+    debugger
+    return $ajax({
+        method: 'GET',
+        url: `/api/projects/${projectId}/comments`
+    })
+}
 
 export const createComment = (comment) => {
     debugger

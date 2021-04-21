@@ -21,15 +21,19 @@ class ProjectShow extends React.Component {
         debugger
         this.props.requestProject(this.props.match.params.id)
     }
-
-    componentDidUpdate(prevProps) {
+    
+    componentDidUpdate(prevProps, prevState) {
         debugger
-        if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
-            this.setState( {
-                comments: this.props.project.comments
-            })
-            console.log(this.state)
+        // if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
+            // if (this.props.comments.length !== prevProps.comments.length) {
+        if (this.state.comments.length === 0 || this.props.comment.length > prevProps.comment.length) {
+            // this.setState({ comments: this.props.project.comments })
+            let comments = this.state.comments;
+            let newComment = this.props.project.comments;
+            let newComments = comments.concat(newComment)
+            this.setState({ comments: newComments})
         }
+        debugger
     }
 
     commentSave(comment) {
