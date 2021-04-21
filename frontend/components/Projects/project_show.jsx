@@ -19,18 +19,22 @@ class ProjectShow extends React.Component {
 
     componentDidMount() {
         debugger
-        this.props.requestProject(this.props.match.params.id)
+        this.props.requestProject(this.props.match.params.id).then((project) => {
+            debugger
+            this.setState({ comments: project.project.comments })
+        }
+        )
     }
     
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         debugger
         // if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
-            // if (this.props.comments.length !== prevProps.comments.length) {
-        if (this.state.comments.length === 0 || this.props.comment.length > prevProps.comment.length) {
-            // this.setState({ comments: this.props.project.comments })
+        if (this.props.comment.length !== prevProps.comment.length) {
+            debugger
             let comments = this.state.comments;
-            let newComment = this.props.project.comments;
+            let newComment = this.props.comment;
             let newComments = comments.concat(newComment)
+            debugger
             this.setState({ comments: newComments})
         }
         debugger
@@ -38,7 +42,13 @@ class ProjectShow extends React.Component {
 
     commentSave(comment) {
         debugger
-        this.props.createComment(comment)
+        this.props.createComment(comment).then(
+            comment => {
+                let comments = this.state.comments;
+                let newComments = comments.concat(comment)
+                this.setState({ comments: newComments})
+            }
+        )
     }
 
 

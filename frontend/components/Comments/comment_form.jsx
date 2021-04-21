@@ -29,14 +29,16 @@ class CommentForm extends React.Component {
         const { projectId, writerId, commentSave } = this.props;
 
         return (
-            <div>
-                <form>
+            <div className='comment-create'>
+                <div className='form-border'>
+                <form className='comment-form'>
                     <input 
                         type="text"
                         value={this.state.body}
                         onChange={this.update('body')}/>
-                    <button onClick={() => commentSave(this.state)}>Post</button>
+                    <button onClick={() => commentSave(this.state)} className='comment-btn' >Post</button>
                 </form>
+                </div>
             </div>
         )
     }

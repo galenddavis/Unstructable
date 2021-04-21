@@ -1,0 +1,23 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-create {
+    display: flex;
+    width: 80%;
+    height: 160px;
+    border: 1px black solid;
+    background-color: #f6f6f6;
+
+    .form-border {
+        width: 80%;
+        height: 60%;
+        background-color: #ffffff;
+    }
+
+
+
+    button {
+        background-color: #f9c666;
+    }
+}

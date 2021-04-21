@@ -7,7 +7,7 @@ const commentsReducer = ( state = {}, action ) => {
     switch (action.type) {
         case RECEIVE_COMMENT:
             debugger
-            return Object.assign({}, state, {[action.comment.extract.id]: action.comment.extract});
+            return Object.assign({}, state, {[action.comment.comment.extract.id]: action.comment.comment.extract});
 
         case RECEIVE_ALL_COMMENTS:
             return action.comments
