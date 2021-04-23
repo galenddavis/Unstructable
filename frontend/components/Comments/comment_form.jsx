@@ -36,7 +36,10 @@ class CommentForm extends React.Component {
                         type="text"
                         value={this.state.body}
                         onChange={this.update('body')}/>
-                    <button onClick={() => commentSave(this.state)} className='comment-btn' >Post</button>
+                    <section className='form-bottom'>
+                        <p>Please be positive and constructive.</p>
+                        <button onClick={() => commentSave(this.state)} className='comment-btn' >Post</button>
+                    </section>
                 </form>
                 </div>
             </div>
