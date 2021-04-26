@@ -30,18 +30,17 @@ class CommentForm extends React.Component {
 
         return (
             <div className='comment-create'>
-                <div className='form-border'>
                 <form className='comment-form'>
-                    <input 
-                        type="text"
+               
+                    <textarea 
                         value={this.state.body}
-                        onChange={this.update('body')}/>
+                        onChange={this.update('body')}></textarea>
+                        
                     <section className='form-bottom'>
-                        <p>Please be positive and constructive.</p>
+                        <p className='be-nice'>Please be positive and constructive.</p>
                         <button onClick={() => commentSave(this.state)} className='comment-btn' >Post</button>
                     </section>
                 </form>
-                </div>
             </div>
         )
     }
