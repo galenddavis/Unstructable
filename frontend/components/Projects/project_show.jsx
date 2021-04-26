@@ -26,32 +26,32 @@ class ProjectShow extends React.Component {
         )
     }
     
-    componentDidUpdate(prevProps) {
-        debugger
-        // if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
-        if (this.props.comment.length !== prevProps.comment.length) {
-            debugger
-            let comments = this.state.comments;
-            let newComment = this.props.comment;
-            let newComments = comments.concat(newComment)
-            debugger
-            this.setState({ comments: newComments})
-        }
-        debugger
-    }
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     // if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
+    //     if (this.props.comment.length !== prevProps.comment.length) {
+    //         debugger
+    //         let comments = this.state.comments;
+    //         let newComment = this.props.comment;
+    //         let newComments = comments.concat(newComment)
+    //         debugger
+    //         this.setState({ comments: newComments})
+    //     }
+    //     debugger
+    // }
 
     commentSave(comment) {
         debugger
         this.props.createComment(comment).then(
             comment => {
                 let comments = this.state.comments;
-                let newComments = comments.concat(comment)
+                let newComment = comment.comment.comment;
+                debugger
+                let newComments = comments.concat(newComment)
                 this.setState({ comments: newComments})
             }
         )
     }
-
-
 
     render() {
         debugger
@@ -76,7 +76,6 @@ class ProjectShow extends React.Component {
         })
 
         const comments = this.state.comments?.map((comment, idx) => {
-            debugger
             return <CommentIndexItem 
                 key={idx}
                 comment={comment}
@@ -116,7 +115,8 @@ class ProjectShow extends React.Component {
                             />
                     </section>
 
-                    <section>
+                    <h1 className='comment-amt'>{this.state.comments.length} Comments</h1>
+                    <section className='comment-index'>
                         {comments}
                     </section>
                 </div>

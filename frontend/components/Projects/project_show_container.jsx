@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.session.id,
         errors: Object.values(state.errors),
         history: ownProps.history,
-        comment: Object.values(state.entities.comments)
+        comment: state.entities.comments
     }
 };
 

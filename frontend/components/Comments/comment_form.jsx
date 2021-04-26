@@ -10,6 +10,7 @@ class CommentForm extends React.Component {
             project_id: '',
         }
         this.update = this.update.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -17,8 +18,11 @@ class CommentForm extends React.Component {
         this.setState({ project_id: this.props.projectId})
     }
 
+    handleSubmit() {
+        this.props.commentSave(this.state)
+        this.setState({ body: '' })
+    }
     
-
     update(field) {
         return event => this.setState({
             [field]: event.target.value
@@ -27,7 +31,7 @@ class CommentForm extends React.Component {
 
     render() {
         const { projectId, writerId, commentSave } = this.props;
-
+        debugger
         return (
             <div className='comment-create'>
                 <form className='comment-form'>
@@ -38,7 +42,7 @@ class CommentForm extends React.Component {
                         
                     <section className='form-bottom'>
                         <p className='be-nice'>Please be positive and constructive.</p>
-                        <button onClick={() => commentSave(this.state)} className='comment-btn' >Post</button>
+                        <button onClick={() => this.handleSubmit()} className='comment-btn' >Post</button>
                     </section>
                 </form>
             </div>
