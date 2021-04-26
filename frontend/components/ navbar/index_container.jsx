@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+ import { connect } from 'react-redux';
 import { requestProjects } from '../../actions/project_actions';
 import Index from './index';
 

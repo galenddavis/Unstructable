@@ -7,6 +7,10 @@ class Index extends React.Component {
         debugger
         super(props)
 
+        this.state = {
+            projects: []
+        }
+
         
     }
 
@@ -15,9 +19,15 @@ class Index extends React.Component {
         this.props.requestProjects()
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+            this.setState({ projects: this.props.projects})
+        }
+    }
+
     render () {
         debugger
-        const projectList = this.props.projects === undefined ? null : this.props.projects.map((project) => {
+        const projectList = this.state.projects === undefined ? null : this.state.projects.map((project) => {
             return <IndexItem 
             key={project.id}
             project={project}

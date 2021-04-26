@@ -28,7 +28,7 @@ class ProjectBuild extends React.Component {
     render() {
         debugger
         
-        let steps = this.state.steps?.map((step, idx) => {
+        let steps = this.props.steps?.map((step, idx) => {
             debugger
             return <StepBlurb
                 key={idx} 

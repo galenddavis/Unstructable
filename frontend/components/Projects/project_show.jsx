@@ -2,32 +2,69 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StepIndex from '../Steps/step_index_container'
 import StepShow from '../Steps/step_show'
+import CommentIndexItem from '../Comments/comment_index_item'
+import CommentForm from '../Comments/comment_form'
 
 
 class ProjectShow extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            comments: []
+        }
+
+        this.commentSave = this.commentSave.bind(this);
     }
 
     componentDidMount() {
         debugger
-        this.props.requestProject(this.props.match.params.id)
+        this.props.requestProject(this.props.match.params.id).then((project) => {
+            debugger
+            this.setState({ comments: project.project.comments })
+        }
+        )
+    }
+    
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     // if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
+    //     if (this.props.comment.length !== prevProps.comment.length) {
+    //         debugger
+    //         let comments = this.state.comments;
+    //         let newComment = this.props.comment;
+    //         let newComments = comments.concat(newComment)
+    //         debugger
+    //         this.setState({ comments: newComments})
+    //     }
+    //     debugger
+    // }
+
+    commentSave(comment) {
+        debugger
+        this.props.createComment(comment).then(
+            comment => {
+                let comments = this.state.comments;
+                let newComment = comment.comment.comment;
+                debugger
+                let newComments = comments.concat(newComment)
+                this.setState({ comments: newComments})
+            }
+        )
     }
 
     render() {
         debugger
         if (this.props.project === undefined) return null;
-        
         const { project } = this.props
-        const userProjects = this.props.project.creator.otherProjects?.map((other) => {
-            debugger
-            let otherProjects = []
-            if (other.id !== this.props.project.id) {
-                // otherProjects.push(other.id)
-                return <li><img src={other.photoUrl} alt=""/></li>
+
+        let count = 0
+        const userProjects = project.creator.otherProjects?.map((other) => {
+            
+            if (other.id !== project.id && count < 2) {
+                count += 1
+                return <li key={other.id}><img src={other.photoUrl} alt=""/></li>
             }
-            // return otherProjects
         })
 
         const steps = project.steps?.map((step, idx) => {
@@ -35,6 +72,13 @@ class ProjectShow extends React.Component {
                 key={step.id} 
                 number={idx + 1}
                 step={step}
+                />
+        })
+
+        const comments = this.state.comments?.map((comment, idx) => {
+            return <CommentIndexItem 
+                key={idx}
+                comment={comment}
                 />
         })
         
@@ -61,6 +105,19 @@ class ProjectShow extends React.Component {
                     <section>
                         {/* <StepIndex /> */}
                         {steps}
+                    </section>
+
+                    <section>
+                        <CommentForm 
+                            projectId={project.id}
+                            writerId={this.props.currentUser}
+                            commentSave={this.commentSave}
+                            />
+                    </section>
+
+                    <h1 className='comment-amt'>{this.state.comments.length} Comments</h1>
+                    <section className='comment-index'>
+                        {comments}
                     </section>
                 </div>
             </div>

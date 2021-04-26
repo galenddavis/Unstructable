@@ -14,7 +14,7 @@ class StepBlurb extends React.Component {
                     <p>Drag Images From Top Bar</p>
                 </span>
                 <span className='body' onClick={() => updateCurrentStep(index)}>
-                    <p>{step.title}</p>
+                    <p>{step?.title}</p>
                 </span>
                 <i className="fas fa-chevron-right"></i>
                 {/* <p>{step.body}</p> */}

@@ -15,7 +15,7 @@ class IndexItem extends React.Component {
                 <div className='thumbnail'>
                     <img src={project.photoUrl} alt=""/>
                 </div>
-                <p> <Link to={`/project/${project.id}`}>{project.title}</Link> by {project.creator?.username} in {project.category}</p>
+                <p> <Link to={`/project/${project.id}`}>{project.title}</Link> by {project.creator} in {project?.category}</p>
             </li>
         )
     }
