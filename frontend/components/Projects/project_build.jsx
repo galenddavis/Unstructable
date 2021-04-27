@@ -8,28 +8,13 @@ class ProjectBuild extends React.Component {
         super(props);
 
         this.state = this.props.state
-        
-        // this.state = {
-        //     currentForm: 1,
-        //     project: {
-        //         title: '',
-        //         body: '', 
-        //         category: '',
-        //         views: 0,
-        //         favorites: 0,
-        //         creator_id: this.props.currentUser
-        //     },
-        //     steps: []
-        // }
 
     }
 
 
     render() {
         debugger
-        
         let steps = this.props.steps?.map((step, idx) => {
-            debugger
             return <StepBlurb
                 key={idx} 
                 step={step}

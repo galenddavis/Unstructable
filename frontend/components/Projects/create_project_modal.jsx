@@ -7,7 +7,7 @@ class ProjectModal extends React.Component {
     }
     
     render() {
-    debugger
+    
     const { handleSubmit, update, title, openModal } = this.props
         return (
             <div className='modal-background' onClick={() => openModal()}>

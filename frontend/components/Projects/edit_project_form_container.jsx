@@ -6,6 +6,11 @@ import {
     updateProject,  
     deleteProject 
     } from '../../actions/project_actions';
+import {
+    createStep,
+    updateStep,
+    deleteStep
+} from '../../actions/step_actions'
 import ProjectForm from './project_form'
 
 
@@ -14,28 +19,26 @@ class EditProjectForm extends React.Component {
         super(props)
 
         this.state = {
-            project: this.props.project
+            project: this.props.project,
+            step: this.props.step
         }
     }
 
     componentDidMount() {
         debugger
-        this.props.requestProject(this.props.match.params.id).then(
-            (res) => {
-                this.setState({ project: res.project })
-            } 
-        )
-    }
-
-    componentDidUpdate() {
-        debugger
-        console.log(this.props)
+        this.setState({ project: this.props.project })
+        // this.props.requestProject(this.props.match.params.id).then(
+        //     (res) => {
+        //         this.setState({ project: res.project })
+        //     } 
+        // )
     }
 
     render() {
         debugger
         const { project } = this.state
         const {
+            step,
             updateProject,
             deleteProject, 
             createStep, 
@@ -43,10 +46,11 @@ class EditProjectForm extends React.Component {
             deleteStep} = this.props
         
         if (!project) return null;
-            debugger
+            
         return (
             <ProjectForm 
                 project={project}
+                step={step}
                 updateProject={updateProject}
                 deleteProject={deleteProject}
                 createStep={createStep}
@@ -59,8 +63,10 @@ class EditProjectForm extends React.Component {
 const mSTP = (state, ownProps) => {
     debugger
     let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects : null;
+    let step = state.entities.steps && Object.values(state.entities.steps).length ? state.entities.steps : null;
     return {
         project: project,
+        step: step
     }
 }
 

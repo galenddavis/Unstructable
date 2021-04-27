@@ -30,21 +30,24 @@ class ProjectSplash extends React.Component {
         // event.preventDefault();
         const project = this.state;
         debugger
-        this.props.createProject(project)
+        this.props.createProject(project).then (project => {
+            debugger
+            this.props.history.push(`project/edit/${project.id}`)
+        })
         this.openModal()
         // .then(
         //     this.props.history.push(`project/edit/${project.id}`)
         // )
     }
 
-    componentDidUpdate(prevProps) {
-        debugger
-        if (this.props.project !== prevProps.project) {
-            debugger
-            const {project} = this.props 
-            this.props.history.push(`project/edit/${project.id}`)
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.project !== prevProps.project) {
+    //         debugger
+    //         const {project} = this.props 
+    //         this.props.history.push(`project/edit/${project.id}`)
+    //     }
+    // }
 
     openModal() {
         this.setState({ title: '' })

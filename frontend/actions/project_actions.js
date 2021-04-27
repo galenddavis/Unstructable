@@ -31,7 +31,7 @@ export const removeProjectErrors = () => ({
 })
 
 export const requestProjects = () => dispatch => {
-    debugger
+    
     return ProjectAPIUtil.fetchProjects().then(
         projects => dispatch(receiveAllProjects(projects)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))
@@ -39,7 +39,7 @@ export const requestProjects = () => dispatch => {
 }
 
 export const requestProject = projectId => dispatch => {
-    debugger
+    
     return ProjectAPIUtil.fetchProject(projectId).then(
         project => dispatch(receiveProject(project)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))
@@ -47,7 +47,7 @@ export const requestProject = projectId => dispatch => {
 }
 
 export const createProject = project => dispatch => {
-    debugger
+    
     return ProjectAPIUtil.createProject(project).then(
         project => dispatch(receiveProject(project)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))

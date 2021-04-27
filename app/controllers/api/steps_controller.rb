@@ -2,7 +2,7 @@ class Api::StepsController < ApplicationController
 
     def index
         @steps = Project.find(params[:project_id]).steps
-        render: 'api/steps/index'
+        render :index
     end
 
     def show
@@ -11,6 +11,7 @@ class Api::StepsController < ApplicationController
 
     def create
         @step = Step.new(step_params)
+        debugger
         if @step.save
             render :show
         else
@@ -35,6 +36,6 @@ class Api::StepsController < ApplicationController
     private
 
     def step_params
-        params.require(:step).permit(:title, :body)
+        params.require(:step).permit(:title, :body, :project_id)
     end
 end

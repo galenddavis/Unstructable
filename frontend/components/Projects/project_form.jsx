@@ -11,7 +11,7 @@ class ProjectForm extends React.Component {
         this.state = {
             currentForm: 1,
             project: {},
-            steps: [{id: 0, title: "Intro + Supplies (Click to Edit)", body: "", project_id: ""}]
+            steps: []
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,10 +25,24 @@ class ProjectForm extends React.Component {
 
     componentDidMount() {
         this.setState({ project: this.props.project })
-        let { steps } = this.state;
+        // this.setState( { steps: this.props.project.steps })
+        // this.setState({ steps = this.props.project.steps})
         debugger
-        let fullSteps = steps.concat(this.props.project.steps)
-        this.setState({ steps: fullSteps })
+        let { steps } = this.state;
+        let firstStep = {id: '', title: "Intro + Supplies (Click to Edit)", body: "", project_id: Object.values(this.props.project)[0].id}
+        if (this.props.project && this.state.steps.length === 0) {
+            this.props.createStep(firstStep).then(firstStep => {
+                let fullSteps = steps.push(firstStep)
+                this.setState({ steps: fullSteps }) 
+            })
+           
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+            this.setState({ steps: this.props.step })
+        }
     }
 
     handleSubmit(event) {
@@ -46,12 +60,12 @@ class ProjectForm extends React.Component {
     addStep() {
         const otherForm = this.state.currentForm === 1 ? 3 : 1
         this.setState({currentForm: otherForm})
-        debugger
+        
     }
 
     saveStep(step) {
         let { steps } = this.state;
-        debugger
+        
         steps.push(step);
         this.setState({steps: steps})
         this.setState({currentForm: 1})
@@ -85,7 +99,7 @@ class ProjectForm extends React.Component {
         let formLayout
 
         if (this.state.currentForm === 1) {
-            debugger
+            
             formLayout = <ProjectBuild 
                 currentForm={this.state.currentForm}
                 // update={this.update}
@@ -94,7 +108,7 @@ class ProjectForm extends React.Component {
                 editStep={this.editStep}
                 updateCurrentStep={this.updateCurrentStep}
                 project={this.state.project}
-                steps={this.state.steps} />
+                steps={this.props.steps} />
 
         } else if (this.state.currentForm === 2) {
             formLayout = <ProjectSubmit 
@@ -137,7 +151,7 @@ class ProjectForm extends React.Component {
                             {/* <button>Save</button>  */}
                             <button 
                                 onClick={this.state.currentForm === 1 ? this.otherForm : this.handleSubmit} 
-                                className='publish'>{this.state.project?.title}
+                                className='publish'>{this.props.project?.title}
                             </button>
                         </span>
                     </div>

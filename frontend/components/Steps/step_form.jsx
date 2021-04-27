@@ -26,7 +26,7 @@ class StepForm extends React.Component {
     }
 
     render() {
-        debugger
+        
         let currentStep = this.props?.steps[this.props.state.currentStep]
         return (
             <div className='step-form'>

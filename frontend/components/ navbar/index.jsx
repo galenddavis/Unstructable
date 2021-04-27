@@ -4,7 +4,7 @@ import IndexItem from './index_item';
 
 class Index extends React.Component {
     constructor(props) {
-        debugger
+        
         super(props)
 
         this.state = {
@@ -15,7 +15,7 @@ class Index extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         this.props.requestProjects()
     }
 
@@ -26,7 +26,7 @@ class Index extends React.Component {
     }
 
     render () {
-        debugger
+        
         const projectList = this.state.projects === undefined ? null : this.state.projects.map((project) => {
             return <IndexItem 
             key={project.id}

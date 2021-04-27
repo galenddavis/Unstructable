@@ -7,7 +7,7 @@ class StepIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         this.props.requestProjects
     }
 

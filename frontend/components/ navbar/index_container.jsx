@@ -5,7 +5,7 @@ import Index from './index';
 
 const mSTP = state => {
     
-    debugger
+    
     return {
         projects: Object.values(state.entities.projects)
     }

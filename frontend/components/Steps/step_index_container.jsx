@@ -3,7 +3,7 @@ import { requestAllSteps } from '../../actions/step_actions';
 import StepIndex from './step_index'
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         project: state.entities.projects[ownProps.match.params.id],
         steps: Object.values(state.entities.steps)

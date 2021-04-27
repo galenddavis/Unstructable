@@ -31,7 +31,7 @@ class CommentForm extends React.Component {
 
     render() {
         const { projectId, writerId, commentSave } = this.props;
-        debugger
+        
         return (
             <div className='comment-create'>
                 <form className='comment-form'>

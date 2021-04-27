@@ -10,7 +10,7 @@ import ProjectSplash from './project-splash'
 
 
 const mSTP = (state) => {
-    debugger
+    
     let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects : null;
     return {
         project: project,

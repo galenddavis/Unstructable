@@ -20,14 +20,14 @@ const removeComment = commentId => ({
 }) 
 
 export const requestComments = projectId => dispatch => {
-    debugger
+    
     return CommentAPIUtil.fetchAllComments(projectId).then(
         comments => dispatch(receiveAllComments(comments))
     )
 }
 
 export const createComment = comment => dispatch => {
-    debugger
+    
     return CommentAPIUtil.createComment(comment).then(
         comment => dispatch(receiveComment(comment))
     )

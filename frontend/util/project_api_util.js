@@ -1,7 +1,7 @@
 
 
 export const fetchProjects = () => {
-    debugger
+    
     return (
         $.ajax({
             method: 'GET',
@@ -11,7 +11,7 @@ export const fetchProjects = () => {
 }
 
 export const fetchProject = (projectId) => {
-    debugger
+    
     return (
         $.ajax({
             method: 'GET',
@@ -22,7 +22,7 @@ export const fetchProject = (projectId) => {
 }
 
 export const createProject = (project) => {
-    debugger
+    
     return $.ajax({
         method: 'POST',
         url: `/api/users/${project.creator_id}/projects`,

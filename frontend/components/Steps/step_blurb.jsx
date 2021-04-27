@@ -7,7 +7,7 @@ class StepBlurb extends React.Component {
 
     render() {
         const { step, index, editStep, updateCurrentStep } = this.props;
-        debugger
+        
         return (
             <li className='step-blurb'>
                 <span className='img-upload'>
