@@ -20,25 +20,24 @@ class EditProjectForm extends React.Component {
 
         this.state = {
             project: this.props.project,
-            step: this.props.step
         }
     }
 
     componentDidMount() {
         debugger
-        this.setState({ project: this.props.project })
-        // this.props.requestProject(this.props.match.params.id).then(
-        //     (res) => {
-        //         this.setState({ project: res.project })
-        //     } 
-        // )
+        // this.setState({ project: this.props.project })
+        this.props.requestProject(this.props.match.params.id).then(
+            (res) => {
+                console.log(res)
+                this.setState({ project: res.project })
+            } 
+        )
     }
 
     render() {
         debugger
         const { project } = this.state
         const {
-            step,
             updateProject,
             deleteProject, 
             createStep, 
@@ -50,7 +49,6 @@ class EditProjectForm extends React.Component {
         return (
             <ProjectForm 
                 project={project}
-                step={step}
                 updateProject={updateProject}
                 deleteProject={deleteProject}
                 createStep={createStep}
@@ -63,10 +61,8 @@ class EditProjectForm extends React.Component {
 const mSTP = (state, ownProps) => {
     debugger
     let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects : null;
-    let step = state.entities.steps && Object.values(state.entities.steps).length ? state.entities.steps : null;
     return {
-        project: project,
-        step: step
+        project: project
     }
 }
 

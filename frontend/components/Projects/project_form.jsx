@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProjectBuild from './project_build';
 import ProjectSubmit from './project_submit';
 import StepForm from '../Steps/step_form';
+import CreateStep from '../Steps/create_step_container'
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class ProjectForm extends React.Component {
             steps: []
         }
         
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this)
         this.otherForm = this.otherForm.bind(this);
         this.addStep = this.addStep.bind(this);
@@ -24,31 +25,15 @@ class ProjectForm extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ project: this.props.project })
-        // this.setState( { steps: this.props.project.steps })
-        // this.setState({ steps = this.props.project.steps})
         debugger
-        let { steps } = this.state;
-        let firstStep = {id: '', title: "Intro + Supplies (Click to Edit)", body: "", project_id: Object.values(this.props.project)[0].id}
-        if (this.props.project && this.state.steps.length === 0) {
-            this.props.createStep(firstStep).then(firstStep => {
-                let fullSteps = steps.push(firstStep)
-                this.setState({ steps: fullSteps }) 
-            })
-           
-        }
+        this.setState({ project: this.props.project })
+        console.log(this.props.project.steps)
     }
 
     componentDidUpdate(prevProps) {
         if (this.props !== prevProps) {
-            this.setState({ steps: this.props.step })
+            this.setState({ project: this.props.project })
         }
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        const project = this.state
-        this.props.createProject(project).then(this.props.history.push('/'))
     }
 
     otherForm(event) {
@@ -59,13 +44,11 @@ class ProjectForm extends React.Component {
 
     addStep() {
         const otherForm = this.state.currentForm === 1 ? 3 : 1
-        this.setState({currentForm: otherForm})
-        
+        this.setState({currentForm: otherForm})        
     }
 
     saveStep(step) {
         let { steps } = this.state;
-        
         steps.push(step);
         this.setState({steps: steps})
         this.setState({currentForm: 1})
@@ -89,7 +72,7 @@ class ProjectForm extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         // let formLayout = <ProjectBuild 
         //     currentForm={this.state.currentForm}
         //     update={this.update}
@@ -104,11 +87,10 @@ class ProjectForm extends React.Component {
                 currentForm={this.state.currentForm}
                 // update={this.update}
                 otherForm={this.otherForm}
-                addStep={this.addStep}
+                // addStep={this.addStep}
                 editStep={this.editStep}
                 updateCurrentStep={this.updateCurrentStep}
-                project={this.state.project}
-                steps={this.props.steps} />
+                project={this.state.project} />
 
         } else if (this.state.currentForm === 2) {
             formLayout = <ProjectSubmit 
@@ -116,18 +98,17 @@ class ProjectForm extends React.Component {
                 handleSubmit={this.handleSubmit}
                 update={this.update}
                 otherForm={this.otherForm}
-                project={this.state.project}
-                steps={this.state.steps} />
+                project={this.state.project} />
 
         } else if (this.state.currentForm === 3) {
-            formLayout = <StepForm 
+            formLayout = <CreateStep 
                 currentForm={this.state.currentForm}
                 update={this.update}
                 saveStep={this.saveStep}
                 otherForm={this.otherForm}
                 state={this.state}
                 project={this.state.project}
-                steps={this.state.steps} />
+                 />
         } 
 
         let headerButton = this.state.currentForm === 3 || 4 ? 

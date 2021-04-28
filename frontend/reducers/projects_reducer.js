@@ -11,7 +11,7 @@ import {
 
 const projectsReducer = (state = {}, action) => {
     Object.freeze(state);
-    const newState = Object.assign({})
+    let newState = Object.assign({}, state)
     
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:
@@ -20,8 +20,8 @@ const projectsReducer = (state = {}, action) => {
             // return Object.assign({}, state, {projects: action.data});
         case RECEIVE_PROJECT: 
             
-            newState[action.project.id] = action.project;
-            return newState;
+            return action.project;
+            // return newState;
         case REMOVE_PROJECT:
             delete[newState[action.projectId]];
             return newState;

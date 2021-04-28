@@ -28,7 +28,7 @@ const App = () => (
                 <ProtectedRoute exact path="/create" component={project_create} />
                 <ProtectedRoute path="/project/new" component={project_create} />
                 <ProtectedRoute path='/project/edit/:id' component={project_edit} />
-                <ProtectedRoute path='/project/step/edit/:id' component={step_create} />
+                <ProtectedRoute path='/project/step/create' component={step_create} />
                 <Route exact path='/project/:id' component={ProjectShow}/>
             </Switch>
         

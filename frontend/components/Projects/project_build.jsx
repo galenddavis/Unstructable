@@ -7,14 +7,43 @@ class ProjectBuild extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = this.props.state
+        this.state = {
+            project: {},
+            allSteps: []
+        }
+
+        // this.addStep = this.addStep.bind(this)
 
     }
+
+    componentDidMount() {
+        this.setState({ project: this.props.project })
+        let { allSteps } = this.state
+        let newSteps = allSteps.concat(this.props.project.steps)
+        this.setState({ allSteps: newSteps })
+    }
+
+    componentDidUpdate(prevProps) {
+        debugger
+        if (this.props !== prevProps) {
+            this.setState({ project: this.props.project })
+            this.setState({ allSteps: this.props.project.steps })
+        }
+    }
+
+    // addStep() {
+    //     let projectId = this.state.project.id
+    //     this.props.history.push({
+    //         pathname: '/project/step/create',
+    //         state: {project: projectId}
+    //     })
+    // }
 
 
     render() {
         debugger
-        let steps = this.props.steps?.map((step, idx) => {
+        let steps = this.state.allSteps?.map((step, idx) => {
+            debugger
             return <StepBlurb
                 key={idx} 
                 step={step}
