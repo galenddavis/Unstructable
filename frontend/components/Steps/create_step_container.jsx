@@ -5,7 +5,6 @@ import StepForm from './step_form';
 const mSTP = (state, ownProps) => {
     debugger
     return {
-        projectId: ownProps.location.state.project,
         formType: 'Create'
     }
 }

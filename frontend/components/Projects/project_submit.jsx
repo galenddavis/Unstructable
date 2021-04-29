@@ -27,14 +27,14 @@ class ProjectSubmit extends React.Component {
 
         return (
             <div className='submitForm'>
-                <section className='header'>
+                {/* <section className='header'>
                     <span>
                         <button onClick={this.props.otherForm}>Back to Edit</button>
                     </span>
                     <span>
                         <button type='submit' className='publish'>Publish Now</button>
                     </span>
-                </section>
+                </section> */}
                 <div className='container'>
                     <p>Unstructable Preview</p>
                 
@@ -52,9 +52,6 @@ class ProjectSubmit extends React.Component {
                             <option value='Workshop'>Workshop</option>
                             <option value='Craft'>Craft</option>
                             <option value='Cooking'>Cooking</option>
-                            <option value='Living'>Living</option>
-                            <option value='Outside'>Outside</option>
-                            <option value='Teachers'>Teachers</option>
                     </select>
                     
                 </section>

@@ -48,9 +48,6 @@ class NavBar extends React.Component {
                         <Link to='/'>Workshop</Link>
                         <Link to='/'>Craft</Link>
                         <Link to='/'>Cooking</Link>
-                        <Link to='/'>Living</Link>
-                        <Link to='/'>Outside</Link>
-                        <Link to='/'>Teachers</Link>
                     </span> 
                     <span>
                         {authButtons}

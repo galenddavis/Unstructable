@@ -11,6 +11,7 @@ class ProjectShow extends React.Component {
         super(props);
 
         this.state = {
+            project: {},
             comments: []
         }
 
@@ -18,9 +19,10 @@ class ProjectShow extends React.Component {
     }
 
     componentDidMount() {
-        
+        debugger
         this.props.requestProject(this.props.match.params.id).then((project) => {
-            
+            debugger
+            this.setState({ project: project.project })
             this.setState({ comments: project.project.comments })
         }
         )
@@ -54,7 +56,7 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-        
+        debugger
         if (this.props.project === undefined) return null;
         const { project } = this.props
 

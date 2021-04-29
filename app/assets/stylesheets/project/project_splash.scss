@@ -1,0 +1,33 @@
+
+.project-splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 30px;
+            margin: 30px 0px;
+        }
+        
+        p {
+            margin: 5px 0px;
+        }
+
+        button {
+            margin-top: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f08428;
+            color: white;
+            font-size: 17px;
+            padding: 12px;
+        }
+    }
+}

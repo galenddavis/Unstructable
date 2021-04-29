@@ -45,7 +45,7 @@ export const requestStep = stepId => dispatch => (
 )
 
 export const createStep = (step) => dispatch => {
-    debugger
+    // debugger
     return StepAPIUtil.createStep(step).then(
         step => dispatch(receiveStep(step)), //should be receiveAll Steps to send back to the form? 
         errors => dispatch(receiveStepErrors(errors))

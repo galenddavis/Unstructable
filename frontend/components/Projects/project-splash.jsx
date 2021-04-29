@@ -61,15 +61,17 @@ class ProjectSplash extends React.Component {
         debugger
         return (
 
-            <div>
-                <section className='image-header'>
-                    <h2>START ANOTHER PROJECT</h2>
+            <div className='project-splash'>
+                <section className='why-publish'>
+                    <h2>START SOMETHING YOU'LL NEVER FINISH WITH UNSTRUCTABLE</h2>
                     
                     <p>Unstructable is a platform for you to share any and every project
-                        that you've lost interest in. Whether youstarted trying to learn 
-                        to knit, or maybe you have a bread recipie that you made once, 
-                        this is the community to share it in.  
-                    </p>
+                        that you've lost interest in.</p>
+                    <p>Come up with a plan!</p>
+                    <p>Brag about it!</p>
+                    <p>Never finish it!</p>
+                    <p>Start a new one!</p>
+                    <p>Join the world's 2nd largest DIWhy community</p>
                     {/* <Link to='/project/new'>New Unstructable</Link> */}
                     <button onClick={() => this.openModal()}>New Unstructable</button>
                 </section>
@@ -77,13 +79,12 @@ class ProjectSplash extends React.Component {
                 <section>
                     <h2>WHY PUBLISH AN UNSTRUCTABLE?</h2>
                     <img src={window.banner} alt=""/>
-                    <span>
-                        <h3>Everyone has something to share</h3>
-                        <p>You have a project inside you, just waiting to 
+                    <h2>EVERYONE HAS SOMETHING TO SHARE</h2>
+                        {/* <p>You have a project inside you, just waiting to 
                             get out. Maybe you have a plan, maybe you don't.
                             Even the most half-baked ideas are worth sharing. 
-                        </p>
-                    </span>
+                        </p> */}
+                    
                 </section>
                 <ProjectModal 
                     handleSubmit={this.handleSubmit}

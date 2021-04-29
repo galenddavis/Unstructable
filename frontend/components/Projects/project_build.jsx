@@ -17,15 +17,19 @@ class ProjectBuild extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ project: this.props.project })
-        let { allSteps } = this.state
-        let newSteps = allSteps.concat(this.props.project.steps)
-        this.setState({ allSteps: newSteps })
+        debugger
+        this.props.requestProject(this.props.project.id).then(project => {
+            debugger
+            this.setState({ project: project.project })
+            let { allSteps } = this.state
+            let newSteps = allSteps.concat(project.project.steps)
+            this.setState({ allSteps: newSteps })
+        })
     }
 
     componentDidUpdate(prevProps) {
         debugger
-        if (this.props !== prevProps) {
+        if (this.props.project !== prevProps.project) {
             this.setState({ project: this.props.project })
             this.setState({ allSteps: this.props.project.steps })
         }
@@ -42,23 +46,26 @@ class ProjectBuild extends React.Component {
 
     render() {
         debugger
-        let steps = this.state.allSteps?.map((step, idx) => {
+        const sortedSteps = this.state.allSteps.sort((a, b) => {
+            return new Date(a.created_at) - new Date(b.created_at)
+        }) 
+        let steps = sortedSteps?.map((step, idx) => {
             debugger
             return <StepBlurb
                 key={idx} 
                 step={step}
                 index={idx}
                 editStep={this.props.editStep}
-                updateCurrentStep={this.props.updateCurrentStep}/> 
+                /> 
         })
         return (
-            <div className='project-form'>
+            <div >
             
             <ul className='project-form-body'>
                 <div className='steps'>
                     {steps}
                 </div>
-                <button className='add-step' onClick={this.props.addStep}>Add Step</button>
+                <button className='add-step' onClick={() => this.props.addStep()}>Add Step</button>
             </ul>
         </div>
         )

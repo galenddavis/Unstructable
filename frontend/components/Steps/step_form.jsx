@@ -12,10 +12,20 @@ class StepForm extends React.Component {
         }
 
         this.update = this.update.bind(this);
+        this.saveStep = this.saveStep.bind(this)
     }
 
-    componentWillUnmount() {
-        this.props.saveStep(this.state)
+    componentDidMount() {
+        this.setState({ project_id: this.props.project.id})
+    }
+
+
+    saveStep(step) {
+        debugger
+        this.props.createStep(step).then(step => {
+            debugger
+            this.props.addStep()
+        })
     }
 
     update(field) {
@@ -26,21 +36,23 @@ class StepForm extends React.Component {
     }
 
     render() {
-        
-        let currentStep = this.props?.steps[this.props.state.currentStep]
+        debugger
+
         return (
             <div className='step-form'>
                 <span className='step-body'>
                     <input 
                         type="text"
-                        value={currentStep.title}
+                        value={this.state.title}
                         onChange={this.update('title')}
                     />
                     <input 
                         type="text"
-                        value={currentStep.body}
-                        onChange={e => this.props.update(e.target.value)}
+                        value={this.state.body}
+                        onChange={this.update('body')}
+                        // onChange={e => this.props.update(e.target.value)}
                     />
+                    <button onClick={() => this.saveStep(this.state)}>Save Step</button>
                 </span>
             </div>
         )

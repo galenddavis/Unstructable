@@ -14,7 +14,7 @@ export const fetchStep = (stepId) => (
 )
 
 export const createStep = (step) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'POST',
         url: `/api/projects/${step.project_id}/steps`,
