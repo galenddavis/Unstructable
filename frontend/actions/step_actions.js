@@ -37,12 +37,13 @@ export const requestAllSteps = projectId => dispatch (
     )
 )
 
-export const requestStep = stepId => dispatch => (
-    StepAPIUtil.fetchStep(stepId).then(
+export const requestStep = (stepId, projectId) => dispatch => {
+    debugger
+    return StepAPIUtil.fetchStep(stepId, projectId).then(
         step => dispatch(receiveStep(step)),
         errors => dispatch(receiveStepErrors(errors))
     )
-)
+}
 
 export const createStep = (step) => dispatch => {
     // debugger

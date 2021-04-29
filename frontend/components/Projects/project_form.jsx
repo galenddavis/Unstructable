@@ -4,6 +4,7 @@ import ProjectBuild from './project_build';
 import ProjectSubmit from './project_submit';
 import StepForm from '../Steps/step_form';
 import CreateStep from '../Steps/create_step_container'
+import EditStep from '../Steps/edit_step_container'
 
 class ProjectForm extends React.Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class ProjectForm extends React.Component {
         // }
         this.state = {
             currentForm: 1,
-            steps: [],
             project: {
                 title: props.project.title || '',
                 body: props.project.body || '', 
@@ -30,17 +30,16 @@ class ProjectForm extends React.Component {
         // this.handleSubmit = this.handleSubmit.bind(this);
         // this.saveStep = this.saveStep.bind(this)
         // this.updateCurrentStep = this.updateCurrentStep.bind(this)
+        // this.editStep = this.editStep.bind(this)
+        // this.addStep = this.addStep.bind(this);
         this.updateCategory = this.updateCategory.bind(this)
         this.updateTitle = this.updateTitle.bind(this)
         this.otherForm = this.otherForm.bind(this);
-        this.addStep = this.addStep.bind(this);
-        this.editStep = this.editStep.bind(this)
     }
 
     componentDidMount() {
         debugger
         this.setState({ project: this.props.project })
-        console.log(this.props.project.steps)
     }
 
     componentDidUpdate(prevProps) {
@@ -54,24 +53,6 @@ class ProjectForm extends React.Component {
         this.setState({currentForm: otherForm}) 
         
     }
-
-    addStep() {
-        const otherForm = this.state.currentForm === 1 ? 2 : 1
-        this.setState({currentForm: otherForm})        
-    }
-
-    // saveStep(step) {
-    //     let { steps } = this.state;
-    //     steps.push(step);
-    //     this.setState({steps: steps})
-    //     this.setState({currentForm: 1})
-    // }
-
-    editStep(step) {
-        const otherForm = this.state.currentForm === 1 ? 3 : 1
-        this.setState({currentForm: otherForm})
-    }
-
 
     updateCategory(event) {
         console.log(this.state)
@@ -97,9 +78,9 @@ class ProjectForm extends React.Component {
                 requestProject={this.props.requestProject}
                 newStep={this.props.newStep}
                 // update={this.update}
+                // addStep={this.addStep}
                 otherForm={this.otherForm}
-                addStep={this.addStep}
-                editStep={this.editStep}
+                createStep={this.props.createStep}
                 project={this.state.project} />
 
         // } else if (this.state.currentForm === 2) {
@@ -117,12 +98,18 @@ class ProjectForm extends React.Component {
                 otherForm={this.otherForm}
                 project={this.state.project}
                  />
-        } 
+        } else if (this.state.currentForm === 3) {
+            formLayout = <EditStep 
+                currentForm={this.state.currentForm}
+                updateStep={this.props.updateStep}
+                otherForm={this.otherForm}
+                project={this.state.project}/>
+        }
 
         let headerButton = this.state.currentForm === 2 ? 
             <button onClick={this.addStep}>Show All</button> : 
             <button>Add Step</button>
-
+            
         return (
             <section>
                 <form className='project-form'>

@@ -12,7 +12,7 @@ class ProjectBuild extends React.Component {
             allSteps: []
         }
 
-        // this.addStep = this.addStep.bind(this)
+        this.addStep = this.addStep.bind(this)
 
     }
 
@@ -35,13 +35,18 @@ class ProjectBuild extends React.Component {
         }
     }
 
-    // addStep() {
-    //     let projectId = this.state.project.id
-    //     this.props.history.push({
-    //         pathname: '/project/step/create',
-    //         state: {project: projectId}
-    //     })
-    // }
+    addStep() {
+        let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
+        debugger
+        this.props.createStep(newStep).then( step => {
+            debugger
+            let { allSteps } = this.state;
+            let fullSteps = allSteps.push(step.step)
+            this.setState({ steps: fullSteps })
+        })
+        // const otherForm = this.state.currentForm === 1 ? 2 : 1
+        // this.setState({currentForm: otherForm})        
+    }
 
 
     render() {
@@ -65,7 +70,7 @@ class ProjectBuild extends React.Component {
                 <div className='steps'>
                     {steps}
                 </div>
-                <button className='add-step' onClick={() => this.props.addStep()}>Add Step</button>
+                <button className='add-step' onClick={() => this.addStep()}>Add Step</button>
             </ul>
         </div>
         )
