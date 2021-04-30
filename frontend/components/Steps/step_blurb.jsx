@@ -19,17 +19,23 @@ class StepBlurb extends React.Component {
         return (
             <li className='step-blurb'>
                 <span className='img-upload'>
+                    <input type="file"/>
                     <p>Drag Images From Top Bar</p>
                 </span>
-                <span className='body'>
-                    <p> <Link to={{ 
-                        pathname: `/project/step/edit/${step.id}`,
-                        stepId: step.id,
-                        projectId: step.project_id,
-                        }}>{step?.title}</Link> </p>
-                    {/* <p onClick={() => this.editStep(step.id)}>{step?.title}</p> */}
-                </span>
-                <i className="fas fa-chevron-right"></i>
+                <div className='blurb-right'>
+                    <span className='body'>
+                        <p> <Link to={{ 
+                            pathname: `/project/step/edit/${step.id}`,
+                            stepId: step.id,
+                            projectId: step.project_id,
+                            }}>{step?.title}</Link> </p>
+                        {/* <p onClick={() => this.editStep(step.id)}>{step?.title}</p> */}
+                    </span>
+                    <div className='symbols'>
+                        <i className="fas fa-chevron-right"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
                 {/* <p>{step.body}</p> */}
             </li>
         )

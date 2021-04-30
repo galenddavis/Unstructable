@@ -23,8 +23,9 @@ class EditStepForm extends React.Component {
         const { updateStep } = this.props
         return (
             <StepForm 
-                step={this.state}
-                updateStep={updateStep} />
+                step={this.state?.step}
+                updateStep={updateStep}
+                history={this.props.history} />
         )
     }
 }

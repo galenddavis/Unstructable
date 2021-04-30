@@ -20,7 +20,8 @@ class Api::StepsController < ApplicationController
     end
     
     def update
-        @step = Step.find_by(id: params[:params])
+        @step = Step.find_by(id: params[:id])
+        
         if @step.update(step_params)
             render :show
         else

@@ -23,13 +23,14 @@ export const createStep = (step) => {
     })
 }
 
-export const updateStep = (step) => (
-    $.ajax({
+export const updateStep = (step) => {
+    debugger
+    return $.ajax({
         method: 'PATCH',
         url: `/api/projects/${step.project_id}/steps/${step.id}`,
         data: {step}
     })
-)
+}
 
 export const deleteStep = (step) => (
     $.ajax({

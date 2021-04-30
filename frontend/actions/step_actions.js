@@ -53,12 +53,13 @@ export const createStep = (step) => dispatch => {
     )
 }
 
-export const updateStep = (step) => dispatch => (
-    StepAPIUtil.updateStep(step).then(
+export const updateStep = (step) => dispatch => {
+    debugger
+    return StepAPIUtil.updateStep(step).then(
         step => dispatch(receiveStep(step)),
         errors => dispatch(receiveStepErrors(errors))
     )
-)
+}
 
 export const deleteStep = (stepId) => dispatch => (
     StepAPIUtil.deleteStep(stepId).then(
