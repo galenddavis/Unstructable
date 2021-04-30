@@ -6,27 +6,41 @@ class StepForm extends React.Component {
         super(props)
 
         this.state = {
-            title: '',
-            body: '',
-            project_id: ''
+            id: this.props.step.id || '',
+            title: this.props.step.title || '',
+            body: this.props.step.body || '',
+            project_id: this.props.step.project_id || ''
         }
 
         this.update = this.update.bind(this);
-        this.saveStep = this.saveStep.bind(this)
+        // this.saveStep = this.saveStep.bind(this)
     }
 
     componentDidMount() {
-        this.setState({ project_id: this.props.project.id})
-    }
-
-
-    saveStep(step) {
         debugger
-        this.props.createStep(step).then(step => {
-            debugger
-            this.props.addStep()
+        this.setState({ 
+            step: this.props.step
         })
+        debugger
     }
+
+    componentDidUpdate(prevProps) {
+        debugger
+        if (this.props.step !== prevProps.step) {
+            this.setState({
+                step: this.props.step
+            }) 
+        }
+    }
+
+
+    // saveStep(step) {
+    //     debugger
+    //     this.props.createStep(step).then(step => {
+    //         debugger
+    //         this.props.addStep()
+    //     })
+    // }
 
     update(field) {
         console.log(this.state)

@@ -30,6 +30,8 @@ class EditStepForm extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
+    // Can also find project with 'state.entities.projects[ownProps.location.projectId]'
+    // Would need to edit jbuilder to set each step as the value with the id as the key. 
     debugger
     return {
         projectId: ownProps.location.projectId,
