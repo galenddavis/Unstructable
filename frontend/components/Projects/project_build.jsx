@@ -9,11 +9,12 @@ class ProjectBuild extends React.Component {
 
         this.state = {
             project: {},
-            allSteps: []
+            allSteps: [],
+            editedStep: 0
         }
 
         this.addStep = this.addStep.bind(this)
-
+        // this.editStep = this.editStep.bind(this)
     }
 
     componentDidMount() {
@@ -32,6 +33,7 @@ class ProjectBuild extends React.Component {
         if (this.props.project !== prevProps.project) {
             this.setState({ project: this.props.project })
             this.setState({ allSteps: this.props.project.steps })
+            
         }
     }
 
@@ -43,10 +45,19 @@ class ProjectBuild extends React.Component {
             let { allSteps } = this.state;
             let fullSteps = allSteps.push(step.step)
             this.setState({ steps: fullSteps })
-        })
-        // const otherForm = this.state.currentForm === 1 ? 2 : 1
-        // this.setState({currentForm: otherForm})        
+        })      
     }
+
+    // editStep(stepId) {
+    //     debugger
+    //     for (let i = 0; i < this.state.fullSteps; i++) {
+    //         if (this.state.fullSteps[i].id === stepId) {
+    //             debugger
+    //             this.setState({ editedStep: i})
+    //             break
+    //         }
+    //     }
+    // }
 
 
     render() {

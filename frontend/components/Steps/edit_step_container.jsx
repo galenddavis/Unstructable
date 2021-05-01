@@ -12,19 +12,24 @@ class EditStepForm extends React.Component {
 
     componentDidMount() {
         debugger
-        this.props.requestStep(this.props.stepId, this.props.projectId).then( step => {
-            debugger
-            console.log(step)
-            this.setState({ step: step.step })
+        this.setState({
+            step: this.props.step
         })
+        // this.props.requestStep(this.props.stepId, this.props.projectId).then( step => {
+        //     debugger
+        //     console.log(step)
+        //     this.setState({ step: step.step })
+        // })
     }
+
     render() {
         debugger
-        const { updateStep } = this.props
+        const { updateStep, otherForm } = this.props
         return (
             <StepForm 
                 step={this.state?.step}
                 updateStep={updateStep}
+                otherForm={otherForm}
                 history={this.props.history} />
         )
     }
@@ -35,8 +40,10 @@ const mSTP = (state, ownProps) => {
     // Would need to edit jbuilder to set each step as the value with the id as the key. 
     debugger
     return {
-        projectId: ownProps.location.projectId,
-        stepId: ownProps.location.stepId
+        // projectId: ownProps.location.projectId,
+        // stepId: ownProps.location.stepId,
+        step: ownProps.currentStep,
+        otherForm: ownProps.otherForm
     }
 }
 

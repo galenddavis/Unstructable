@@ -38,6 +38,7 @@ class EditProjectForm extends React.Component {
         debugger
         const { project } = this.state
         const {
+            steps,
             newStep,
             requestProject,
             updateProject,
@@ -51,6 +52,7 @@ class EditProjectForm extends React.Component {
         return (
             <ProjectForm 
                 project={project}
+                steps={steps}
                 newStep={newStep}
                 requestProject={requestProject}
                 updateProject={updateProject}
@@ -67,7 +69,8 @@ const mSTP = (state, ownProps) => {
     let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects[ownProps.match.params.id] : null;
     return {
         project: project,
-        newStep: state.entities.steps
+        newStep: state.entities.steps,
+        steps: project?.steps
     }
 }
 

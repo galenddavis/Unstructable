@@ -24,16 +24,16 @@ class StepBlurb extends React.Component {
                 </span>
                 <div className='blurb-right'>
                     <span className='body'>
-                        <p> <Link to={{ 
+                        {/* <p> <Link to={{ 
                             pathname: `/project/step/edit/${step.id}`,
                             stepId: step.id,
                             projectId: step.project_id,
-                            }}>{step?.title}</Link> </p>
-                        {/* <p onClick={() => this.editStep(step.id)}>{step?.title}</p> */}
+                            }}>{step?.title}</Link> </p> */}
+                        <p onClick={() => this.props.editStep(step.id)}>{step?.title}</p>
                     </span>
                     <div className='symbols'>
                         <i className="fas fa-chevron-right"></i>
-                        <i class="fas fa-trash-alt"></i>
+                        <i className="fas fa-trash-alt"></i>
                     </div>
                 </div>
                 {/* <p>{step.body}</p> */}
