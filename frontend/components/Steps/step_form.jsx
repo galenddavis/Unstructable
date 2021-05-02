@@ -16,14 +16,14 @@ class StepForm extends React.Component {
         this.saveStep = this.saveStep.bind(this)
     }
 
-    componentDidMount() {
-        this.setState({
-            id: this.props.step?.id,
-            title: this.props.step?.title,
-            body: this.props.step?.body,
-            project_id: this.props.step?.project_id 
-        }) 
-    }
+    // componentDidMount() {
+    //     this.setState({
+    //         id: this.props.step?.id,
+    //         title: this.props.step?.title,
+    //         body: this.props.step?.body,
+    //         project_id: this.props.step?.project_id 
+    //     }) 
+    // }
 
     // componentDidUpdate(prevProps) {
     //     debugger
@@ -44,6 +44,7 @@ class StepForm extends React.Component {
             debugger
             // this.props.history.push(`project/edit/${step.step.project_id}`)
             this.props.otherForm()
+            // this.props.triggerUpdate()
         })
     }
 

@@ -13,7 +13,7 @@ class ProjectBuild extends React.Component {
             editedStep: 0
         }
 
-        this.addStep = this.addStep.bind(this)
+        // this.addStep = this.addStep.bind(this)
         // this.editStep = this.editStep.bind(this)
     }
 
@@ -37,16 +37,17 @@ class ProjectBuild extends React.Component {
         }
     }
 
-    addStep() {
-        let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
-        debugger
-        this.props.createStep(newStep).then( step => {
-            debugger
-            let { allSteps } = this.state;
-            let fullSteps = allSteps.push(step.step)
-            this.setState({ steps: fullSteps })
-        })      
-    }
+    // addStep() {
+    //     let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
+    //     debugger
+    //     this.props.createStep(newStep).then( step => {
+    //         debugger
+    //         let { allSteps } = this.state;
+    //         let fullSteps = allSteps.push(step.step)
+    //         this.setState({ steps: fullSteps })
+    //         this.forceUpdate()
+    //     })      
+    // }
 
     // editStep(stepId) {
     //     debugger
@@ -65,7 +66,7 @@ class ProjectBuild extends React.Component {
         const sortedSteps = this.state.allSteps.sort((a, b) => {
             return new Date(a.created_at) - new Date(b.created_at)
         }) 
-        let steps = sortedSteps?.map((step, idx) => {
+        let steps = this.state.allSteps?.map((step, idx) => {
             debugger
             return <StepBlurb
                 key={idx} 
@@ -81,7 +82,7 @@ class ProjectBuild extends React.Component {
                 <div className='steps'>
                     {steps}
                 </div>
-                <button className='add-step' onClick={() => this.addStep()}>Add Step</button>
+                <button className='add-step' onClick={() => this.props.addStep()}>Add Step</button>
             </ul>
         </div>
         )

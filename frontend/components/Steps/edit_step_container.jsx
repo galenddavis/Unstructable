@@ -10,24 +10,24 @@ class EditStepForm extends React.Component {
         this.state = {}
     }
 
-    componentDidMount() {
-        debugger
-        this.setState({
-            step: this.props.step
-        })
+    // componentDidMount() {
+    //     debugger
+    //     this.setState({
+    //         step: this.props.step
+    //     })
         // this.props.requestStep(this.props.stepId, this.props.projectId).then( step => {
         //     debugger
         //     console.log(step)
         //     this.setState({ step: step.step })
         // })
-    }
+    // }
 
     render() {
         debugger
-        const { updateStep, otherForm } = this.props
+        const { step, updateStep, otherForm } = this.props
         return (
             <StepForm 
-                step={this.state?.step}
+                step={this.props.step}
                 updateStep={updateStep}
                 otherForm={otherForm}
                 history={this.props.history} />
