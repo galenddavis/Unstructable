@@ -17,26 +17,26 @@ class ProjectBuild extends React.Component {
         // this.editStep = this.editStep.bind(this)
     }
 
-    componentDidMount() {
-        debugger
-        this.props.requestProject(this.props.project.id).then(project => {
-            debugger
-            this.setState({ project: project.project })
-            this.setState({ allSteps: project.steps})
-            // let { allSteps } = this.state
-            // let newSteps = allSteps.concat(project.project.steps)
-            // this.setState({ allSteps: newSteps })
-        })
-    }
+    // componentDidMount() {
+    //     debugger
+    //     this.props.requestProject(this.props.project.id).then(project => {
+    //         debugger
+    //         this.setState({ project: project.project })
+    //         this.setState({ allSteps: project.steps})
+    //         // let { allSteps } = this.state
+    //         // let newSteps = allSteps.concat(project.project.steps)
+    //         // this.setState({ allSteps: newSteps })
+    //     })
+    // }
 
-    componentDidUpdate(prevProps) {
-        debugger
-        if (this.props.steps !== prevProps.steps) {
-            this.setState({ project: this.props.project })
-            this.setState({ allSteps: this.props.steps })
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.steps !== prevProps.steps) {
+    //         this.setState({ project: this.props.project })
+    //         this.setState({ allSteps: this.props.steps })
             
-        }
-    }
+    //     }
+    // }
 
     // addStep() {
     //     let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
@@ -63,7 +63,9 @@ class ProjectBuild extends React.Component {
 
 
     render() {
-        const sortedSteps = this.state.allSteps?.sort((a, b) => {
+        debugger
+        // if (this.props.steps === []) return null
+        const sortedSteps = this.props.steps?.sort((a, b) => {
             return new Date(a.created_at) - new Date(b.created_at)
         }) 
         let steps = sortedSteps?.map((step, idx) => {

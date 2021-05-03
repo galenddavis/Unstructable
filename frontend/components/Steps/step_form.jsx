@@ -59,20 +59,24 @@ class StepForm extends React.Component {
         debugger
 
         return (
-            <div className='step-form'>
+            <div className='project-form-body'>
                 <span className='step-body'>
-                    <input 
+                    <input
+                        className='step-title-input' 
                         type="text"
                         value={this.state.title}
                         onChange={this.update('title')}
                     />
-                    <input 
+                    {/* <input 
                         type="text"
                         value={this.state.body}
                         onChange={this.update('body')}
-                        // onChange={e => this.props.update(e.target.value)}
-                    />
-                    <button onClick={() => this.saveStep(this.state)}>Save Step</button>
+                    /> */}
+                    <textarea 
+                        className='step-body-input' 
+                        value={this.state.body} 
+                        onChange={this.update('body')}></textarea>
+                    <button className='step-save-btn' onClick={() => this.saveStep(this.state)}>Save Step</button>
                 </span>
             </div>
         )

@@ -25,7 +25,7 @@ const App = () => (
 
             <Switch> 
                 <Route exact path="/" component={Index} />
-                <Route exact path="/:category" component={CategoryIndex} />
+                <Route exact path="/index/:category" component={CategoryIndex} />
                 <AuthRoute path="/login" component={login_form_container} />
                 <AuthRoute path="/signup" component={signup_form_container} />
                 <ProtectedRoute exact path="/create" component={project_create} />

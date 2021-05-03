@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import IndexItem from '../ navbar/index_item';
 
+
 class CategoryIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -50,6 +51,15 @@ class CategoryIndex extends React.Component {
 
         return (
             <div>
+                <span className='category-img'>
+                    <div className='banner-text'>
+                        <h1>YOURS FOR THE MAKING</h1>
+                        <p>A place for those who like the idea of creating</p>
+                        <p>without getting bogged down in the details</p>
+                    </div>
+                </span>
+
+                <h1 className='category-header'>Featured Projects <i className="fas fa-chevron-right"></i></h1>
                 <ul className='project-index'>
                     {projectList}
                 </ul>

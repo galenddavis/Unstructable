@@ -52,19 +52,19 @@ class EditProjectForm extends React.Component {
         if (!this.state.project) return null;
             
         return (
-            <div>
-                <h1>Hey Yall</h1>
-                <h1>{this.state?.project.id}</h1>
-                <h1>{this.state?.steps[0].title}</h1>
-            </div>
-            // <ProjectForm 
-            //     project={project}
-            //     requestProject={requestProject}
-            //     updateProject={updateProject}
-            //     deleteProject={deleteProject}
-            //     createStep={createStep}
-            //     updateStep={updateStep}
-            //     deleteStep={deleteStep}/>
+            // <div>
+            //     <h1>Hey Yall</h1>
+            //     <h1>{this.state?.project.id}</h1>
+            //     <h1>{this.state?.steps[0].title}</h1>
+            // </div>
+            <ProjectForm 
+                project={project}
+                requestProject={requestProject}
+                updateProject={updateProject}
+                deleteProject={deleteProject}
+                createStep={createStep}
+                updateStep={updateStep}
+                deleteStep={deleteStep}/>
         )
     }
 }

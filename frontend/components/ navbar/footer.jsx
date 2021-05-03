@@ -12,16 +12,16 @@ const Footer = () => (
                     <div className='categories'>
                         <label className='col-names'>Categories</label>
                             <Link to={{
-                                pathname: '/Circuits',
+                                pathname: '/index/Circuits',
                                 category: 'Circuits'}}><i className="fas fa-microchip"></i> Circuits</Link>
                             <Link to={{
-                                pathname: '/Workshop',
+                                pathname: '/index/Workshop',
                                 category: 'Workshop'}}><i className="fas fa-wrench"></i> Workshop</Link>
                             <Link to={{
-                                pathname: '/Crafts',
+                                pathname: '/index/Crafts',
                                 category: 'Crafts'}}><i className="fas fa-cut"></i> Crafts</Link>
                             <Link to={{
-                                pathname: '/Cooking',
+                                pathname: '/index/Cooking',
                                 category: 'Cooking'}}><i className="fas fa-blender"></i> Cooking</Link>
                     </div>
                 

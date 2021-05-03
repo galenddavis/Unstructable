@@ -19,13 +19,13 @@ class ProjectForm extends React.Component {
             currentForm: 1,
             editedStep: 0,
             project: {
-                id: props.project.id || 0,
-                title: props.project.title || '',
-                body: props.project.body || '', 
-                category: props.project.category || '',
-                views: props.project.views || 0,
-                favorites: props.project.favorites || 0,
-                creator_id: this.props.currentUser
+                // id: props.project.id || 0,
+                // title: props.project.title || '',
+                // body: props.project.body || '', 
+                // category: props.project.category || '',
+                // views: props.project.views || 0,
+                // favorites: props.project.favorites || 0,
+                // creator_id: this.props.currentUser
             },
             allSteps:[]
         }
@@ -43,13 +43,13 @@ class ProjectForm extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         this.setState({ project: this.props.project })
         this.setState({ allSteps: this.props.project.steps })
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+        // debugger
         if (this.props.project.steps !== prevProps.project.steps) {
             this.setState({ project: this.props.project })
             this.setState({ allSteps: this.props.project.steps })
@@ -58,11 +58,24 @@ class ProjectForm extends React.Component {
         }
     }
 
+    // otherForm(event) {
+    //     const otherForm = this.state.currentForm === 1 ? 2 : 1
+    //     this.setState({currentForm: otherForm}) 
+        
+    // }
+
     otherForm(event) {
-        const otherForm = this.state.currentForm === 1 ? 2 : 1
-        this.setState({currentForm: otherForm}) 
+        debugger
+        this.props.requestProject(this.props.project.id).then( project => {
+            debugger
+            this.setState({ project: project.project })
+            this.setState({ allSteps: project.project.steps })
+        })
+        this.setState({currentForm: 1}) 
         
     }
+
+
 
     updateCategory(event) {
         console.log(this.state)
@@ -80,9 +93,9 @@ class ProjectForm extends React.Component {
 
     addStep() {
         let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
-        debugger
+        // debugger
         this.props.createStep(newStep).then( step => {
-            debugger
+            // debugger
             let { allSteps } = this.state;
             let fullSteps = allSteps.push(step.step)
             this.setState({ steps: fullSteps })
@@ -90,15 +103,15 @@ class ProjectForm extends React.Component {
     }
 
     editStep(stepId) {
-        debugger
+        // debugger
         for (let i = 0; i < this.state.allSteps.length; i++) {
             if (this.state.allSteps[i].id === stepId) {
-                debugger
+                // debugger
                 this.setState({ editedStep: i})
                 break;
             }
         }
-        debugger
+        // debugger
         this.setState({ currentForm: 2})
     }
 
@@ -146,8 +159,7 @@ class ProjectForm extends React.Component {
         }
 
         // let headerButton = this.state.currentForm === 2 ? 
-        //     <button>Show All</button> : 
-        //     <button>Add Step</button>
+        //     <button onClick={this.otherForm}>Show All</button> : null
             
         return (
             <section>
