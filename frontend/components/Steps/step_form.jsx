@@ -6,16 +6,46 @@ class StepForm extends React.Component {
         super(props)
 
         this.state = {
-            title: '',
-            body: '',
-            project_id: ''
+            id: this.props.step?.id || '',
+            title: this.props.step?.title || '',
+            body: this.props.step?.body || '',
+            project_id: this.props.step?.project_id || ''
         }
 
         this.update = this.update.bind(this);
+        this.saveStep = this.saveStep.bind(this)
     }
 
-    componentWillUnmount() {
-        this.props.saveStep(this.state)
+    // componentDidMount() {
+    //     this.setState({
+    //         id: this.props.step?.id,
+    //         title: this.props.step?.title,
+    //         body: this.props.step?.body,
+    //         project_id: this.props.step?.project_id 
+    //     }) 
+    // }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.step !== prevProps.step) {
+    //         this.setState({
+    //             id: this.props.step?.id,
+    //             title: this.props.step?.title,
+    //             body: this.props.step?.body,
+    //             project_id: this.props.step?.project_id 
+    //         }) 
+    //     }
+    // }
+
+
+    saveStep(step) {
+        debugger
+        this.props.updateStep(step).then(step => {
+            debugger
+            // this.props.history.push(`project/edit/${step.step.project_id}`)
+            this.props.otherForm()
+            // this.props.triggerUpdate()
+        })
     }
 
     update(field) {
@@ -27,20 +57,26 @@ class StepForm extends React.Component {
 
     render() {
         debugger
-        let currentStep = this.props?.steps[this.props.state.currentStep]
+
         return (
-            <div className='step-form'>
+            <div className='project-form-body'>
                 <span className='step-body'>
-                    <input 
+                    <input
+                        className='step-title-input' 
                         type="text"
-                        value={currentStep.title}
+                        value={this.state.title}
                         onChange={this.update('title')}
                     />
-                    <input 
+                    {/* <input 
                         type="text"
-                        value={currentStep.body}
-                        onChange={e => this.props.update(e.target.value)}
-                    />
+                        value={this.state.body}
+                        onChange={this.update('body')}
+                    /> */}
+                    <textarea 
+                        className='step-body-input' 
+                        value={this.state.body} 
+                        onChange={this.update('body')}></textarea>
+                    <button className='step-save-btn' onClick={() => this.saveStep(this.state)}>Save Step</button>
                 </span>
             </div>
         )

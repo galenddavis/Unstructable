@@ -6,6 +6,11 @@ import {
     updateProject,  
     deleteProject 
     } from '../../actions/project_actions';
+import {
+    createStep,
+    updateStep,
+    deleteStep
+} from '../../actions/step_actions'
 import ProjectForm from './project_form'
 
 
@@ -14,39 +19,47 @@ class EditProjectForm extends React.Component {
         super(props)
 
         this.state = {
-            project: this.props.project
+            project: {},
+            steps: []
         }
     }
 
     componentDidMount() {
         debugger
-        this.props.requestProject(this.props.match.params.id).then(
+        // this.setState({ project: this.props.project })
+        // this.setState({ steps: this.props.steps })
+        this.props.requestProject(this.props.projectId).then(
             (res) => {
+                debugger
                 this.setState({ project: res.project })
+                this.setState({ steps: res.project.steps })
             } 
         )
-    }
-
-    componentDidUpdate() {
-        debugger
-        console.log(this.props)
     }
 
     render() {
         debugger
         const { project } = this.state
         const {
+            requestProject,
             updateProject,
             deleteProject, 
             createStep, 
             updateStep,
             deleteStep} = this.props
         
-        if (!project) return null;
-            debugger
+        if (!this.props.project) return null;
+        if (!this.state.project) return null;
+            
         return (
+            // <div>
+            //     <h1>Hey Yall</h1>
+            //     <h1>{this.state?.project.id}</h1>
+            //     <h1>{this.state?.steps[0].title}</h1>
+            // </div>
             <ProjectForm 
                 project={project}
+                requestProject={requestProject}
                 updateProject={updateProject}
                 deleteProject={deleteProject}
                 createStep={createStep}
@@ -58,9 +71,12 @@ class EditProjectForm extends React.Component {
 
 const mSTP = (state, ownProps) => {
     debugger
-    let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects : null;
+    let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects[ownProps.match.params.id] : null;
     return {
         project: project,
+        projectId: ownProps.match.params.id
+        // newStep: state.entities.steps,
+        // steps: project?.steps
     }
 }
 

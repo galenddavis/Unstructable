@@ -1,6 +1,6 @@
 class Step < ApplicationRecord
 
-    validates :body, :project_id, presence: true
+    validates :project_id, presence: true
 
     belongs_to :project,
         foreign_key: :project_id, 

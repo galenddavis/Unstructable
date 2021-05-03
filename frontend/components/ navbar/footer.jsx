@@ -9,31 +9,45 @@ const Footer = () => (
                 <span className='line-break'>
 
                     <img src={window.logoURL} alt=""/>
-                    <span className='foot-left'>
+                    <div className='categories'>
                         <label className='col-names'>Categories</label>
-                        
-                            <Link to='/'><i className="fas fa-microchip"></i> Circuits</Link>
-                            <Link to='/'><i className="fas fa-wrench"></i> Workshop</Link>
-                            <Link to='/'><i className="fas fa-cut"></i> Craft</Link>
-                            <Link to='/'><i className="fas fa-blender"></i> Cooking</Link>
-                            <Link to='/'><i className="fas fa-house-damage"></i> Living</Link>
-                            <Link to='/'><i className="fas fa-bicycle"></i> Outside</Link>
-                            <Link to='/'><i className="fas fa-journal-whills"></i> Teachers</Link>
-                        
-                    </span>
+                            <Link to={{
+                                pathname: '/index/Circuits',
+                                category: 'Circuits'}}><i className="fas fa-microchip"></i> Circuits</Link>
+                            <Link to={{
+                                pathname: '/index/Workshop',
+                                category: 'Workshop'}}><i className="fas fa-wrench"></i> Workshop</Link>
+                            <Link to={{
+                                pathname: '/index/Crafts',
+                                category: 'Crafts'}}><i className="fas fa-cut"></i> Crafts</Link>
+                            <Link to={{
+                                pathname: '/index/Cooking',
+                                category: 'Cooking'}}><i className="fas fa-blender"></i> Cooking</Link>
+                    </div>
                 
-                    <div className='info'>
+                    {/* <div className='info'>
                         <label className='col-names'>About Us</label>
                         <Link to='/'>Who Am I?</Link>
                         <Link to='/'>Why I Code</Link>
                         <Link to='/'>Jobs</Link>
-                    </div>
+                    </div> */}
                     
                     <div className='resources'>
                         <label className='col-names'>Resources</label>
-                        <Link to='/'><i className="fab fa-instagram"></i> Instagram</Link>
-                        <Link to='/'><i className="fab fa-linkedin"></i> LinkedIn</Link>
-                        <Link to='/'><i className="fas fa-envelope"></i> Email</Link>
+                        <a href="https://www.linkedin.com/in/galenddavis/" 
+                            target='_blank' 
+                            rel='noreferrer'>
+                                <i className="fab fa-linkedin"></i> LinkedIn</a>
+
+                        <a href="https://angel.co/u/galen-davis-1" 
+                            target='_blank' 
+                            rel='noreferrer'>
+                                <i className="fab fa-angellist"></i> AngelList</a>
+
+                        <a href="https://github.com/galenddavis" 
+                            target='_blank' 
+                            rel='noreferrer'>
+                                <i className="fab fa-github"></i> Github</a>
                     </div>
                 
             </span>

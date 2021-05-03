@@ -1,0 +1,62 @@
+
+.step-body {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    padding-top: 15px;
+    border: 1px solid #cccccc;
+
+
+    .step-title-input {
+        font-family: 'Roboto';
+        width: 95%;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        color: #555555;
+        height: 25px;
+        font-size: 18px;
+        font-weight: 600;
+        padding-left: 7px;
+        padding-top: 3px;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    
+    .step-body-input {
+        font-family: 'Roboto';
+        width: 95%;
+        min-height: 400px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        color: black;
+        height: 25px;
+        font-size: 14px;
+        font-weight: 400;
+        padding-left: 7px;
+        padding-top: 10px;
+        align-items: center;
+        // margin-bottom: 15px;
+        resize: none;
+    }
+
+    button {
+        margin: 20px 0px;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: 1px lightgrey solid;
+        background-color: #ea6c00;
+        color: white;
+    }
+
+    button:hover {
+        background-color: #d46a0d;
+    }
+    
+}
+
+

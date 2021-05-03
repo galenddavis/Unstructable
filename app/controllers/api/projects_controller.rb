@@ -3,8 +3,14 @@ require 'byebug'
 class Api::ProjectsController < ApplicationController
 
      def index
-      @projects = Project.all
-      render :index 
+      @category = params[:category]
+      if @category == ""
+         @projects = Project.all
+      else
+         @projects = Project.where(category: @category)
+
+      end
+      render :index
      end
 
      def show
@@ -17,9 +23,9 @@ class Api::ProjectsController < ApplicationController
      def create
         @project = Project.new(project_params)
         @project.creator_id = current_user.id
-      #   debugger
-    
+      #   
         if @project.save
+            @project.steps.create!(title: "Intro + Supplies (Click to Edit)", body: "")
             render :show
         else
             render json: @project.errors.full_messages, status: 422

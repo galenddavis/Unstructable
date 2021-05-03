@@ -44,13 +44,18 @@ class NavBar extends React.Component {
                     <span>
                         
                         <Link to='/'><i className="fas fa-house-damage"></i></Link>
-                        <Link to='/'>Circuits</Link>
-                        <Link to='/'>Workshop</Link>
-                        <Link to='/'>Craft</Link>
-                        <Link to='/'>Cooking</Link>
-                        <Link to='/'>Living</Link>
-                        <Link to='/'>Outside</Link>
-                        <Link to='/'>Teachers</Link>
+                        <Link to={{
+                            pathname: '/index/Circuits',
+                            category: 'Circuits'}}>Circuits</Link>
+                        <Link to={{
+                            pathname: '/index/Workshop',
+                            category: 'Workshop'}}>Workshop</Link>
+                        <Link to={{
+                            pathname: '/index/Crafts',
+                            category: 'Crafts'}}>Crafts</Link>
+                        <Link to={{
+                            pathname: '/index/Cooking',
+                            category: 'Cooking'}}>Cooking</Link>
                     </span> 
                     <span>
                         {authButtons}

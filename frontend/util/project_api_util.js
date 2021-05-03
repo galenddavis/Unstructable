@@ -1,17 +1,27 @@
-
-
-export const fetchProjects = () => {
+export const fetchFilteredProjects = (category) => {
     debugger
     return (
         $.ajax({
             method: 'GET',
-            url: '/api/projects'
+            url: '/api/projects',
+            data: {category}
+        })
+    )
+}
+
+export const fetchProjects = (category) => {
+    debugger
+    return (
+        $.ajax({
+            method: 'GET',
+            url: '/api/projects',
+            data: {category}
         })
     )
 }
 
 export const fetchProject = (projectId) => {
-    debugger
+    
     return (
         $.ajax({
             method: 'GET',
@@ -22,7 +32,7 @@ export const fetchProject = (projectId) => {
 }
 
 export const createProject = (project) => {
-    debugger
+    
     return $.ajax({
         method: 'POST',
         url: `/api/users/${project.creator_id}/projects`,

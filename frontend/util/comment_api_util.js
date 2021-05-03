@@ -1,5 +1,5 @@
 export const fetchAllComments = (projectId) => {
-    debugger
+    
     return $ajax({
         method: 'GET',
         url: `/api/projects/${projectId}/comments`
@@ -7,7 +7,7 @@ export const fetchAllComments = (projectId) => {
 }
 
 export const createComment = (comment) => {
-    debugger
+    
     return $.ajax({
         method: 'POST',
         url: `/api/projects/${comment.project_id}/comments`,

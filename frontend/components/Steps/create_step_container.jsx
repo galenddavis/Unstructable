@@ -2,14 +2,9 @@ import { connect } from 'react-redux';
 import { createStep, deleteStep } from '../../actions/step_actions';
 import StepForm from './step_form';
 
-const mSTP = (state) => {
-
+const mSTP = (state, ownProps) => {
+    debugger
     return {
-        step: {
-            title: '',
-            body: '',
-            project_id: ''
-        },
         formType: 'Create'
     }
 }

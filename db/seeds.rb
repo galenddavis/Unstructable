@@ -53,6 +53,48 @@ u5 = User.create!(
     location: 'Spain',
 )
 
+u6 = User.create!(
+    username: 'Robo-Bot',
+    password: 'password',
+    occupation: 'robot',
+    email: 'Robo-Bot@email.com',
+    location: 'Spain',
+)
+
+u7 = User.create!(
+    username: 'Robo-Bot',
+    password: 'password',
+    occupation: 'robot',
+    email: 'Robo-Bot@email.com',
+    location: 'Spain',
+)
+
+u8 = User.create!(
+    username: 'Robo-Bot',
+    password: 'password',
+    occupation: 'robot',
+    email: 'Robo-Bot@email.com',
+    location: 'Spain',
+)
+
+u9 = User.create!(
+    username: 'Robo-Bot',
+    password: 'password',
+    occupation: 'robot',
+    email: 'Robo-Bot@email.com',
+    location: 'Spain',
+)
+
+u10 = User.create!(
+    username: 'Robo-Bot',
+    password: 'password',
+    occupation: 'robot',
+    email: 'Robo-Bot@email.com',
+    location: 'Spain',
+)
+
+
+
 
 # ~~~~~~~~~~~~~~~~~~~Project 1~~~~~~~~~~~~~~~~~~~~
 

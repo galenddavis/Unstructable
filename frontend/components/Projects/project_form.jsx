@@ -3,143 +3,202 @@ import { Link } from 'react-router-dom';
 import ProjectBuild from './project_build';
 import ProjectSubmit from './project_submit';
 import StepForm from '../Steps/step_form';
+import CreateStep from '../Steps/create_step_container'
+import EditStep from '../Steps/edit_step_container'
 
 class ProjectForm extends React.Component {
     constructor(props) {
         super(props);
         
+        // this.state = {
+        //     currentForm: 1,
+        //     project: {},
+        //     steps: []
+        // }
         this.state = {
             currentForm: 1,
-            project: {},
-            steps: [{id: 0, title: "Intro + Supplies (Click to Edit)", body: "", project_id: ""}]
+            editedStep: 0,
+            project: {
+                // id: props.project.id || 0,
+                // title: props.project.title || '',
+                // body: props.project.body || '', 
+                // category: props.project.category || '',
+                // views: props.project.views || 0,
+                // favorites: props.project.favorites || 0,
+                // creator_id: this.props.currentUser
+            },
+            allSteps:[]
         }
         
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.update = this.update.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        // this.saveStep = this.saveStep.bind(this)
+        // this.updateCurrentStep = this.updateCurrentStep.bind(this)
+        // this.editStep = this.editStep.bind(this)
+        this.updateCategory = this.updateCategory.bind(this);
+        this.updateTitle = this.updateTitle.bind(this);
         this.otherForm = this.otherForm.bind(this);
+        this.editStep = this.editStep.bind(this);
+        
         this.addStep = this.addStep.bind(this);
-        this.saveStep = this.saveStep.bind(this)
-        this.editStep = this.editStep.bind(this)
-        this.updateCurrentStep = this.updateCurrentStep.bind(this)
     }
 
     componentDidMount() {
+        // debugger
         this.setState({ project: this.props.project })
-        let { steps } = this.state;
-        debugger
-        let fullSteps = steps.concat(this.props.project.steps)
-        this.setState({ steps: fullSteps })
+        this.setState({ allSteps: this.props.project.steps })
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        const project = this.state
-        this.props.createProject(project).then(this.props.history.push('/'))
+    componentDidUpdate(prevProps) {
+        // debugger
+        if (this.props.project.steps !== prevProps.project.steps) {
+            this.setState({ project: this.props.project })
+            this.setState({ allSteps: this.props.project.steps })
+            // console.log(this.state.allSteps)
+            // console.log(this.state.project)
+        }
     }
+
+    // otherForm(event) {
+    //     const otherForm = this.state.currentForm === 1 ? 2 : 1
+    //     this.setState({currentForm: otherForm}) 
+        
+    // }
 
     otherForm(event) {
-        const otherForm = this.state.currentForm === 1 ? 2 : 1
-        this.setState({currentForm: otherForm}) 
+        debugger
+        this.props.requestProject(this.props.project.id).then( project => {
+            debugger
+            this.setState({ project: project.project })
+            this.setState({ allSteps: project.project.steps })
+        })
+        this.setState({currentForm: 1}) 
         
     }
 
+
+
+    updateCategory(event) {
+        console.log(this.state)
+        let newState = Object.assign({}, this.state);
+        newState.project.category = event.target.value
+        this.setState({ newState })
+    }
+
+    updateTitle(event) {
+        console.log(this.state)
+        let newState = Object.assign({}, this.state);
+        newState.project.title = event.target.value
+        this.setState({ newState })
+    }
+
     addStep() {
-        const otherForm = this.state.currentForm === 1 ? 3 : 1
-        this.setState({currentForm: otherForm})
-        debugger
+        let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
+        // debugger
+        this.props.createStep(newStep).then( step => {
+            // debugger
+            let { allSteps } = this.state;
+            let fullSteps = allSteps.push(step.step)
+            this.setState({ steps: fullSteps })
+        })      
     }
 
-    saveStep(step) {
-        let { steps } = this.state;
-        debugger
-        steps.push(step);
-        this.setState({steps: steps})
-        this.setState({currentForm: 1})
-    }
-
-    editStep(step) {
-        const otherForm = this.state.currentForm === 1 ? 3 : 1
-        this.setState({currentForm: otherForm})
-    }
-
-    updateCurrentStep(index) {
-        this.setState({currentStep: index})
-        this.editStep(index)
-    }
-
-
-    update(field) {
-        return event => this.setState({ 
-            [field]: event.target.value
-        })
+    editStep(stepId) {
+        // debugger
+        for (let i = 0; i < this.state.allSteps.length; i++) {
+            if (this.state.allSteps[i].id === stepId) {
+                // debugger
+                this.setState({ editedStep: i})
+                break;
+            }
+        }
+        // debugger
+        this.setState({ currentForm: 2})
     }
 
     render() {
-        debugger
-        // let formLayout = <ProjectBuild 
-        //     currentForm={this.state.currentForm}
-        //     update={this.update}
-        //     otherForm={this.otherForm}
-        //     project={this.state.project}
-        //     steps={this.state.steps} />
         let formLayout
 
         if (this.state.currentForm === 1) {
-            debugger
+            
             formLayout = <ProjectBuild 
-                currentForm={this.state.currentForm}
-                // update={this.update}
+                requestProject={this.props.requestProject}
+                newStep={this.props.newStep}
                 otherForm={this.otherForm}
-                addStep={this.addStep}
+                createStep={this.props.createStep}
                 editStep={this.editStep}
-                updateCurrentStep={this.updateCurrentStep}
+                addStep={this.addStep}
+                
+                currentForm={this.state.currentForm}
                 project={this.state.project}
-                steps={this.state.steps} />
+                steps={this.state.allSteps} />
+                // update={this.update}
 
+        // } else if (this.state.currentForm === 2) {
+        //     formLayout = <ProjectSubmit 
+        //         currentForm={this.state.currentForm}
+        //         handleSubmit={this.handleSubmit}
+        //         otherForm={this.otherForm}
+        //         project={this.state.project} />
+
+        // } else if (this.state.currentForm === 2) {
+        //     formLayout = <CreateStep 
+        //         currentForm={this.state.currentForm}
+        //         createStep={this.props.createStep}
+        //         addStep={this.addStep}
+        //         otherForm={this.otherForm}
+        //         project={this.state.project}
+        //          />
         } else if (this.state.currentForm === 2) {
-            formLayout = <ProjectSubmit 
-                currentForm={this.state.currentForm}
-                handleSubmit={this.handleSubmit}
-                update={this.update}
+            formLayout = <EditStep 
+                updateStep={this.props.updateStep}
                 otherForm={this.otherForm}
-                project={this.state.project}
-                steps={this.state.steps} />
 
-        } else if (this.state.currentForm === 3) {
-            formLayout = <StepForm 
                 currentForm={this.state.currentForm}
-                update={this.update}
-                saveStep={this.saveStep}
-                otherForm={this.otherForm}
-                state={this.state}
-                project={this.state.project}
-                steps={this.state.steps} />
-        } 
+                currentStep={this.state.allSteps[this.state.editedStep]}
+                project={this.state.project} />
+        }
 
-        let headerButton = this.state.currentForm === 3 || 4 ? 
-            <button onClick={this.addStep}>Show All</button> : 
-            <button>Add Step</button>
-
+        // let headerButton = this.state.currentForm === 2 ? 
+        //     <button onClick={this.otherForm}>Show All</button> : null
+            
         return (
             <section>
-                <form>
+                <form className='project-form'>
                     <section className='project-form-head'>
                     {/* <span className='img-upload'>
                         <p>Click to Add Images</p>
                     </span> */}
-                    <div className='head-buttons'>
-                        <span className='left'>
 
+                    <div className='head-buttons'>
+
+                        {/* <span className='left'>
                             {headerButton}
-                            <button>More</button>
+                        </span> */}
+
+                        <input 
+                            type="text"
+                            value={this.state.title}
+                            // value={this.props.project.title}
+                            onChange={this.updateTitle}/>
+
+                        <span className='middle'>
+                        <select className='category'
+                            value={this.props.project.category}
+                            onChange={this.updateCategory}>
+                                <option value='Circuits'>Circuits</option>
+                                <option value='Workshop'>Workshop</option>
+                                <option value='Craft'>Craft</option>
+                                <option value='Cooking'>Cooking</option>
+                        </select>
                         </span>
+
                         <span className='right'>
-                            {/* <button>Save</button>  */}
                             <button 
-                                onClick={this.state.currentForm === 1 ? this.otherForm : this.handleSubmit} 
-                                className='publish'>{this.state.project?.title}
+                                onClick={this.handleSubmit} 
+                                className='publish'>Publish
                             </button>
                         </span>
+
                     </div>
                 </section>
                     {formLayout}
