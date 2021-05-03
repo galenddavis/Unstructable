@@ -11,10 +11,18 @@ const Footer = () => (
                     <img src={window.logoURL} alt=""/>
                     <div className='categories'>
                         <label className='col-names'>Categories</label>
-                            <Link to='/'><i className="fas fa-microchip"></i> Circuits</Link>
-                            <Link to='/'><i className="fas fa-wrench"></i> Workshop</Link>
-                            <Link to='/'><i className="fas fa-cut"></i> Craft</Link>
-                            <Link to='/'><i className="fas fa-blender"></i> Cooking</Link>
+                            <Link to={{
+                                pathname: '/Circuits',
+                                category: 'Circuits'}}><i className="fas fa-microchip"></i> Circuits</Link>
+                            <Link to={{
+                                pathname: '/Workshop',
+                                category: 'Workshop'}}><i className="fas fa-wrench"></i> Workshop</Link>
+                            <Link to={{
+                                pathname: '/Crafts',
+                                category: 'Crafts'}}><i className="fas fa-cut"></i> Crafts</Link>
+                            <Link to={{
+                                pathname: '/Cooking',
+                                category: 'Cooking'}}><i className="fas fa-blender"></i> Cooking</Link>
                     </div>
                 
                     {/* <div className='info'>

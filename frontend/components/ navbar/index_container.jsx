@@ -1,4 +1,4 @@
- import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { requestProjects } from '../../actions/project_actions';
 import Index from './index';
 
@@ -12,7 +12,7 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => ({
-    requestProjects: () => dispatch(requestProjects())
+    requestProjects: () => dispatch(requestProjects()),
 })
 
 export default connect(mSTP, mDTP)(Index)

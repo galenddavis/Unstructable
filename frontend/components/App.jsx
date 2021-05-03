@@ -13,6 +13,7 @@ import step_create from './Steps/create_step_container'
 import step_edit from './Steps/edit_step_container'
 import project_splash from './Projects/project-splash'
 import ProjectShow from './Projects/project_show_container'
+import CategoryIndex from './categories/category_index_container'
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
 
             <Switch> 
                 <Route exact path="/" component={Index} />
+                <Route exact path="/:category" component={CategoryIndex} />
                 <AuthRoute path="/login" component={login_form_container} />
                 <AuthRoute path="/signup" component={signup_form_container} />
                 <ProtectedRoute exact path="/create" component={project_create} />

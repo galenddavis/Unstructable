@@ -30,9 +30,16 @@ export const removeProjectErrors = () => ({
     type: REMOVE_ERRORS
 })
 
-export const requestProjects = () => dispatch => {
-    
-    return ProjectAPIUtil.fetchProjects().then(
+export const requestFilteredProjects = category => {
+    debugger
+    return ProjectAPIUtil.fetchFilteredProjects(category).then(
+        projects => dispatch(receiveAllProjects(projects))
+    )
+}
+
+export const requestProjects = (category = null) => dispatch => {
+    debugger
+    return ProjectAPIUtil.fetchProjects(category).then(
         projects => dispatch(receiveAllProjects(projects)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))
     )

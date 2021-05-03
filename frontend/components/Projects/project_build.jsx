@@ -22,17 +22,18 @@ class ProjectBuild extends React.Component {
         this.props.requestProject(this.props.project.id).then(project => {
             debugger
             this.setState({ project: project.project })
-            let { allSteps } = this.state
-            let newSteps = allSteps.concat(project.project.steps)
-            this.setState({ allSteps: newSteps })
+            this.setState({ allSteps: project.steps})
+            // let { allSteps } = this.state
+            // let newSteps = allSteps.concat(project.project.steps)
+            // this.setState({ allSteps: newSteps })
         })
     }
 
     componentDidUpdate(prevProps) {
         debugger
-        if (this.props.project !== prevProps.project) {
+        if (this.props.steps !== prevProps.steps) {
             this.setState({ project: this.props.project })
-            this.setState({ allSteps: this.props.project.steps })
+            this.setState({ allSteps: this.props.steps })
             
         }
     }
@@ -62,12 +63,10 @@ class ProjectBuild extends React.Component {
 
 
     render() {
-        debugger
-        const sortedSteps = this.state.allSteps.sort((a, b) => {
+        const sortedSteps = this.state.allSteps?.sort((a, b) => {
             return new Date(a.created_at) - new Date(b.created_at)
         }) 
-        let steps = this.state.allSteps?.map((step, idx) => {
-            debugger
+        let steps = sortedSteps?.map((step, idx) => {
             return <StepBlurb
                 key={idx} 
                 step={step}

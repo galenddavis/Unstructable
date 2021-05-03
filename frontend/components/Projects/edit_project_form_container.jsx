@@ -19,17 +19,20 @@ class EditProjectForm extends React.Component {
         super(props)
 
         this.state = {
-            project: this.props.project,
+            project: {},
+            steps: []
         }
     }
 
     componentDidMount() {
         debugger
         // this.setState({ project: this.props.project })
-        this.props.requestProject(this.props.match.params.id).then(
+        // this.setState({ steps: this.props.steps })
+        this.props.requestProject(this.props.projectId).then(
             (res) => {
-                console.log(res)
+                debugger
                 this.setState({ project: res.project })
+                this.setState({ steps: res.project.steps })
             } 
         )
     }
@@ -38,8 +41,6 @@ class EditProjectForm extends React.Component {
         debugger
         const { project } = this.state
         const {
-            steps,
-            newStep,
             requestProject,
             updateProject,
             deleteProject, 
@@ -47,19 +48,23 @@ class EditProjectForm extends React.Component {
             updateStep,
             deleteStep} = this.props
         
-        if (!project) return null;
+        if (!this.props.project) return null;
+        if (!this.state.project) return null;
             
         return (
-            <ProjectForm 
-                project={project}
-                steps={steps}
-                newStep={newStep}
-                requestProject={requestProject}
-                updateProject={updateProject}
-                deleteProject={deleteProject}
-                createStep={createStep}
-                updateStep={updateStep}
-                deleteStep={deleteStep}/>
+            <div>
+                <h1>Hey Yall</h1>
+                <h1>{this.state?.project.id}</h1>
+                <h1>{this.state?.steps[0].title}</h1>
+            </div>
+            // <ProjectForm 
+            //     project={project}
+            //     requestProject={requestProject}
+            //     updateProject={updateProject}
+            //     deleteProject={deleteProject}
+            //     createStep={createStep}
+            //     updateStep={updateStep}
+            //     deleteStep={deleteStep}/>
         )
     }
 }
@@ -69,8 +74,9 @@ const mSTP = (state, ownProps) => {
     let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects[ownProps.match.params.id] : null;
     return {
         project: project,
-        newStep: state.entities.steps,
-        steps: project?.steps
+        projectId: ownProps.match.params.id
+        // newStep: state.entities.steps,
+        // steps: project?.steps
     }
 }
 

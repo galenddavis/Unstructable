@@ -1,11 +1,21 @@
-
-
-export const fetchProjects = () => {
-    
+export const fetchFilteredProjects = (category) => {
+    debugger
     return (
         $.ajax({
             method: 'GET',
-            url: '/api/projects'
+            url: '/api/projects',
+            data: {category}
+        })
+    )
+}
+
+export const fetchProjects = (category) => {
+    debugger
+    return (
+        $.ajax({
+            method: 'GET',
+            url: '/api/projects',
+            data: {category}
         })
     )
 }

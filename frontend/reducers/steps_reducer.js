@@ -6,9 +6,11 @@ const stepsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_STEP:
+            debugger
             return Object.assign({}, newState, {[action.step.id]: action.step});
 
         case RECEIVE_ALL_STEPS:
+            debugger
             return action.steps
 
         case REMOVE_STEP:

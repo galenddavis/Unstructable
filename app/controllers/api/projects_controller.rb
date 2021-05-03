@@ -3,8 +3,14 @@ require 'byebug'
 class Api::ProjectsController < ApplicationController
 
      def index
-      @projects = Project.all
-      render :index 
+      @category = params[:category]
+      if @category == ""
+         @projects = Project.all
+      else
+         @projects = Project.where(category: @category)
+
+      end
+      render :index
      end
 
      def show

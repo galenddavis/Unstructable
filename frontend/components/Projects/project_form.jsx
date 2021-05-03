@@ -19,6 +19,7 @@ class ProjectForm extends React.Component {
             currentForm: 1,
             editedStep: 0,
             project: {
+                id: props.project.id || 0,
                 title: props.project.title || '',
                 body: props.project.body || '', 
                 category: props.project.category || '',
@@ -42,16 +43,16 @@ class ProjectForm extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
+        debugger
         this.setState({ project: this.props.project })
-        this.setState({ allSteps: this.props.steps })
+        this.setState({ allSteps: this.props.project.steps })
     }
 
     componentDidUpdate(prevProps) {
         debugger
-        if (this.props !== prevProps) {
+        if (this.props.project.steps !== prevProps.project.steps) {
             this.setState({ project: this.props.project })
-            this.setState({ allSteps: this.props.steps })
+            this.setState({ allSteps: this.props.project.steps })
             // console.log(this.state.allSteps)
             // console.log(this.state.project)
         }
@@ -85,7 +86,6 @@ class ProjectForm extends React.Component {
             let { allSteps } = this.state;
             let fullSteps = allSteps.push(step.step)
             this.setState({ steps: fullSteps })
-            this.forceUpdate()
         })      
     }
 
@@ -102,25 +102,22 @@ class ProjectForm extends React.Component {
         this.setState({ currentForm: 2})
     }
 
-    triggerUpdate() {
-        this.forceUpdate()
-    }
-
     render() {
         let formLayout
 
         if (this.state.currentForm === 1) {
             
             formLayout = <ProjectBuild 
-                currentForm={this.state.currentForm}
                 requestProject={this.props.requestProject}
                 newStep={this.props.newStep}
                 otherForm={this.otherForm}
                 createStep={this.props.createStep}
-                project={this.state.project}
                 editStep={this.editStep}
                 addStep={this.addStep}
-                triggerUpdate={this.triggerUpdate} />
+                
+                currentForm={this.state.currentForm}
+                project={this.state.project}
+                steps={this.state.allSteps} />
                 // update={this.update}
 
         // } else if (this.state.currentForm === 2) {
@@ -140,13 +137,12 @@ class ProjectForm extends React.Component {
         //          />
         } else if (this.state.currentForm === 2) {
             formLayout = <EditStep 
-                currentForm={this.state.currentForm}
-                // currentStep={this.state.editedStep}
-                currentStep={this.state.allSteps[this.state.editedStep]}
                 updateStep={this.props.updateStep}
                 otherForm={this.otherForm}
-                project={this.state.project}
-                triggerUpdate={this.triggerUpdate} />
+
+                currentForm={this.state.currentForm}
+                currentStep={this.state.allSteps[this.state.editedStep]}
+                project={this.state.project} />
         }
 
         // let headerButton = this.state.currentForm === 2 ? 
@@ -169,7 +165,8 @@ class ProjectForm extends React.Component {
 
                         <input 
                             type="text"
-                            value={this.props.project.title}
+                            value={this.state.title}
+                            // value={this.props.project.title}
                             onChange={this.updateTitle}/>
 
                         <span className='middle'>
@@ -192,7 +189,6 @@ class ProjectForm extends React.Component {
 
                     </div>
                 </section>
-
                     {formLayout}
                 </form>
             </section>
