@@ -69,3 +69,5 @@ class CategoryIndex extends React.Component {
 }
 
 export default CategoryIndex;
+
+

@@ -54,42 +54,42 @@ u5 = User.create!(
 )
 
 u6 = User.create!(
-    username: 'Robo-Bot',
+    username: 'Stanley',
     password: 'password',
     occupation: 'robot',
-    email: 'Robo-Bot@email.com',
+    email: 'Stanley@email.com',
     location: 'Spain',
 )
 
 u7 = User.create!(
-    username: 'Robo-Bot',
+    username: 'Rodger',
     password: 'password',
     occupation: 'robot',
-    email: 'Robo-Bot@email.com',
+    email: 'Rodger@email.com',
     location: 'Spain',
 )
 
 u8 = User.create!(
-    username: 'Robo-Bot',
+    username: 'Alicia',
     password: 'password',
     occupation: 'robot',
-    email: 'Robo-Bot@email.com',
+    email: 'Alicia@email.com',
     location: 'Spain',
 )
 
 u9 = User.create!(
-    username: 'Robo-Bot',
+    username: 'Sarah',
     password: 'password',
     occupation: 'robot',
-    email: 'Robo-Bot@email.com',
+    email: 'Sarah@email.com',
     location: 'Spain',
 )
 
 u10 = User.create!(
-    username: 'Robo-Bot',
+    username: 'Angie',
     password: 'password',
     occupation: 'robot',
-    email: 'Robo-Bot@email.com',
+    email: 'Angie@email.com',
     location: 'Spain',
 )
 
@@ -110,7 +110,7 @@ file1 = open('https://unstructable-seeds.s3.amazonaws.com/01_potato.jpg')
 p1.title_photo.attach(io: file1, filename: '01_potato.jpg')
 
 step10 = Step.create!(
-    title: "",
+    title: "Intro",
     body: "So my daughter's first grade class was building potato batteries, and 
     I wanted to make sure that he project put all those other kids in their place.
     Today I'll be showing you how to build a fully functional potato-media PC.",
@@ -118,7 +118,7 @@ step10 = Step.create!(
 )
 
 step11 = Step.create!(
-    title: "Get a Potato",
+    title: "Step 1 - Get a Potato",
     body: "Go into your kitchen and grab any old potato. Russet works best, but any will do. 
     If you can sneak out more than one, great!, but even just a single Idaho should output enough power 
     to power the equivalent of a raspberry pi.",
@@ -126,7 +126,7 @@ step11 = Step.create!(
 )
 
 step12 = Step.create!(
-    title: "Google how to build a computer",
+    title: "Step 2 - Google how to build a computer",
     body: "Computers are complex beasts, and if you aren't sure how they're put together, then you 
     might need to do a little research into how all the parts fit together. For instance, It didn't 
     occur to me that I would need a chipset to make this work. Allocate plenty of time to carve one 
@@ -135,7 +135,7 @@ step12 = Step.create!(
 )
 
 step13 = Step.create!(
-    title: "Figure out how much power your potato can handle",
+    title: "Step 3 - Figure out how much power your potato can handle",
     body: "Now we've got the fun stuff. It's time to figure out how much juice we can run through our 
     little spuddy without french frying him. For instance, when I plugged my little tater into wall power, 
     it toasted him, and also blew the circuit breaker for half of my apartment complex. ",
@@ -143,7 +143,7 @@ step13 = Step.create!(
 )
 
 step14 = Step.create!(
-    title: "Do some research into how much raspberry pi's cost",
+    title: "Step 4 - Do some research into how much raspberry pi's cost",
     body: "This is taking longer than I thought. I think I might need to rethink how viable this whole 
     project actually is. Raspberry Pi's apparently can be used to set up a decent little home theater 
     system. After burning through a couple pounds of potatos and setting a small fire, I think my wife 
@@ -152,7 +152,7 @@ step14 = Step.create!(
 )
 
 step15 = Step.create!(
-    title: "Google how to set up your new Raspberry Pi as a home media system",
+    title: "Step 5 - Google how to set up your new Raspberry Pi as a home media system",
     body: "I had to google this. Who would have thought that even setting up a new PC would be this difficult. 
     If anyone has any experience setting up speaker systems, plz comment below. I'm out of my depth here.",
     project_id: p1.id,
@@ -175,10 +175,52 @@ p2.title_photo.attach(io: file2, filename: '02_robot.png')
 
 step20 = Step.create!(
     title: '',
-    body: "Boy am I bad at math, but I'm ok at programming so I figured I'd write 
-    up a quick python program to do my taxes for me. How hard could it be?",
+    body: "Tax season is back again, but I everybody's gotta pay the piper. 
+    I was sick and tired of going through old receipts and plugging them into turbotax, 
+    so I figured, why not work up a quick bot that could do it for me. 
+    Boy am I bad at math, but I figured I'd write up a quick python program to do my taxes for me. 
+    How hard could it be?",
     project_id: p2.id,
 )
+
+step21 = Step.create!(
+    title: 'Step 1 Learn to code',
+    body: "First things first, Let's pick a coding language. I think that for my pruposes, 
+    Python makes the most sense. It seems versitile and from what the forums say, people have assured me 
+    that it's pretty easy to pick up. they told me that I needed to download something called vscode 
+    first.",
+    project_id: p2.id,
+)
+
+step22 = Step.create!(
+    title: 'Step 2 Continue learning to code',
+    body: "Ok, so it turns out that learning to code a program to file my taxes is harder than I thought. 
+    I've gotten a basic 'Hello World' program down, and I think that I'm getting close, but it's tricky. 
+    Definitely not as easy as those idiots on the message boards made it sound. I'm starting to think 
+    that this is a bad idea.",
+    project_id: p2.id,
+)
+
+step23 = Step.create!(
+    title: 'Step 3 Finally figured it out',
+    body: "So it's been about four years since I began this project, and now I owe four years of back 
+    taxes to the IRS, but I've finally cracked it. I've learned Python and finally got my project in a 
+    place where I can pass in my tax forms and get back a fully formatted tax return. If I can still find 
+    all my old tax documents, this is going to be a breeze. ",
+    project_id: p2.id,
+)
+
+step24 = Step.create!(
+    title: 'Step 4 Maybe just hire someone to do your taxes',
+    body: "I'm writing this from the library in prison. Turns out all the back taxes that I turned in 
+    after being processed by Taxy, my tax-bot, were egrigiously incorrect. I was arrested for tax fraud 
+    and I'm serving a four year prison sentence. I definitely think that this was a great learnig experience 
+    for me, but I'd recommend to any readers out there, just use one of the many existing tax softwares, 
+    or hire someone to do them for you. ",
+    project_id: p2.id,
+)
+
+
 
 
 # ~~~~~~~~~~~~~~~~~~~Project 3~~~~~~~~~~~~~~~~~~~~
@@ -195,10 +237,43 @@ file3 = open('https://unstructable-seeds.s3.amazonaws.com/03_dashboard.jpg')
 p3.title_photo.attach(io: file3, filename: '03_dashboard.jpg')
 
 step30 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "Have you ever looked at your car's dashboard and thought it was just super boring?
     I'm here to show you how, with just a few cheap ingredients, you can spruce up your
     vehicle!",
+    project_id: p3.id,
+)
+
+step30 = Step.create!(
+    title: 'Step 1 Clean off your car dashboard',
+    body: "First things first, you're going to want to start with a clean, empty dash. Take some time and 
+    clear out any dust, old CDs, air fresheners that you might have laying around, and if you have the 
+    initiative, maybe even give the thing a once over with a vacuum.",
+    project_id: p3.id,
+)
+
+step30 = Step.create!(
+    title: 'Step 2 Sand',
+    body: "The first key ingredient to any desert scene is sand. You're going to want to grab some dirt 
+    from outside your house and mix it with equal parts sand that you can pick up at any old craft store. 
+    While you're there, pick up any set dressing that you might want for your scene. 
+    Pro tip** A few small cacti can really bring the whole scene together. Most nursuries carry them for 
+    cheap. ",
+    project_id: p3.id,
+)
+
+step30 = Step.create!(
+    title: 'Step 3 Let your creativity flow!',
+    body: "Now that you have your base set down above the passenger seat, you can flex those creative muscles 
+    and begin to arrange whatever decorations you decided to pick up. As you can see from my photo above, I 
+    decided to go simple with some small rocks and shells from my garden and the nearby beach. I also placed a few 
+    small cacti and succulents to really bring the space to life. Go nuts!",
+    project_id: p3.id,
+)
+
+step30 = Step.create!(
+    title: 'Step 4 Disclaimer **Important**',
+    body: "",
     project_id: p3.id,
 )
 
