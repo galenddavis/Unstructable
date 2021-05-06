@@ -983,21 +983,11 @@ step120 = Step.create!(
 
 step121 = Step.create!(
     title: 'Step 1 - Get bricks',
-    body: "",
+    body: "Bricks are everywhere. Head out and find some.",
     project_id: p12.id,
 )
 
-step122 = Step.create!(
-    title: '',
-    body: "Build cheap and easy shelves out of extra bricks",
-    project_id: p12.id,
-)
 
-step123 = Step.create!(
-    title: '',
-    body: "Build cheap and easy shelves out of extra bricks",
-    project_id: p12.id,
-)
 
 # ~~~~~~~~~~~~~~~~~~~Project 13~~~~~~~~~~~~~~~~~~~~
 
