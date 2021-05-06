@@ -18,7 +18,7 @@ const mDTP = dispatch => {
     return {
         requestProject: projectId => dispatch(requestProject(projectId)),
         updateProject: project => dispatch(updateProject(project)),
-        deleteProject: projectId => dispatch(deleteProject(projectId)),
+        deleteProject: project => dispatch(deleteProject(project)),
         createComment: comment => dispatch(createComment(comment)),
         deleteComment: commentId => dispatch(deleteComment(commentId))
         

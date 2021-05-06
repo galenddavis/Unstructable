@@ -9,9 +9,9 @@ class IndexItem extends React.Component {
     }
 
     render() {
-        const { project } = this.props
+        const { project, goToProject } = this.props
         return (
-            <li className='project'>
+            <li className='project' onClick={() => goToProject(project.id)}>
                 <div className='thumbnail'>
                     <img src={project.photoUrl} alt=""/>
                 </div>

@@ -42,10 +42,15 @@ class Api::ProjectsController < ApplicationController
      end
 
      def destroy
-        @project = Project.find(params[:id])
-        @project.destroy
-
-        render :show
+      @project = Project.find(params[:id])
+      if @project.destroy
+         # @project.title_photo.destroy
+         @project.steps.each do |step|
+   
+            step.destroy!
+         end
+      end
+      render :show
      end
 
      private

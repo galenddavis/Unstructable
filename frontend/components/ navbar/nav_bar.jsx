@@ -13,7 +13,7 @@ class NavBar extends React.Component {
     dummyLogin(event) {
         event.preventDefault();
         const user = {
-            username: 'guest',
+            username: 'Buster',
             password: 'password',
             occupation: 'robot',
             email: 'sample@email.com',
@@ -31,7 +31,9 @@ class NavBar extends React.Component {
 
         const authButtons = loggedIn ? 
         ( <div className='userAuth'>
-                <UseDropDown logout={logout} className='drop-down'/>
+                <UseDropDown 
+                    logout={logout}
+                    className='drop-down'/>
         </div>) : ( <div className='login-logout'>
             <Link to='/login' className='userAuth'>Log In</Link>
             <Link to='/signup' className='userAuth'>Sign Up</Link>
@@ -74,14 +76,14 @@ class NavBar extends React.Component {
                     </span>
                     <span className='head-right'>
                         <Link to="/create" className='right-side'>PUBLISH</Link>
-                        <input 
+                        {/* <input 
                         type="search" 
                         placeholder="Let's Make..."
                         className='search-bar'
-                        />
-                        <button>
+                        /> */}
+                        {/* <button>
                             <i className="fas fa-search"></i>
-                        </button>
+                        </button> */}
 
                         
                     </span>

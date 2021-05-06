@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 .project-show {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     align-content: center;
@@ -12,6 +14,7 @@
     img {
         border-radius: 5px;
         margin-bottom: 25px;
+        max-height: 500px;
     }
 
     .stats {
@@ -47,11 +50,12 @@
     }
 
     h3 {
-        width: 800px;
+        // width: 800px;
+        max-width: 50%;
     }
 
     .project-plugs {
-        // width: 50%;
+        min-width: 45%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -84,7 +88,53 @@
             width: 80px;
             border-radius: 0px;
         }
+    }   
+}
+
+.steps-list div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creator-buttons {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    
+    button {
+        padding: 20px 32px;
     }
 
-    
+    * {
+        font-size: 15px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9c666;
+        width: 60px;
+        height: 40px;
+        border: 2px solid #ebba6a;
+        border-radius: 5px;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    *:hover {
+        background-color: #fab534;
+    }
+
+    *:active {
+        outline: none;
+    }
+
 }
+

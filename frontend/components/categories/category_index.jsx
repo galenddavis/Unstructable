@@ -11,6 +11,7 @@ class CategoryIndex extends React.Component {
             projects: [],
             category: ''
         }
+        this.goToProject = this.goToProject.bind(this);
     }
 
     componentDidMount() {
@@ -37,6 +38,10 @@ class CategoryIndex extends React.Component {
         }
     }
 
+    goToProject(projectId) {
+        this.props.history.push(`/project/${projectId}`)
+    }
+
     render() {
         debugger
         let {projects} = this.props;
@@ -45,6 +50,7 @@ class CategoryIndex extends React.Component {
         const projectList = this.state.projects === [] ? null : Object.values(this.state.projects).map((project) => {
             return <IndexItem 
             key={project.id}
+            goToProject={this.goToProject}
             project={project}
             />
         })

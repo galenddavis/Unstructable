@@ -6,7 +6,7 @@ const StepShow = ({ step, number }) => {
     return (
         <div className="step">
             <h1 className='step-title'>Step {number}: {step.title}</h1>
-            <h3 className='step-body'>{step.body}</h3>
+            <h3>{step.body}</h3>
         </div>
     )
 }

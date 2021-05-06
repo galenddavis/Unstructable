@@ -2,16 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments-form {
+    min-width: 45%;
+}
+
 .comment-create {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    min-width: 100%;
     height: 200px;
     border: 1px lightgray solid;
     border-radius: 6px;
     background-color: #f6f6f6;
-    margin-left: 85px;
+    margin-top: 50px;
 
     .be-nice {
         margin: 0px;
@@ -61,8 +71,8 @@
 
 .comment-index {
     margin-top: 45px;
-    margin-left: 85px;
-    width: 80%;
+    // margin-left: 85px;
+    min-width: 45%;
     display: flex;
     flex-direction: column-reverse;
 

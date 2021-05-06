@@ -72,6 +72,16 @@
     flex-wrap: wrap;
     height: 100%;
     justify-content: center;
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 .project {

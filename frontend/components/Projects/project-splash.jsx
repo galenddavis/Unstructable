@@ -9,7 +9,7 @@ class ProjectSplash extends React.Component {
 
         this.state = {
                 title: '', 
-                category: '',
+                category: 'Circuits',
                 views: 0,
                 favorites: 0,
                 creator_id: this.props.currentUser

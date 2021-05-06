@@ -16,7 +16,7 @@ class StepBlurb extends React.Component {
     render() {
         const { step, index } = this.props;
         return (
-            <li className='step-blurb'>
+            <li className='step-blurb' onClick={() => this.props.editStep(step.id)}>
                 <span className='img-upload'>
                     <input type="file"/>
                     <p>Drag Images From Top Bar</p>
@@ -28,7 +28,7 @@ class StepBlurb extends React.Component {
                             stepId: step.id,
                             projectId: step.project_id,
                             }}>{step?.title}</Link> </p> */}
-                        <p onClick={() => this.props.editStep(step.id)}>{step?.title}</p>
+                        <p>{step?.title}</p>
                     </span>
                     <div className='symbols'>
                         <i className="fas fa-chevron-right"></i>

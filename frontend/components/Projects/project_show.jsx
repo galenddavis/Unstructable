@@ -16,31 +16,16 @@ class ProjectShow extends React.Component {
         }
 
         this.commentSave = this.commentSave.bind(this);
+        this.deleteProject = this.deleteProject.bind(this);
     }
 
     componentDidMount() {
-        debugger
         this.props.requestProject(this.props.match.params.id).then((project) => {
-            debugger
             this.setState({ project: project.project })
             this.setState({ comments: project.project.comments })
         }
         )
     }
-    
-    // componentDidUpdate(prevProps) {
-    //     
-    //     // if (prevProps.project === undefined || this.props.project.comments.length > prevProps.project.comments.length) {
-    //     if (this.props.comment.length !== prevProps.comment.length) {
-    //         
-    //         let comments = this.state.comments;
-    //         let newComment = this.props.comment;
-    //         let newComments = comments.concat(newComment)
-    //         
-    //         this.setState({ comments: newComments})
-    //     }
-    //     
-    // }
 
     commentSave(comment) {
         
@@ -55,8 +40,16 @@ class ProjectShow extends React.Component {
         )
     }
 
-    render() {
+    deleteProject(project) {
         debugger
+        this.props.deleteProject(project).then( res => {
+            debugger
+            this.props.history.push('/')
+        })
+    }
+
+    render() {
+        
         if (this.props.project === undefined) return null;
         const { project } = this.props
 
@@ -83,7 +76,15 @@ class ProjectShow extends React.Component {
                 comment={comment}
                 />
         })
-        
+
+        const creatorButtons = this.props.currentUser === project.creator.id ? 
+            <div className='creator-buttons'>
+                <button onClick={() => this.deleteProject(this.state.project)} >Delete</button>
+                {/* <Link to={`/project/edit/${this.props.project.id}`}>Delete</Link> */}
+                <Link to={`/project/edit/${this.props.project.id}`}>Edit</Link>
+            </div> :
+            null
+        debugger
         return (
             <div className='project-show'>
                 <div className='project-header'>
@@ -92,8 +93,9 @@ class ProjectShow extends React.Component {
                         <p>By {project.creator?.username} in {project.category}</p>
                         <p><i className="fas fa-eye" id='views'></i> {project.views}</p>
                         <p><i className="fas fa-heart" id='favorites'></i> {project.favorites}</p>
-
                     </div>
+                    {creatorButtons}
+
                     <img src={project.photoUrl} alt="potato"/>
                     <section className='project-plugs'>
                         <p>By {project.creator?.username} </p>
@@ -102,14 +104,19 @@ class ProjectShow extends React.Component {
                             <ul className='other-projects'>{userProjects}</ul>
                         </div>
                     </section>
+                </div>
+
+                <div className='project-main-body'>
                     <h3>{project.body}</h3>
 
-                    <section>
+                    <section className='steps-list'>
                         {/* <StepIndex /> */}
                         {steps}
                     </section>
 
-                    <section>
+                </div>
+                <div className='comment-section'>
+                    <section className='comments-form'>
                         <CommentForm 
                             projectId={project.id}
                             writerId={this.props.currentUser}

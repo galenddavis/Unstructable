@@ -36,11 +36,28 @@
     .head-buttons {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         align-content: flex-start;
+        font-family: 'Roboto';
+
+        input {
+            height: 30px;
+            // height: 100%;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        input:active {
+            outline: none;
+        }
+
+        select {
+            height: 35px;
+        }
 
         button {
             margin: 5px 4px;
-            padding: 8px;
+            padding: 10px;
             font-size: 14px;
             border-radius: 4px;
             border: 1px lightgrey solid;

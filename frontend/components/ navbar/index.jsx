@@ -11,11 +11,11 @@ class Index extends React.Component {
             projects: []
         }
 
+        this.goToProject = this.goToProject.bind(this);
         
     }
 
     componentDidMount() {
-        
         this.props.requestProjects()
     }
 
@@ -25,11 +25,16 @@ class Index extends React.Component {
         }
     }
 
+    goToProject(projectId) {
+        this.props.history.push(`/project/${projectId}`)
+    }
+
     render () {
         
         const projectList = this.state.projects === undefined ? null : this.state.projects.map((project) => {
             return <IndexItem 
             key={project.id}
+            goToProject={this.goToProject}
             project={project}
             />
         })

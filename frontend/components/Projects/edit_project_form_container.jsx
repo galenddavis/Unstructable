@@ -22,6 +22,9 @@ class EditProjectForm extends React.Component {
             project: {},
             steps: []
         }
+
+        this.publish = this.publish.bind(this)
+
     }
 
     componentDidMount() {
@@ -35,6 +38,15 @@ class EditProjectForm extends React.Component {
                 this.setState({ steps: res.project.steps })
             } 
         )
+    }
+
+    publish(project) {
+        debugger
+        this.props.updateProject(project).then(project => {
+            debugger
+            this.props.history.push(`/project/${project.project.id}`)
+            // console.log(project)
+        })
     }
 
     render() {
@@ -64,7 +76,8 @@ class EditProjectForm extends React.Component {
                 deleteProject={deleteProject}
                 createStep={createStep}
                 updateStep={updateStep}
-                deleteStep={deleteStep}/>
+                deleteStep={deleteStep}
+                publish={this.publish} />
         )
     }
 }
