@@ -102,7 +102,6 @@ u10 = User.create!(
 p1 = Project.create!(
     title: 'Build a DIY Computer out of a Potato',
     favorites: 15,
-    body: '1',
     views: 38,
     category: 'Circuits',
     creator_id: u1.id,
@@ -185,7 +184,6 @@ c3 = Comment.create!(
 p2 = Project.create!(
     title: 'Build a program to file your taxes.',
     favorites: 0,
-    body: '1',
     views: 106,
     category: 'Circuits',
     creator_id: u2.id,
@@ -270,7 +268,6 @@ c7 = Comment.create!(
 p3 = Project.create!(
     title: 'Decorate your car Dashboard',
     favorites: 1,
-    body: '1',
     views: 98,
     category: 'Crafts',
     creator_id: u3.id,
@@ -347,7 +344,6 @@ c10 = Comment.create!(
 p4 = Project.create!(
     title: 'Turn your old jeans into a chair',
     favorites: 5,
-    body: '1',
     views: 16,
     category: 'Workshop',
     creator_id: u4.id,
@@ -431,7 +427,6 @@ c14 = Comment.create!(
 p5 = Project.create!(
     title: "Homemade Peanut M&Ms",
     favorites: 150,
-    body: '1',
     views: 348,
     category: 'Cooking',
     creator_id: u3.id,
@@ -513,7 +508,6 @@ c16 = Comment.create!(
 p6 = Project.create!(
     title: 'Grow your own Vegetables at home',
     favorites: 45,
-    body: '1',
     views: 67,
     category: 'Cooking',
     creator_id: u2.id,
@@ -595,7 +589,6 @@ c18 = Comment.create!(
 p7 = Project.create!(
     title: 'Convert desk into standing desk',
     favorites: 0,
-    body: '1',
     views: 2,
     category: 'Workshop',
     creator_id: u5.id,
@@ -683,7 +676,6 @@ c21 = Comment.create!(
 p8 = Project.create!(
     title: 'Refinish an old side table',
     favorites: 19,
-    body: '1',
     views: 53,
     category: 'Workshop',
     creator_id: u2.id,
@@ -765,7 +757,6 @@ c25 = Comment.create!(
 p9 = Project.create!(
     title: 'Repurpose dolls as planters',
     favorites: 5,
-    body: '1',
     views: 0,
     category: 'Crafts',
     creator_id: u1.id,
@@ -838,7 +829,6 @@ c28 = Comment.create!(
 p10 = Project.create!(
     title: 'Stylish plastic sunglasses',
     favorites: 1,
-    body: '1',
     views: 1,
     category: 'Crafts',
     creator_id: u5.id,
@@ -913,7 +903,6 @@ c31 = Comment.create!(
 p11 = Project.create!(
     title: 'Create a flashy, creative lampshade',
     favorites: 10,
-    body: '1',
     views: 500,
     category: 'Crafts',
     creator_id: u8.id,
@@ -975,7 +964,6 @@ c33 = Comment.create!(
 p12 = Project.create!(
     title: 'Build your own shelves',
     favorites: 150,
-    body: '1',
     views: 200,
     category: 'Workshop',
     creator_id: u9.id,
@@ -1045,7 +1033,6 @@ c35 = Comment.create!(
 p13 = Project.create!(
     title: 'Create outlet cord hanger',
     favorites: 0,
-    body: '1',
     views: 200,
     category: 'Circuits',
     creator_id: u5.id,
@@ -1066,7 +1053,6 @@ step130 = Step.create!(
 p14 = Project.create!(
     title: 'DIY water hose',
     favorites: 5,
-    body: '1',
     views: 9,
     category: 'Cooking',
     creator_id: u6.id,
@@ -1086,7 +1072,6 @@ step140 = Step.create!(
 p15 = Project.create!(
     title: 'Holiday Snowman cakes',
     favorites: 25,
-    body: '1',
     views: 57,
     category: 'Cooking',
     creator_id: u4.id,
@@ -1106,7 +1091,6 @@ step150 = Step.create!(
 p16 = Project.create!(
     title: 'How to install your new CPU',
     favorites: 2,
-    body: '1',
     views: 6,
     category: 'Circuits',
     creator_id: u10.id,
