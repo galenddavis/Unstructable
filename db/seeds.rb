@@ -983,11 +983,50 @@ step120 = Step.create!(
 
 step121 = Step.create!(
     title: 'Step 1 - Get bricks',
-    body: "Bricks are everywhere. Head out and find some.",
+    body: "First things that you need for this project is a bunch of bricks. There everywhere. You 
+    can get them at home depot or most local hardware stores. Heck, if you go out late at night, 
+    you can even sneak into a construction site and grab as many as you want. You'll need about 25, 
+    give or take, for the base, and then as many as you want for whatever height that you want to reach.",
     project_id: p12.id,
 )
 
+step122 = Step.create!(
+    title: 'Step 2 - Lay the foundation',
+    body: "Ok, so now that you have the bricks, we're going to start laying out our foundation. You can 
+    cement them together if you want, but in my experience, it's unnecessary. I layed mine out in a easy 
+    12 x 6  square and filled in the center with more bricks. Definitely make the bricks flush with each 
+    other.",
+    project_id: p12.id,
+)
 
+step123 = Step.create!(
+    title: 'Step 3 - Build up the sides',
+    body: "Now that you have the fountation, it's time to begin building up the sides. Decide how high 
+    that you want to go, and then get stacking! Make sure that the bricks are flush, and then just make 
+    your way upwards.",
+    project_id: p12.id,
+)
+
+step124 = Step.create!(
+    title: 'Step 4 - Tweak your liking',
+    body: "Ok, so once you've got it as high as you'd like, you can add on whatever structures you'd like. 
+    I set up a bar so that I could hang my dress shirts on. Let me know what you did to customize your 
+    shelves!",
+    project_id: p12.id,
+)
+
+c34 = Comment.create!(
+    body: "that shit is ugly, but honestly, if I went to a dudes dorm and saw this, I wouldn't be 
+    surprised",
+    writer_id: u7.id,
+    project_id: p12.id
+)
+
+c35 = Comment.create!(
+    body: "i think i'm just gonna go to ikea",
+    writer_id: u7.id,
+    project_id: p12.id
+)
 
 # ~~~~~~~~~~~~~~~~~~~Project 13~~~~~~~~~~~~~~~~~~~~
 
@@ -1004,7 +1043,8 @@ p13.title_photo.attach(io: file13, filename: '13_cords.png')
 
 step130 = Step.create!(
     title: '',
-    body: "Hang long cords from outlet hooks",
+    body: "So in my kitchen, I often have my phone in front of me when I cook so I can follow a recipe, 
+    or watch something, but I don't have a ton of counter space. When I want to watch something ",
     project_id: p13.id,
 )
 
