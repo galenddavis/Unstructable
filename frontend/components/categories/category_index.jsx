@@ -15,24 +15,24 @@ class CategoryIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         // this.setState({ category: this.props.category })
         let category = this.props.category
-        debugger
+        
         this.props.requestProjects(category).then( projectList => {
-            debugger
+            
             this.setState({ projects: projectList.projects })
         })
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+        
         if (this.props.category !== prevProps.category) {
             this.setState({ category: this.props.category })
-            debugger
+            
             let category = this.props.category
             this.props.requestProjects(category).then( projectList => {
-                debugger
+                
                 this.setState({ projects: Object.values(projectList.projects) })
             })
         }
@@ -43,7 +43,7 @@ class CategoryIndex extends React.Component {
     }
 
     render() {
-        debugger
+        
         let {projects} = this.props;
         if (!projects) return null;
 

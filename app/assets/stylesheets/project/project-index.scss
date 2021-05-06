@@ -113,6 +113,15 @@
     
 }
 
+.main-image{
+    background-image: url('/splash-pic.jpg');
+    overflow: hidden;
+    background-size: cover;
+    background-position-x: left;
+    background-position-y: bottom;
+    align-items: center;
+}
+
 .category-img {
     width: 100%;
     height: 400px;

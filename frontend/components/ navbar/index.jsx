@@ -42,7 +42,6 @@ class Index extends React.Component {
         return (
         <div className='body'>
             <span className='main-image'>
-                <img src={window.feature} alt="" />
             </span>
 
             <section className='feat-text'>

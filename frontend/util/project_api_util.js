@@ -1,5 +1,5 @@
 export const fetchFilteredProjects = (category) => {
-    debugger
+    
     return (
         $.ajax({
             method: 'GET',
@@ -10,7 +10,7 @@ export const fetchFilteredProjects = (category) => {
 }
 
 export const fetchProjects = (category) => {
-    debugger
+    
     return (
         $.ajax({
             method: 'GET',
@@ -49,7 +49,7 @@ export const updateProject = (project) => (
 )
 
 export const deleteProject = (project) => {
-    debugger
+    
     return $.ajax({
         method: 'DELETE',
         url: `/api/users/${project.creator.id}/projects/${project.id}`

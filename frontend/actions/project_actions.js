@@ -31,14 +31,14 @@ export const removeProjectErrors = () => ({
 })
 
 export const requestFilteredProjects = category => {
-    debugger
+    
     return ProjectAPIUtil.fetchFilteredProjects(category).then(
         projects => dispatch(receiveAllProjects(projects))
     )
 }
 
 export const requestProjects = (category = null) => dispatch => {
-    debugger
+    
     return ProjectAPIUtil.fetchProjects(category).then(
         projects => dispatch(receiveAllProjects(projects)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))
@@ -69,7 +69,7 @@ export const updateProject = project => dispatch => (
 )
 
 export const deleteProject = project => dispatch => {
-    debugger
+    
     return ProjectAPIUtil.deleteProject(project).then(
         () => dispatch(removeProject(project)),
         errors => dispatch(receiveProjectErrors(errors.responseJSON))

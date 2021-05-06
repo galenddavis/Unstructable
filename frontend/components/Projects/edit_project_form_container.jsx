@@ -28,12 +28,9 @@ class EditProjectForm extends React.Component {
     }
 
     componentDidMount() {
-        debugger
-        // this.setState({ project: this.props.project })
-        // this.setState({ steps: this.props.steps })
         this.props.requestProject(this.props.projectId).then(
             (res) => {
-                debugger
+                
                 this.setState({ project: res.project })
                 this.setState({ steps: res.project.steps })
             } 
@@ -41,16 +38,15 @@ class EditProjectForm extends React.Component {
     }
 
     publish(project) {
-        debugger
+        
         this.props.updateProject(project).then(project => {
-            debugger
+            
             this.props.history.push(`/project/${project.project.id}`)
-            // console.log(project)
         })
     }
 
     render() {
-        debugger
+        
         const { project } = this.state
         const {
             requestProject,
@@ -64,11 +60,6 @@ class EditProjectForm extends React.Component {
         if (!this.state.project) return null;
             
         return (
-            // <div>
-            //     <h1>Hey Yall</h1>
-            //     <h1>{this.state?.project.id}</h1>
-            //     <h1>{this.state?.steps[0].title}</h1>
-            // </div>
             <ProjectForm 
                 project={project}
                 requestProject={requestProject}
@@ -83,13 +74,11 @@ class EditProjectForm extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     let project = state.entities.projects && Object.values(state.entities.projects).length ? state.entities.projects[ownProps.match.params.id] : null;
     return {
         project: project,
         projectId: ownProps.match.params.id
-        // newStep: state.entities.steps,
-        // steps: project?.steps
     }
 }
 

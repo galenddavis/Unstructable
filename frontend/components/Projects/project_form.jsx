@@ -27,13 +27,13 @@ class ProjectForm extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
+        
         this.setState({ project: this.props.project })
         this.setState({ allSteps: this.props.project.steps })
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
+        
         if (this.props.project.steps !== prevProps.project.steps) {
             this.setState({ project: this.props.project })
             this.setState({ allSteps: this.props.project.steps })
@@ -42,9 +42,9 @@ class ProjectForm extends React.Component {
 
 
     otherForm(event) {
-        debugger
+        
         this.props.requestProject(this.props.project.id).then( project => {
-            debugger
+            
             this.setState({ project: project.project })
             this.setState({ allSteps: project.project.steps })
         })
@@ -53,26 +53,24 @@ class ProjectForm extends React.Component {
     }
 
     updateCategory(event) {
-        console.log(this.state)
         let newState = Object.assign({}, this.state);
-        debugger
+        
         newState.project.category = event.target.value
         this.setState({ newState })
     }
 
     updateTitle(event) {
-        console.log(this.state)
         let newState = Object.assign({}, this.state);
-        debugger
+        
         newState.project.title = event.target.value
         this.setState({ newState })
     }
 
     addStep() {
         let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
-        // debugger
+        
         this.props.createStep(newStep).then( step => {
-            // debugger
+            
             let { allSteps } = this.state;
             let fullSteps = allSteps.push(step.step)
             this.setState({ steps: fullSteps })
@@ -80,24 +78,18 @@ class ProjectForm extends React.Component {
     }
 
     editStep(stepId) {
-        // debugger
+        
         for (let i = 0; i < this.state.allSteps.length; i++) {
             if (this.state.allSteps[i].id === stepId) {
-                // debugger
+                
                 this.setState({ editedStep: i})
                 break;
             }
         }
-        // debugger
+        
         this.setState({ currentForm: 2})
     }
 
-    // publish(project) {
-    //     this.props.updateProject(project).then(project => {
-    //         this.props.history.push('/')
-    //         // console.log(project)
-    //     })
-    // }
 
     render() {
         let formLayout

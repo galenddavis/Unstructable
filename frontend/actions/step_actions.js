@@ -38,7 +38,7 @@ export const requestAllSteps = projectId => dispatch (
 )
 
 export const requestStep = (stepId, projectId) => dispatch => {
-    // debugger
+    
     return StepAPIUtil.fetchStep(stepId, projectId).then(
         step => dispatch(receiveStep(step)),
         errors => dispatch(receiveStepErrors(errors))
@@ -46,7 +46,7 @@ export const requestStep = (stepId, projectId) => dispatch => {
 }
 
 export const createStep = (step) => dispatch => {
-    // debugger
+    
     return StepAPIUtil.createStep(step).then(
         step => dispatch(receiveStep(step)), //should be receiveAll Steps to send back to the form? 
         errors => dispatch(receiveStepErrors(errors))
@@ -54,7 +54,7 @@ export const createStep = (step) => dispatch => {
 }
 
 export const updateStep = (step) => dispatch => {
-    debugger
+    
     return StepAPIUtil.updateStep(step).then(
         step => dispatch(receiveStep(step)),
         errors => dispatch(receiveStepErrors(errors))

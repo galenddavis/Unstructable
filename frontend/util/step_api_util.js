@@ -7,7 +7,7 @@ export const fetchAllSteps = (projectId) => {
 }
 
 export const fetchStep = (stepId, projectId) => {
-    // debugger 
+     
     return $.ajax({
         method: 'GET',
         url: `/api/projects/${projectId}/steps/${stepId}`
@@ -15,7 +15,7 @@ export const fetchStep = (stepId, projectId) => {
 }
 
 export const createStep = (step) => {
-    // debugger
+    
     return $.ajax({
         method: 'POST',
         url: `/api/projects/${step.project_id}/steps`,
@@ -24,7 +24,7 @@ export const createStep = (step) => {
 }
 
 export const updateStep = (step) => {
-    debugger
+    
     return $.ajax({
         method: 'PATCH',
         url: `/api/projects/${step.project_id}/steps/${step.id}`,

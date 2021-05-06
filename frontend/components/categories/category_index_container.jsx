@@ -3,7 +3,7 @@ import {requestFilteredProjects, requestProjects } from '../../actions/project_a
 import CategoryIndex from './category_index'
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         projects: state.entities.projects,
         category: ownProps.match.params.category

@@ -15,11 +15,11 @@ const projectsReducer = (state = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:
-            debugger
+            
             return action.projects
             // return Object.assign({}, state, {projects: action.data});
         case RECEIVE_PROJECT: 
-            debugger
+            
             newState[action.project.id] = action.project
             return newState;
 

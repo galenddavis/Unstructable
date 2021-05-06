@@ -3,7 +3,7 @@ import { createStep, deleteStep } from '../../actions/step_actions';
 import StepForm from './step_form';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         formType: 'Create'
     }

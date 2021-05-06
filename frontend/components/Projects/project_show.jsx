@@ -41,9 +41,9 @@ class ProjectShow extends React.Component {
     }
 
     deleteProject(project) {
-        debugger
+        
         this.props.deleteProject(project).then( res => {
-            debugger
+            
             this.props.history.push('/')
         })
     }
@@ -84,7 +84,7 @@ class ProjectShow extends React.Component {
                 <Link to={`/project/edit/${this.props.project.id}`}>Edit</Link>
             </div> :
             null
-        debugger
+        
         return (
             <div className='project-show'>
                 <div className='project-header'>
