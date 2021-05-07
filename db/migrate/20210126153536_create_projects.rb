@@ -4,7 +4,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :password_digest, null: false
       t.string :session_token, null: false
       t.string :title, null: false
-      t.text :body, null: false
       t.text :keys, array: true, null: false
       t.integer :favorites, null: false
       t.integer :views, null: false
