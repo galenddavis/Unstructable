@@ -26,6 +26,8 @@ class ProjectBuild extends React.Component {
                 key={idx} 
                 step={step}
                 index={idx}
+                deleteStep={this.props.deleteStep}
+                otherForm={this.props.otherForm}
                 editStep={this.props.editStep}
                 /> 
         })

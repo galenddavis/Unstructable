@@ -2,14 +2,13 @@
 class Api::ProjectsController < ApplicationController
 
      def index
-      @category = params[:category]
-      if @category == ""
-         @projects = Project.all
-      else
-         @projects = Project.where(category: @category)
-
-      end
-      render :index
+         @category = params[:category]
+         if @category == ""
+            @projects = Project.all
+         else
+            @projects = Project.where(category: @category)
+         end
+         render :index
      end
 
      def show
@@ -22,7 +21,7 @@ class Api::ProjectsController < ApplicationController
      def create
         @project = Project.new(project_params)
         @project.creator_id = current_user.id
-      #   
+
         if @project.save
             @project.steps.create!(title: "Intro + Supplies (Click to Edit)", body: "")
             render :show

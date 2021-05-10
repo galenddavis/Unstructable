@@ -101,7 +101,7 @@ u10 = User.create!(
 
 p1 = Project.create!(
     title: 'Build a DIY Computer out of a Potato',
-    favorites: 15,
+    favorites: 15,4
     views: 38,
     category: 'Circuits',
     creator_id: u1.id,
@@ -1044,8 +1044,63 @@ p13.title_photo.attach(io: file13, filename: '13_cords.png')
 step130 = Step.create!(
     title: '',
     body: "So in my kitchen, I often have my phone in front of me when I cook so I can follow a recipe, 
-    or watch something, but I don't have a ton of counter space. When I want to watch something ",
+    or watch something, but I don't have a ton of counter space. When I wanted to have my phone out 
+    and plugged in, it usually ends up with me getting frustrated as the cable gets in my way at every 
+    turn. That's why I worked up this super convenient hook system that mounts straight onto the plugs. ",
     project_id: p13.id,
+)
+
+step131 = Step.create!(
+    title: 'Step 1 - grab some bendable metal',
+    body: "As I'm sure you can see from my photo, I used a slightly heavier piece of metal since I have 
+    access to metal working tools, but a coat hanger can work just as well. Snip off a length of the 
+    straight edge of the hanger and you'll have everything you need.",
+    project_id: p13.id,
+)
+
+step132 = Step.create!(
+    title: 'Step 2 - Bending',
+    body: "Begin by bending the metal in half, leaving and then fold the rounded edge up into a little 
+    hook shape. Make sure to leave some width at the end for the cable to rest in. You may need more or 
+    less depending on how thick your charging cord is. After that, fold each end over perendicular to the 
+    bend you just made at the other end. These are the hooks that will fold around the metal bits of the 
+    plug going into the wall. ",
+    project_id: p13.id,
+)
+
+step133 = Step.create!(
+    title: 'Step 3 - Use!',
+    body: "Now that everything is folded into place, just mount it to the back of your charger, and 
+    plug it in! Loop your cable as much as necessary and hang it from the loop at the bottom and you're 
+    ready to go!",
+    project_id: p13.id,
+)
+
+step134 = Step.create!(
+    title: '!! Warning !!',
+    body: "Some people have commented below saying that this is dangerous and that they have gotten 
+    shocked when they touch the metal after it's been plugged in. I don't know anything about that. Just 
+    be careful, and if you get shocked using this project, just don't touch the metal anymore.",
+    project_id: p13.id,
+)
+
+c36 = Comment.create!(
+    body: "I nearly had to go to the hospital after getting a nasty shock from this project. Seriously 
+    dangerous!",
+    writer_id: u7.id,
+    project_id: p13.id
+)
+
+c37 = Comment.create!(
+    body: "this is so stupidly dangerous. Please, NOONE DO THIS!",
+    writer_id: u4.id,
+    project_id: p13.id
+)
+
+c38 = Comment.create!(
+    body: "i don't know if you're stupid or actually malicious, but this is so so dangerous.",
+    writer_id: u10.id,
+    project_id: p13.id
 )
 
 # ~~~~~~~~~~~~~~~~~~~Project 14~~~~~~~~~~~~~~~~~~~~
@@ -1067,6 +1122,46 @@ step140 = Step.create!(
     project_id: p14.id,
 )
 
+step141 = Step.create!(
+    title: 'Step 1 - Drink a bottle of water',
+    body: "You can use money to go out and buy a bottle of water. Drink it like you normally would, but 
+    don't recycle the bottle like you would normally.",
+    project_id: p14.id,
+)
+
+step142 = Step.create!(
+    title: 'Step 2 - Cut a hole in the bottle',
+    body: "Cut a small hole in the bottle, just large enough to fit around the spout of your faucet. 
+    Fit it over with the opening of the bottle pointed down into the sink.",
+    project_id: p14.id,
+)
+
+step143 = Step.create!(
+    title: 'Step 3 - Use',
+    body: "Now, you can turn your faucet on and by adjusting the direction of the bottle, you can 
+    redirect the stream of your faucet as needed for watching dishes or filling containers! Congrats on 
+    your cheap home renovation!",
+    project_id: p14.id,
+)
+
+c39 = Comment.create!(
+    body: "lol wtf is this tacky diy, who even thinks of this?",
+    writer_id: u9.id,
+    project_id: p14.id
+)
+
+c40 = Comment.create!(
+    body: "i bet you felt like a real genius when you dreamt up this one",
+    writer_id: u7.id,
+    project_id: p14.id
+)
+
+c41 = Comment.create!(
+    body: "'how to tell your guests you're trashy in 3 easy steps'",
+    writer_id: u2.id,
+    project_id: p14.id
+)
+
 # ~~~~~~~~~~~~~~~~~~~Project 15~~~~~~~~~~~~~~~~~~~~
 
 p15 = Project.create!(
@@ -1082,8 +1177,57 @@ p15.title_photo.attach(io: file15, filename: '15_snowmen.jpg')
 
 step150 = Step.create!(
     title: '',
-    body: "Holiday celebrations with Snowmen Cakes",
+    body: "Bring home some holiday cheer with these delightful little snowmen cake balls! I make these 
+    everything holiday season and my kids and husband just love them. I'm not the greatest baker, but 
+    these are easy enough that everyone can get in on the action. Even the little ones can help and all 
+    you need is a small cupcake tray!",
     project_id: p15.id,
+)
+
+step151 = Step.create!(
+    title: 'Start with the cake',
+    body: "I usually just start with a boxed cake mix. If you want to make yours from scratch, by all 
+    means, but either way, you're going follow whatever batter directions to the point right before 
+    you put it in the oven. Divide your batter in the cupcake tray holes and put in the over for about 
+    15 minutes.",
+    project_id: p15.id,
+)
+
+step152 = Step.create!(
+    title: 'Taking out and trimming',
+    body: "Once the cakes come out of the over, we can get to designing. You can certainly ice them now, 
+    but I like to get them a little rounder by carefully trimming any hard corners down. Nibble on the 
+    excess as you'd like. ",
+    project_id: p15.id,
+)
+
+step153 = Step.create!(
+    title: "Here's where the fun begins! Decoration",
+    body: "Ok, now, gather up your helpers and begin the icing and decoration process. I use store bought 
+    icing that I heat up for a few seconds in the microwave, but you can definitly make your own if you 
+    know what you're doing. Just stick the cake ball on the end of a fork and dip into the icing. Let 
+    it partially dry before you begin to make the face out of candy. If you try and set anything in to 
+    the icing too early, it won't stay. I like to let my kids create the faces, and we usually do little 
+    oreos for hats, but go nuts! These little snowmen can be whatever you want.",
+    project_id: p15.id,
+)
+
+c42 = Comment.create!(
+    body: "I feel like these could be cute, but I can't help but feel bad for the ones in your pic",
+    writer_id: u5.id,
+    project_id: p15.id
+)
+
+c43 = Comment.create!(
+    body: "they should be coming out better if you've been making these every year....",
+    writer_id: u3.id,
+    project_id: p15.id
+)
+
+c44 = Comment.create!(
+    body: "are these gluten free? Do you have an online store when I can buy them?",
+    writer_id: u8.id,
+    project_id: p15.id
 )
 
 # ~~~~~~~~~~~~~~~~~~~Project 16~~~~~~~~~~~~~~~~~~~~
@@ -1101,7 +1245,62 @@ p16.title_photo.attach(io: file16, filename: '16_thermalpaste.jpg')
 
 step160 = Step.create!(
     title: '',
-    body: "How to install your new CPU, quick and easy",
+    body: "No matter how powerful your computer is, there will come a time when you need to upgrade. 
+    Whether a part craps out on your, or you just want to get a little more processing power, a CPU 
+    upgrade can give your pc a much needed boost. I'm going to walk you through selecting one and 
+    actually installing it.",
     project_id: p16.id,
+)
+
+step160 = Step.create!(
+    title: 'Step 1 - Selecting your part',
+    body: "First figure out what kind of CPU you need. You'll need to figure out if your motherboard 
+    accepts and intel chip or an AMD. The easiest way to know is to just look at what chip you already have, 
+    but if this is your first CPU, you'll have to google your motherboard and see what type it takes.
+    After that, it really just comes down to looking at reviews and finding something in your price range. 
+    I recommend newegg.com for purchasing parts.",
+    project_id: p16.id,
+)
+
+step160 = Step.create!(
+    title: 'Step 2 - Installation',
+    body: "Ok, now that you've recieved your new part, we're going to install it. If you have a CPU 
+    already in the motherboard slot, you'll need to remove it. Lift up the tension rod and the chip should 
+    lift right out. After that, you're going to take your new chip (DELICATELY AND BY THE EDGES) and 
+    set it in place. There will usually be a small triangle on both the motherboard and chip to line up. 
+    Delicately place it down, you should't need to apply any force here. Once you're sure it's in position, 
+    push the tension rod back down into place, (this will require a little bit of force) and you should be 
+    good to go onto the next step.",
+    project_id: p16.id,
+)
+
+step160 = Step.create!(
+    title: 'Step 3 - Cooling',
+    body: "Most CPUs now a days come with a cooler of their own, and to apply that, you need something called 
+    thermal paste. Now, cooling is so so important to the performance and longevity of your CPU, so you want 
+    to do this right. Apply enough thermal paste so that it covers the entire CPU, and then place the cooler 
+    on top. Many coolers have different fastening mechanisms, so refer to any documentation that came with 
+    you're specific part. Don't worry if a little thermal paste seeps out the edges. A little extra cooling 
+    never hurt anyone ;)",
+    project_id: p16.id,
+)
+
+c45 = Comment.create!(
+    body: "oh man, you were doing alright until you started throwing thermal paste all over the place. 
+    You're using waaaaay to much!",
+    writer_id: u3.id,
+    project_id: p16.id
+)
+
+c46 = Comment.create!(
+    body: "You only need a single pea sized dot of thermal paste! You don't need that much!",
+    writer_id: u4.id,
+    project_id: p16.id
+)
+
+c47 = Comment.create!(
+    body: "decent guide, but place, don't get thermal paste all over your motherboard",
+    writer_id: u6.id,
+    project_id: p16.id
 )
 

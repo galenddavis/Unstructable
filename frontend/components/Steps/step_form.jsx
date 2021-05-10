@@ -17,9 +17,8 @@ class StepForm extends React.Component {
     }
 
     saveStep(step) {
-        
+        event.stopPropagation()
         this.props.updateStep(step).then(step => {
-            
             this.props.otherForm()
         })
     }

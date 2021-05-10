@@ -103,6 +103,7 @@ class ProjectForm extends React.Component {
                 createStep={this.props.createStep}
                 editStep={this.editStep}
                 addStep={this.addStep}
+                deleteStep={this.props.deleteStep}
                 
                 currentForm={this.state.currentForm}
                 project={this.state.project}

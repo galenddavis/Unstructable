@@ -84,13 +84,11 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 1px lightgrey solid;
-    // border-style: solid solid none;
-    // margin: 0px 25px 0px 25px;
+    min-height: 300px;
     height: auto;
     padding: 20px 25px 60px 25px;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
 
     button {
@@ -118,7 +116,7 @@
         .blurb-right {
             display: flex;
             height: 100%;
-            width: 50%;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
         }

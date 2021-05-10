@@ -32,9 +32,9 @@ export const updateStep = (step) => {
     })
 }
 
-export const deleteStep = (step) => (
-    $.ajax({
+export const deleteStep = (step) => {
+    return $.ajax({
         method: 'DELETE',
         url: `/api/projects/${step.project_id}/steps/${step.id}`
     })
-)
+}
