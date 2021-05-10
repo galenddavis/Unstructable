@@ -101,7 +101,7 @@ u10 = User.create!(
 
 p1 = Project.create!(
     title: 'Build a DIY Computer out of a Potato',
-    favorites: 15,4
+    favorites: 15,
     views: 38,
     category: 'Circuits',
     creator_id: u1.id,
