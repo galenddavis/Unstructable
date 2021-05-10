@@ -1,11 +1,9 @@
 # README
 <h1 align="center">Unstructable</h1>
 
+Unstructable is a DIY site that allows users to create and share projects with others. Users can build out step by step instructions as well as comment on, and discuss other's projects. 
+
 ___
-
-## Description
-
-Unstructable is a working clone of the website [Instructables](https://www.instructables.com/) which allows users to create and share DIY projects with others. Users can build out step by step instructions and discuss both their own work as well as others'. 
 
 ![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/splash%20page.png "Unstructable Splash Page")
 
