@@ -49,8 +49,8 @@ handleSubmit(event) {
 ```
 ### Project Creation
 
-Once signed in, users have the ability to create their own projects. At this moment, the created projects are a single body field, but will soon be expanded to allow for the creation of individual steps and organize them on the project creation form. 
+Once signed in, users have the ability to create their own projects. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/create_project.png "Unstructable create form")
+![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/projectCreation.PNG)
 
 
