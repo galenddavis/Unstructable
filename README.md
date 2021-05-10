@@ -53,4 +53,22 @@ Once signed in, users have the ability to create their own projects.
 
 ![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/projectCreation.PNG)
 
+Upon titling the new projects, the backend creates the project and immediately creates the first default step that every project shares. 
+
+![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/newproject.PNG)
+
+``` ruby
+def create
+        @project = Project.new(project_params)
+        @project.creator_id = current_user.id
+
+        if @project.save
+            @project.steps.create!(title: "Intro + Supplies (Click to Edit)", body: "")
+            render :show
+        else
+            render json: @project.errors.full_messages, status: 422
+        end 
+     end
+```
+
 
