@@ -88,4 +88,16 @@ addStep() {
 }
 ```
 
+Upon creation of a project, we redirect to the project show page, and if the user has not uploaded an image, a default image is provided via jbuilder. 
+
+![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/projectShow.PNG)
+
+``` javascript
+if @project.title_photo.attached?
+    json.photoUrl url_for(@project.title_photo)
+else
+    json.photoUrl url_for('https://unstructable-seeds.s3.amazonaws.com/no_photo_attached.png')
+end
+```
+
 
