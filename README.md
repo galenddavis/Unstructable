@@ -7,7 +7,7 @@ ___
 
 ![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/splash%20page.png "Unstructable Splash Page")
 
-Unstructable was build with a combination of Ruby/Rails and PSQL on the backend and React/Redux/Javascript on the front. Styling is done mainly is SCSS, and AWS will be implemented in order to handle and store static assests. The Demo version below is hosted on Heroku.
+Unstructable was build with a combination of Ruby/Rails and PSQL on the backend and React/Redux/Javascript on the front. Styling is done mainly is SCSS, and AWS is used in hosting project's associated images.
 
 ## Live Demo
 
