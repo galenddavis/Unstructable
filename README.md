@@ -59,16 +59,16 @@ Upon titling the new projects, the backend creates the project and immediately c
 
 ``` ruby
 def create
-        @project = Project.new(project_params)
-        @project.creator_id = current_user.id
+     @project = Project.new(project_params)
+     @project.creator_id = current_user.id
 
-        if @project.save
-            @project.steps.create!(title: "Intro + Supplies (Click to Edit)", body: "")
-            render :show
-        else
-            render json: @project.errors.full_messages, status: 422
-        end 
-     end
+     if @project.save
+         @project.steps.create!(title: "Intro + Supplies (Click to Edit)", body: "")
+         render :show
+     else
+         render json: @project.errors.full_messages, status: 422
+     end 
+end
 ```
 
 
