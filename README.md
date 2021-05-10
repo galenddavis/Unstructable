@@ -71,4 +71,21 @@ def create
 end
 ```
 
+Once projects have been created, new steps may be added and edited. Upon creation, steps are imediately saved to the database, and upon editing they are updated. 
+
+![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/addingSteps.PNG)
+
+``` javascript
+addStep() {
+  let newStep = {title: `Step ${this.state.allSteps.length} (Click to Edit)`, body: '', project_id: this.props.project.id}
+
+  this.props.createStep(newStep).then( step => {
+
+      let { allSteps } = this.state;
+      let fullSteps = allSteps.push(step.step)
+      this.setState({ steps: fullSteps })
+  })      
+}
+```
+
 
