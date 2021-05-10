@@ -17,11 +17,7 @@ Unstructable was build with a combination of Ruby/Rails and PSQL on the backend 
 
 ### User Account Creation
 
-When the user first hits the site, they will have virtually unlimited access to the site's projects and other users, but in order to begin commenting or creating projects of their own, they will need to create an account of thier own. 
-
-* Account-locked features
-  * Commmenting
-  * Creating and editing projects
+When the user first hits the site, they will have virtually unlimited access to the site's projects, but in order to begin commenting or creating projects of their own, they will need to create an account of thier own. 
   
   ![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/login.png "Unstructable Login Page")
   
