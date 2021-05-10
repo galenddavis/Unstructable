@@ -100,4 +100,39 @@ else
 end
 ```
 
+### Commenting
+
+Once you have logged in, you also have the ability to comment on other's projects. 
+
+![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/commenting.PNG)
+
+
+### Categories
+
+Beyond just the basic index that you get on the entry page, there are also indexes filtered by categories. 
+
+![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/category.PNG)
+
+``` javascript
+export const requestProjects = (category = null) => dispatch => {
+    
+    return ProjectAPIUtil.fetchProjects(category).then(
+        projects => dispatch(receiveAllProjects(projects)),
+        errors => dispatch(receiveProjectErrors(errors.responseJSON))
+    )
+}
+```
+
+``` ruby
+def index
+     @category = params[:category]
+     if @category == ""
+        @projects = Project.all
+     else
+        @projects = Project.where(category: @category)
+     end
+     render :index
+ end
+```
+
 
