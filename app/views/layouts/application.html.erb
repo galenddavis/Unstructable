@@ -2,9 +2,29 @@
 <html>
   <head>
   
-    <title>InstructablesClone</title>
+    <title>Unstructable</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta 
+      name="title"
+      property="og:title"
+      content="Unstructable"
+    />
+
+    <meta 
+      name="image"
+      property="og:image"
+      content="/unstructable.png"
+    />
+
+    <meta 
+      name="description"
+      property="og:description"
+      content="Share and promote your best DIY ideas on the web's premier how-to site!"
+    />
+
+    
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -23,8 +43,6 @@
         window.logoURL = "<%= image_url('robot.png') %>";
       </script>
       
-     
-
       <script type="text/javascript">
         window.header = "<%= image_url('project-header.jpg') %>";
       </script>
