@@ -19,8 +19,12 @@ class CommentForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.commentSave(this.state)
-        this.setState({ body: '' })
+        if (this.props.writerId) {
+            this.props.commentSave(this.state)
+            this.setState({ body: '' })
+        } else {
+            this.props.history.push('/login')
+        }
     }
     
     update(field) {

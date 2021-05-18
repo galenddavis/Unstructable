@@ -21,10 +21,22 @@ class ProjectShow extends React.Component {
 
     componentDidMount() {
         this.props.requestProject(this.props.match.params.id).then((project) => {
+
             this.setState({ project: project.project })
             this.setState({ comments: project.project.comments })
-        }
+            }
         )
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.requestProject(this.props.match.params.id).then((project) => {
+    
+                this.setState({ project: project.project })
+                this.setState({ comments: project.project.comments })
+                }
+            )
+        }
     }
 
     commentSave(comment) {
@@ -43,24 +55,35 @@ class ProjectShow extends React.Component {
     deleteProject(project) {
         
         this.props.deleteProject(project).then( res => {
-            
             this.props.history.push('/')
         })
     }
 
+    
+
     render() {
-        
         if (this.props.project === undefined) return null;
         const { project } = this.props
 
         let count = 0
-        const userProjects = project.creator.otherProjects?.map((other) => {
-            
-            if (other.id !== project.id && count < 2) {
-                count += 1
-                return <li key={other.id}><img src={other.photoUrl} alt=""/></li>
-            }
-        })
+        debugger
+        const userProjectHeader = project.creator.otherProjects?.length > 1 ?
+        <p>More by the Author: </p> :
+        <p>This Author has no other Projects :(</p>
+
+        const userProjects = project.creator.otherProjects?.length > 1 ?
+            project.creator.otherProjects?.map((other) => {
+                if (other.id !== project.id && count < 2) {
+                    count += 1
+        
+                    return <li key={other.id}>
+                            <Link to={`/project/${other.id}`} >
+                                <img src={other.photoUrl} />
+                            </Link>
+                        </li>
+                }
+            }) :
+            null
 
         const steps = project.steps?.map((step, idx) => {
             return <StepShow
@@ -84,6 +107,10 @@ class ProjectShow extends React.Component {
                 <Link to={`/project/edit/${this.props.project.id}`}>Edit</Link>
             </div> :
             null
+
+        const commentsHeader = this.state.comments.length === 1 ? 
+            <h1 className='comment-amt'>{this.state.comments.length} Comment</h1> :
+            <h1 className='comment-amt'>{this.state.comments.length} Comments</h1>
         
         return (
             <div className='project-show'>
@@ -91,8 +118,8 @@ class ProjectShow extends React.Component {
                     <h1>{project.title}</h1>
                     <div className='stats'>
                         <p>By {project.creator?.username} in {project.category}</p>
-                        <p><i className="fas fa-eye" id='views'></i> {project.views}</p>
-                        <p><i className="fas fa-heart" id='favorites'></i> {project.favorites}</p>
+                        {/* <p><i className="fas fa-eye" id='views'></i> {project.views}</p>
+                        <p><i className="fas fa-heart" id='favorites'></i> {project.favorites}</p> */}
                     </div>
                     {creatorButtons}
 
@@ -100,7 +127,8 @@ class ProjectShow extends React.Component {
                     <section className='project-plugs'>
                         <p>By {project.creator?.username} </p>
                         <div className='user'>
-                            <p>More by the Author: </p>
+                            {/* <p>More by the Author: </p> */}
+                            {userProjectHeader}
                             <ul className='other-projects'>{userProjects}</ul>
                         </div>
                     </section>
@@ -121,10 +149,15 @@ class ProjectShow extends React.Component {
                             projectId={project.id}
                             writerId={this.props.currentUser}
                             commentSave={this.commentSave}
+                            history={this.props.history}
                             />
                     </section>
+                    
 
-                    <h1 className='comment-amt'>{this.state.comments.length} Comments</h1>
+                    {/* <h1 className='comment-amt'>{this.state.comments.length} 
+                        Comments
+                    </h1> */}
+                    {commentsHeader}
                     <section className='comment-index'>
                         {comments}
                     </section>

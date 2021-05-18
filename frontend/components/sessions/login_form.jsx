@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
                    {/* I think my login needs to be changed so that errors will be specific to username or password */}
                     <input 
                         type="text"
-                        placeholder='Email'
+                        placeholder='Username'
                         value={this.state.username}
                         onChange={this.update('username')}
                     />

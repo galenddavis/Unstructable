@@ -4,7 +4,7 @@ import { requestProject, updateProject, deleteProject } from '../../actions/proj
 import { createComment, deleteComment } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => {
-    
+    debugger
     return {
         project: state.entities.projects[ownProps.match.params.id],
         currentUser: state.session.id,

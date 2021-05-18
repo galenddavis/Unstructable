@@ -54,16 +54,19 @@ class ProjectForm extends React.Component {
 
     updateCategory(event) {
         let newState = Object.assign({}, this.state);
-        
         newState.project.category = event.target.value
         this.setState({ newState })
+
+        this.props.updateProject(this.state.project)
+
+
     }
 
     updateTitle(event) {
         let newState = Object.assign({}, this.state);
-        
         newState.project.title = event.target.value
         this.setState({ newState })
+        this.props.updateProject(this.state.project)
     }
 
     addStep() {
