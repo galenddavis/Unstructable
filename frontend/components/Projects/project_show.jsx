@@ -85,7 +85,10 @@ class ProjectShow extends React.Component {
             }) :
             null
 
-        const steps = project.steps?.map((step, idx) => {
+        const sortedSteps = project.steps?.sort((a, b) => a.created_at > b.created_at)
+
+        const steps = sortedSteps?.map((step, idx) => {
+            debugger
             return <StepShow
                 key={step.id} 
                 number={idx + 1}
@@ -103,7 +106,6 @@ class ProjectShow extends React.Component {
         const creatorButtons = this.props.currentUser === project.creator.id ? 
             <div className='creator-buttons'>
                 <button onClick={() => this.deleteProject(this.state.project)} >Delete</button>
-                {/* <Link to={`/project/edit/${this.props.project.id}`}>Delete</Link> */}
                 <Link to={`/project/edit/${this.props.project.id}`}>Edit</Link>
             </div> :
             null

@@ -144,7 +144,7 @@ step13 = Step.create!(
 )
 
 step14 = Step.create!(
-    title: "Step 4 - Do some research into how much raspberry pi's cost",
+    title: "Step - 4 Do some research into how much raspberry pi's cost",
     body: "This is taking longer than I thought. I think I might need to rethink how viable this whole 
     project actually is. Raspberry Pi's apparently can be used to set up a decent little home theater 
     system. After burning through a couple pounds of potatos and setting a small fire, I think my wife 
@@ -153,7 +153,7 @@ step14 = Step.create!(
 )
 
 step15 = Step.create!(
-    title: "Step 5 - Google how to set up your new Raspberry Pi as a home media system",
+    title: "Step - 5 Google how to set up your new Raspberry Pi as a home media system",
     body: "I had to google this. Who would have thought that even setting up a new PC would be this difficult. 
     If anyone has any experience setting up speaker systems, plz comment below. I'm out of my depth here.",
     project_id: p1.id,
@@ -193,7 +193,7 @@ file2 = open('https://unstructable-seeds.s3.amazonaws.com/02_robot.png')
 p2.title_photo.attach(io: file2, filename: '02_robot.png')
 
 step20 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "Tax season is back again, but I everybody's gotta pay the piper. 
     I was sick and tired of going through old receipts and plugging them into turbotax, 
     so I figured, why not work up a quick bot that could do it for me. 
@@ -203,7 +203,7 @@ step20 = Step.create!(
 )
 
 step21 = Step.create!(
-    title: 'Step 1 Learn to code',
+    title: 'Step 1 - Learn to code',
     body: "First things first, Let's pick a coding language. I think that for my pruposes, 
     Python makes the most sense. It seems versitile and from what the forums say, people have assured me 
     that it's pretty easy to pick up. they told me that I needed to download something called vscode 
@@ -212,7 +212,7 @@ step21 = Step.create!(
 )
 
 step22 = Step.create!(
-    title: 'Step 2 Continue learning to code',
+    title: 'Step 2 - Continue learning to code',
     body: "Ok, so it turns out that learning to code a program to file my taxes is harder than I thought. 
     I've gotten a basic 'Hello World' program down, and I think that I'm getting close, but it's tricky. 
     Definitely not as easy as those idiots on the message boards made it sound. I'm starting to think 
@@ -221,7 +221,7 @@ step22 = Step.create!(
 )
 
 step23 = Step.create!(
-    title: 'Step 3 Finally figured it out',
+    title: 'Step 3 - Finally figured it out',
     body: "So it's been about four years since I began this project, and now I owe four years of back 
     taxes to the IRS, but I've finally cracked it. I've learned Python and finally got my project in a 
     place where I can pass in my tax forms and get back a fully formatted tax return. If I can still find 
@@ -230,7 +230,7 @@ step23 = Step.create!(
 )
 
 step24 = Step.create!(
-    title: 'Step 4 Maybe just hire someone to do your taxes',
+    title: 'Step 4 - Maybe just hire someone to do your taxes',
     body: "I'm writing this from the library in prison. Turns out all the back taxes that I turned in 
     after being processed by Taxy, my tax-bot, were egrigiously incorrect. I was arrested for tax fraud 
     and I'm serving a four year prison sentence. I definitely think that this was a great learnig experience 
@@ -285,7 +285,7 @@ step30 = Step.create!(
 )
 
 step31 = Step.create!(
-    title: 'Step 1 Clean off your car dashboard',
+    title: 'Step 1 - Clean off your car dashboard',
     body: "First things first, you're going to want to start with a clean, empty dash. Take some time and 
     clear out any dust, old CDs, air fresheners that you might have laying around, and if you have the 
     initiative, maybe even give the thing a once over with a vacuum.",
@@ -293,7 +293,7 @@ step31 = Step.create!(
 )
 
 step32 = Step.create!(
-    title: 'Step 2 Sand',
+    title: 'Step 2 - Sand',
     body: "The first key ingredient to any desert scene is sand. You're going to want to grab some dirt 
     from outside your house and mix it with equal parts sand that you can pick up at any old craft store. 
     While you're there, pick up any set dressing that you might want for your scene. 
@@ -303,7 +303,7 @@ step32 = Step.create!(
 )
 
 step33 = Step.create!(
-    title: 'Step 3 Let your creativity flow!',
+    title: 'Step 3 - Let your creativity flow!',
     body: "Now that you have your base set down above the passenger seat, you can flex those creative muscles 
     and begin to arrange whatever decorations you decided to pick up. As you can see from my photo above, I 
     decided to go simple with some small rocks and shells from my garden and the nearby beach. I also placed a few 
@@ -312,7 +312,7 @@ step33 = Step.create!(
 )
 
 step34 = Step.create!(
-    title: 'Step 4 Disclaimer **Important**',
+    title: 'Step 4 - Disclaimer **Important**',
     body: "I've been told that a number of the people who have followed this project's instructions 
     have ended up injured due to airborn cacti. Please understand that anyone following these directions 
     does so at their own risk. I assume no responsibility for any injuries that arise from this 
@@ -353,7 +353,7 @@ file4 = open('https://unstructable-seeds.s3.amazonaws.com/04_jeans.jpg')
 p4.title_photo.attach(io: file4, filename: '04_jeans.jpg')
 
 step40 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "I'm sure that many of you, like me, have a collection of jeans that either don't
     fit, or are full of holes. Well, with a little sewing know-how, and some ingenuity you 
     can turn those rags into a stylish piece of furniture.",
@@ -361,7 +361,7 @@ step40 = Step.create!(
 )
 
 step41 = Step.create!(
-    title: 'Step 1 Wear out multiple pairs of jeans',
+    title: 'Step 1 - Wear out multiple pairs of jeans',
     body: "This first step is easy. Wear out as many pairs of jeans as possible. Ideally they would 
     all be the same size, but that goes without saying. Take some of your least favorite jeans and 
     either wear them out or outgrow them. ",
@@ -369,7 +369,7 @@ step41 = Step.create!(
 )
 
 step42 = Step.create!(
-    title: 'Step 2 Sew snaps onto the ends of legs',
+    title: 'Step 2 - Sew snaps onto the ends of legs',
     body: "Snaps can be purchased for cheap at any fabric store. You'll need at least two or three per 
     leg, depending on how thick the fabric is. What you want to do is alternate legs so that that 
     they can be snapped together in an alternating pattern. The idea is that why eventually sewing the tops 
@@ -378,7 +378,7 @@ step42 = Step.create!(
 )
 
 step43 = Step.create!(
-    title: 'Step 3 Begin to sew tops of jeans together',
+    title: 'Step 3 - Begin to sew tops of jeans together',
     body: "Now that the legs can snap together, begin to sew the front of the waistlines together. Begin 
     to make your way around, but when you get almost all the way around, leave a little bit of space. 
     When you're finished with this step, you the pants should almost be completely sewn up. This is the 
@@ -388,7 +388,7 @@ step43 = Step.create!(
 )
 
 step44 = Step.create!(
-    title: 'Step 4 Stuff cotton and close up',
+    title: 'Step 4 - Stuff cotton and close up',
     body: "Continue to stuff the pants, making sure to work the material all the way up the legs. As you 
     stuff them, snap the legs into place and they should begin to fold upwards, giving the chair it's 
     shape and making it less of a flat octopus. Once you've got the chair to it's desired firmness, 
@@ -436,14 +436,14 @@ file5 = open('https://unstructable-seeds.s3.amazonaws.com/05_mnms.jpg')
 p5.title_photo.attach(io: file5, filename: '05_mnms.jpg')
 
 step50 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "Everytime we go out, my kids are always asking me to buy candy, but it's just so 
     bad for them. I decided to try my hand at making a healthy alternative. Turns out, they love them!",
     project_id: p5.id,
 )
 
 step51 = Step.create!(
-    title: "Step 1 Make sure kids aren't allergic",
+    title: "Step 1 - Make sure kids aren't allergic",
     body: "I can't stress enough that before you start this, ensure that your children don't suffer from 
     a peanut allergy. Obviously those allergies can be very severe and you want to ensure that your 
     kids and other snackers will be safe to enjoy your soon to be treats.",
@@ -451,7 +451,7 @@ step51 = Step.create!(
 )
 
 step52 = Step.create!(
-    title: 'Step 2 Warm up the hot glue gun',
+    title: 'Step 2 - Warm up the hot glue gun',
     body: "The most important part of this recipe is the hot glue, that's going to act as your binding 
     agent and it's going to be the difference between eating homemade peanut M&Ms and just eating peanuts 
     and M&Ms together. So set your glue gun to warm, you still want to be able to handle and mold the glue 
@@ -460,14 +460,14 @@ step52 = Step.create!(
 )
 
 step53 = Step.create!(
-    title: 'Step 3 Have kids pick favorite flavors',
+    title: 'Step 3 - Have kids pick favorite flavors',
     body: "If you're children have favorite colors or flavors of M&Ms, have them sort them out. This is 
     a perfect opporrtunity to get your kids involved. Have them work a little bit for their snack ;).",
     project_id: p5.id,
 )
 
 step54 = Step.create!(
-    title: 'Step 4 Time to glue',
+    title: 'Step 4 - Time to glue',
     body: "Ok, so now that you have everything set up and ready to go, it's time to get started with the 
     actual assembly. This part of the project can be a tad dangerous, so it's probably best to do this part for 
     your kids yourself. What you're going to want to do is take a single peanut and apply 
@@ -476,7 +476,7 @@ step54 = Step.create!(
 )
 
 step54 = Step.create!(
-    title: 'Step 5 Wait to dry and taste!',
+    title: 'Step 5 - Wait to dry and taste!',
     body: "Follow step four until you have enough peanut M&Ms and let them cool so that the glue doesn't 
     burn your mouth. Once they're cooled, serve in a small bowl. Remember that peanuts are surprisingly high 
     in calories. Make sure to keep track of how much snacking your little ones are doing. ",
@@ -517,7 +517,7 @@ file6 = open('https://unstructable-seeds.s3.amazonaws.com/06_plant.jpg')
 p6.title_photo.attach(io: file6, filename: '06_plant.jpg')
 
 step60 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "Who likes paying an arm and a leg for veggies that go bad just days after you bring them home? 
     Lord knows I don't. Well, why pay for what you can grow with a few dollars worth of seeds 
     and a little bit of dirt from right outside.",
@@ -525,7 +525,7 @@ step60 = Step.create!(
 )
 
 step61 = Step.create!(
-    title: 'Step 1 Research your local environment',
+    title: 'Step 1 - Research your local environment',
     body: "Before you do anything else, one of the most important bit of knowledge to have is to 
     understand what kind of plants can survive your local environment. If you live somewhere hot like 
     Arizona, you're going to be able to grow differnt plants than if you live somewhere colder like Minnesota. 
@@ -535,7 +535,7 @@ step61 = Step.create!(
 )
 
 step62 = Step.create!(
-    title: 'Step 2 Take a trip to your local nursury',
+    title: 'Step 2 - Take a trip to your local nursury',
     body: "Now that you have an idea of what can survive and thrive where you live, take a trip to your 
     nearest nursury. If you don't happen to live near one, there is also a large selection of seeds that can 
     be purchased somewhere like Amazon. I'd recommend purchasing some flowers or small herbs in addition to 
@@ -545,7 +545,7 @@ step62 = Step.create!(
 )
 
 step63 = Step.create!(
-    title: 'Step 3 Clear out a small space for plants',
+    title: 'Step 3 - Clear out a small space for plants',
     body: "Now that you have all the seeds you need, it's time to plan out where you're going to plant them. 
     Either find a place in your yard if you have one or set up a couple of pots to hold everything. If you 
     don't have any pots, some old cans and jars can be used to start your plants until they outgrow them. 
@@ -554,7 +554,7 @@ step63 = Step.create!(
 )
 
 step64 = Step.create!(
-    title: 'Step 4 Begin to plant',
+    title: 'Step 4 - Begin to plant',
     body: "Lets get going! Throw on some clothes that you don't mind getting dirty and gather your seeds 
     and tools! Begin by making a small hole in the dirt and toss in one of two seeds. Gently cover the seeds 
     and water them until the dirt is completely wet. Continue until your seeds are all planted and you're 
@@ -563,7 +563,7 @@ step64 = Step.create!(
 )
 
 step65 = Step.create!(
-    title: 'Step 5 Ongoing Maintanence',
+    title: 'Step 5 - Ongoing Maintanence',
     body: "Now that everything is planted, the next step is wait, but once they begin sprouting, each plant 
     will have potentially different care instructions. Consult your earlier research and make sure that you 
     maintain a strict watering schedule to make sure that each plant is getting the nutrients they need. 
@@ -606,7 +606,7 @@ step70 = Step.create!(
 )
 
 step71 = Step.create!(
-    title: 'Step 1 Buy some sturdy wood for the legs',
+    title: 'Step 1 - Buy some sturdy wood for the legs',
     body: "The first step involves making a trip to home depot to grab wood as well as some nails for 
     attaching the new leg extenders to your existing table. Make sure that to buy a nice sturdy wood like 
     oak or some other hard wood. No balsa allowed! Make sure that whatever thickness wood you buy, you 
@@ -616,7 +616,7 @@ step71 = Step.create!(
 )
 
 step72 = Step.create!(
-    title: 'Step 2 Measure twice, cut once',
+    title: 'Step 2 - Measure twice, cut once',
     body: "Now that you've got your supplies, and you've gotten back home, we're going to need to figure 
     out how high the new table needs to be. Start by standing in a comfortable position and raising your arms as 
     if working at a keyboard. Measure from there to the floor and that's your table height! Now that you 
@@ -626,7 +626,7 @@ step72 = Step.create!(
 )
 
 step73 = Step.create!(
-    title: 'Step 3 Attach new leg extenders',
+    title: 'Step 3 - Attach new leg extenders',
     body: "Now that you have the pieces all cut, we just lay your table on it's side and begin to hammer 
     on the pieces you just cut. Do your best to make them straight and for good measure, throw a couple of 
     nails into each piece for extra strength.",
@@ -634,7 +634,7 @@ step73 = Step.create!(
 )
 
 step74 = Step.create!(
-    title: 'Step 4 Double check structural integrity',
+    title: 'Step 4 - Double check structural integrity',
     body: "Now that you have everything nailed up, flip the table over and make sure that it stands under 
     it's own weight before setting everything up on top. Everything seems fine with my project so I'm going 
     to starting setting my computer up on top. Place things slowly so that if things begin to fail, you can 
@@ -685,7 +685,7 @@ file8 = open('https://unstructable-seeds.s3.amazonaws.com/08_table.jpg')
 p8.title_photo.attach(io: file8, filename: '08_table.jpg')
 
 step80 = Step.create!(
-    title: 'Intro - What are we doing?',
+    title: 'What are we doing?',
     body: "I bought an old sidetable at a junk sale and wanted to give it new life with some 
     gold spackle. It's a super easy project that anyone can do, perfect for a weekend 
     project with the kids. ",
@@ -766,7 +766,7 @@ file9 = open('https://unstructable-seeds.s3.amazonaws.com/09_dolls.jpg')
 p9.title_photo.attach(io: file9, filename: '09_dolls.jpg')
 
 step90 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "My daughter has grown out of her doll phase, but I didn't want to just throw 
     them away, call me sentimental. Instead, I thought, maybe I can use them out in the garden 
     as a way to foster some of the smaller plants until they're ready for transplanting.",
@@ -791,7 +791,7 @@ step92 = Step.create!(
 )
 
 step93 = Step.create!(
-    title: 'Step 4 - Get some seeds',
+    title: 'Step 3 - Get some seeds',
     body: "Now that you have some hollowed out heads, it's time to grab some soil and seeds. What you're going 
     to do is fill the head about half way and place a seed or two inside. Then use more soil to get the 
     head to about halfway. Give it a water and begin to prep the next head in the same way.",
@@ -799,7 +799,7 @@ step93 = Step.create!(
 )
 
 step94 = Step.create!(
-    title: 'Step 5 - Throw em up on the Insta',
+    title: 'Step 4 - Throw em up on the Insta',
     body: "Now that we've got our heads finished, you might want to wait a few days for them to start 
     to sprout, but once they do, you can post them on social media for clout with the other moms! These 
     are fun, exciting decorations that you can sprinkle throughout your garden! <3",
@@ -838,14 +838,14 @@ file10 = open('https://unstructable-seeds.s3.amazonaws.com/10_glasses.jpg')
 p10.title_photo.attach(io: file10, filename: '10_glasses.jpg')
 
 step100 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "This is a fun weekend project to keep my little ones busy while I get a quick nap in on a Sunday. 
     Using any old soda bottle, you can create a template and cut out a fun and stylish pair of sunglasses.",
     project_id: p10.id,
 )
 
 step101 = Step.create!(
-    title: '',
+    title: 'Step 1 - Drink Soda and draw template',
     body: "If you're like me, you probably end up with one or two soda bottles around the house at the end 
     of the week. I usually recycle them, but I was trying to come up with a fun project that I could do 
     with my kids when they came over over for the weekend and I had a stroke of genius. I drew up a simple 
@@ -854,7 +854,7 @@ step101 = Step.create!(
 )
 
 step102 = Step.create!(
-    title: '',
+    title: 'Step 2 - Cut out and wear!',
     body: "Once the kids are over, all you have to do is tape the stencil over a freshly emptied and washed 
     soda bottle. Have your kids take some scissors and cut around the stencil. Once they have it cut out, 
     they can cut little notches that sit on the ears. Boom, all of a sudden you have a funky pair of 
@@ -863,7 +863,7 @@ step102 = Step.create!(
 )
 
 step103 = Step.create!(
-    title: '',
+    title: 'Step 2.5 - Optional Forming',
     body: "Pro Tip: If the glasses aren't staying on your face, you can heat the plastic over a low stove 
     flame until they're a little pliable. Then you should be able to mold the plastic into more of a curved 
     shape around your kid's face. ",
@@ -871,7 +871,7 @@ step103 = Step.create!(
 )
 
 step104 = Step.create!(
-    title: '',
+    title: 'Warning',
     body: "Warning: If you try the last step. Definitely wait until the plastic cools a little bit. I've 
     gotten some angry emails from parents who have accidentally burned their children. Look, if you're dumb 
     enough to press hot plastic against your child's face, that's on you. Don't blame me for your idiocy.",
@@ -912,7 +912,7 @@ file11 = open('https://unstructable-seeds.s3.amazonaws.com/11_lampshade.jpg')
 p11.title_photo.attach(io: file11, filename: '11_lampshade.jpg')
 
 step110 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "So last week I picked up this old lamp from a yard sale, but when I brought it home, my husband 
     hated. The plastic lampshade had gotten yellowed over time, but I saw the potential. I decided to take 
     it into my workshop and see what I could do. Today I'm going to show you what's possible with a little 
@@ -939,7 +939,7 @@ step112 = Step.create!(
 )
 
 step113 = Step.create!(
-    title: 'Step 3 Throw it away again',
+    title: 'Step 3 - Throw it away again',
     body: "So my husband still didn't like it. He told me, 'Jeff, the Robinson's are coming to dinner 
     in a few days, and God help me, that thing better be gone by then'. I'm putting it back in the garage, 
     but I'm going to try and revamp it again. My creative spirit will not be diminished.",
@@ -973,7 +973,7 @@ file12 = open('https://unstructable-seeds.s3.amazonaws.com/12_shelves.jpg')
 p12.title_photo.attach(io: file12, filename: '12_shelves.jpg')
 
 step120 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "If you have extra bricks laying around, this makes a great addition to any dorm room or frat 
     house. We don't all have money to spend on new furniture and as Walt Whitman says, 'Necessity is the 
     mother of invention'. With just a few basic steps, I'll show you how to build a minimal and asthetic 
@@ -1042,7 +1042,7 @@ file13 = open('https://unstructable-seeds.s3.amazonaws.com/13_cords.png')
 p13.title_photo.attach(io: file13, filename: '13_cords.png')
 
 step130 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "So in my kitchen, I often have my phone in front of me when I cook so I can follow a recipe, 
     or watch something, but I don't have a ton of counter space. When I wanted to have my phone out 
     and plugged in, it usually ends up with me getting frustrated as the cable gets in my way at every 
@@ -1117,7 +1117,7 @@ file14 = open('https://unstructable-seeds.s3.amazonaws.com/14_faucet.jpg')
 p14.title_photo.attach(io: file14, filename: '14_faucet.jpg')
 
 step140 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "Focus faucet with extra water bottle",
     project_id: p14.id,
 )
@@ -1176,7 +1176,7 @@ file15 = open('https://unstructable-seeds.s3.amazonaws.com/15_snowmen.jpg')
 p15.title_photo.attach(io: file15, filename: '15_snowmen.jpg')
 
 step150 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "Bring home some holiday cheer with these delightful little snowmen cake balls! I make these 
     everything holiday season and my kids and husband just love them. I'm not the greatest baker, but 
     these are easy enough that everyone can get in on the action. Even the little ones can help and all 
@@ -1185,7 +1185,7 @@ step150 = Step.create!(
 )
 
 step151 = Step.create!(
-    title: 'Start with the cake',
+    title: 'Step 1 - Start with the cake',
     body: "I usually just start with a boxed cake mix. If you want to make yours from scratch, by all 
     means, but either way, you're going follow whatever batter directions to the point right before 
     you put it in the oven. Divide your batter in the cupcake tray holes and put in the over for about 
@@ -1194,7 +1194,7 @@ step151 = Step.create!(
 )
 
 step152 = Step.create!(
-    title: 'Taking out and trimming',
+    title: 'Step 2 - Taking out and trimming',
     body: "Once the cakes come out of the over, we can get to designing. You can certainly ice them now, 
     but I like to get them a little rounder by carefully trimming any hard corners down. Nibble on the 
     excess as you'd like. ",
@@ -1202,7 +1202,7 @@ step152 = Step.create!(
 )
 
 step153 = Step.create!(
-    title: "Here's where the fun begins! Decoration",
+    title: "Step 3 - Here's where the fun begins! Decoration",
     body: "Ok, now, gather up your helpers and begin the icing and decoration process. I use store bought 
     icing that I heat up for a few seconds in the microwave, but you can definitly make your own if you 
     know what you're doing. Just stick the cake ball on the end of a fork and dip into the icing. Let 
@@ -1244,7 +1244,7 @@ file16 = open('https://unstructable-seeds.s3.amazonaws.com/16_thermalpaste.jpg')
 p16.title_photo.attach(io: file16, filename: '16_thermalpaste.jpg')
 
 step160 = Step.create!(
-    title: '',
+    title: 'Intro',
     body: "No matter how powerful your computer is, there will come a time when you need to upgrade. 
     Whether a part craps out on your, or you just want to get a little more processing power, a CPU 
     upgrade can give your pc a much needed boost. I'm going to walk you through selecting one and 
