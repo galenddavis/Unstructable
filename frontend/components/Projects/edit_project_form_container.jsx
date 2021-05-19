@@ -38,7 +38,6 @@ class EditProjectForm extends React.Component {
     }
 
     publish(project) {
-        
         this.props.updateProject(project).then(project => {
             
             this.props.history.push(`/project/${project.project.id}`)
@@ -58,7 +57,7 @@ class EditProjectForm extends React.Component {
         
         if (!this.props.project) return null;
         if (!this.state.project) return null;
-            
+        console.log(this.state)
         return (
             <ProjectForm 
                 project={project}

@@ -14,7 +14,8 @@ class ProjectForm extends React.Component {
             currentForm: 1,
             editedStep: 0,
             project: {},
-            allSteps:[]
+            allSteps:[],
+            title_photo: null
         }
         
         this.updateCategory = this.updateCategory.bind(this);
@@ -22,12 +23,12 @@ class ProjectForm extends React.Component {
         this.otherForm = this.otherForm.bind(this);
         this.editStep = this.editStep.bind(this);
         this.addStep = this.addStep.bind(this);
+        this.handleImage = this.handleImage.bind(this);
         // this.publish = this.publish.bind(this);
 
     }
 
     componentDidMount() {
-        
         this.setState({ project: this.props.project })
         this.setState({ allSteps: this.props.project.steps })
     }
@@ -93,6 +94,29 @@ class ProjectForm extends React.Component {
         this.setState({ currentForm: 2})
     }
 
+    handleImage(event) {
+        event.preventDefault();
+        this.setState({ title_photo: event.currentTarget.files[0]});
+        const formData = new FormData();
+        debugger
+        if (this.state.title_photo) {
+            formData.append('project[title_photo]', this.state.title_photo)
+        }
+        debugger
+        $.ajax({
+            url: `/api/users/${this.state.project.creator.id}/projects/${this.state.project.id}`,
+            method: 'PATCH',
+            data: formData,
+            contentType: false,
+            processData: false
+        }).then(response => {
+            console.log(response.message)
+        })
+
+    }
+
+    
+
 
     render() {
         let formLayout
@@ -121,7 +145,12 @@ class ProjectForm extends React.Component {
                 currentStep={this.state.allSteps[this.state.editedStep]}
                 project={this.state.project} />
         }
-
+        
+        let projectPic = this.state?.project.photoUrl === "https://unstructable-seeds.s3.amazonaws.com/no_photo_attached.png" ?
+                <input type="file" 
+                    onChange={this.handleImage} /> :
+                <img src={this.state.project.photoUrl} alt="pic" />
+       
         return (
             <section>
                 <form className='project-form'>
@@ -132,9 +161,10 @@ class ProjectForm extends React.Component {
 
                     <div className='head-buttons'>
 
-                        {/* <span className='left'>
-                            {headerButton}
-                        </span> */}
+                        {/* <input type="file" 
+                            onChange={this.handleImage} /> */}
+                        {projectPic}
+                        
                         
                         <input 
                             type="text"
