@@ -97,12 +97,13 @@ class ProjectForm extends React.Component {
     handleImage(event) {
         event.preventDefault();
         this.setState({ title_photo: event.currentTarget.files[0]});
+
         const formData = new FormData();
-        debugger
-        if (this.state.title_photo) {
-            formData.append('project[title_photo]', this.state.title_photo)
-        }
-        debugger
+
+        // if (this.state.title_photo) {
+            formData.append('project[title_photo]', event.currentTarget.files[0])
+        // }
+        
         $.ajax({
             url: `/api/users/${this.state.project.creator.id}/projects/${this.state.project.id}`,
             method: 'PATCH',
@@ -148,8 +149,9 @@ class ProjectForm extends React.Component {
         
         let projectPic = this.state?.project.photoUrl === "https://unstructable-seeds.s3.amazonaws.com/no_photo_attached.png" ?
                 <input type="file" 
-                    onChange={this.handleImage} /> :
-                <img src={this.state.project.photoUrl} alt="pic" />
+                    onChange={this.handleImage}
+                    id='file-upload' /> :
+                <img src={this.state.project.photoUrl} className="form-photo" alt="pic" />
        
         return (
             <section>

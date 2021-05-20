@@ -32,7 +32,6 @@ class Api::ProjectsController < ApplicationController
 
      def update
         @project = Project.find_by(id: params[:id])
-        debugger
         if @project.update(project_params)
             render :show
         else
