@@ -66,7 +66,6 @@ class ProjectShow extends React.Component {
         const { project } = this.props
 
         let count = 0
-        debugger
         const userProjectHeader = project.creator.otherProjects?.length > 1 ?
         <p>More by the Author: </p> :
         <p>This Author has no other Projects :(</p>
@@ -88,7 +87,7 @@ class ProjectShow extends React.Component {
         const sortedSteps = project.steps?.sort((a, b) => a.created_at > b.created_at)
 
         const steps = sortedSteps?.map((step, idx) => {
-            debugger
+
             return <StepShow
                 key={step.id} 
                 number={idx + 1}

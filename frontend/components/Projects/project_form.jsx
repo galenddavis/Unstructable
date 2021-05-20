@@ -31,6 +31,7 @@ class ProjectForm extends React.Component {
     componentDidMount() {
         this.setState({ project: this.props.project })
         this.setState({ allSteps: this.props.project.steps })
+        this.setState({ title_photo: this.props.project.photoUrl})
     }
 
     componentDidUpdate(prevProps) {
@@ -38,6 +39,8 @@ class ProjectForm extends React.Component {
         if (this.props.project.steps !== prevProps.project.steps) {
             this.setState({ project: this.props.project })
             this.setState({ allSteps: this.props.project.steps })
+            this.setState({ title_photo: this.props.project.photoUrl})
+            
         }
     }
 
@@ -100,9 +103,18 @@ class ProjectForm extends React.Component {
 
         const formData = new FormData();
 
-        // if (this.state.title_photo) {
-            formData.append('project[title_photo]', event.currentTarget.files[0])
-        // }
+        const reader = new FileReader();
+        const file = event.currentTarget.files[0];
+        reader.onloadend = () =>
+        this.setState({ title_photo: reader.result, imageFile: file });
+
+        if (file) {
+        reader.readAsDataURL(file);
+        } else {
+        this.setState({ title_photo: "", imageFile: null });
+        }
+
+        formData.append('project[title_photo]', event.currentTarget.files[0])
         
         $.ajax({
             url: `/api/users/${this.state.project.creator.id}/projects/${this.state.project.id}`,
@@ -110,8 +122,6 @@ class ProjectForm extends React.Component {
             data: formData,
             contentType: false,
             processData: false
-        }).then(response => {
-            console.log(response.message)
         })
 
     }
@@ -146,13 +156,14 @@ class ProjectForm extends React.Component {
                 currentStep={this.state.allSteps[this.state.editedStep]}
                 project={this.state.project} />
         }
-        
-        let projectPic = this.state?.project.photoUrl === "https://unstructable-seeds.s3.amazonaws.com/no_photo_attached.png" ?
+
+        let projectPic = this.state.title_photo === 'https://unstructable-seeds.s3.amazonaws.com/no_photo_attached.png' ?
                 <input type="file" 
                     onChange={this.handleImage}
                     id='file-upload' /> :
-                <img src={this.state.project.photoUrl} className="form-photo" alt="pic" />
-       
+                <img src={this.state.title_photo} className="form-photo" alt="pic" />
+        
+        
         return (
             <section>
                 <form className='project-form'>

@@ -40,14 +40,13 @@ export const createProject = (project) => {
     })
 }
 
-export const updateProject = (project) => {
-    debugger
-    return $.ajax({
+export const updateProject = (project) => (
+    $.ajax({
         method: 'PATCH',
         url: `/api/users/${project.creator_id}/projects/${project.id}`,
         data: {project}
     })
-}
+)
 
 export const deleteProject = (project) => {
     
