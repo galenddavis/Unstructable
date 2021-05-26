@@ -1,3 +1,4 @@
+
 # README
 <h1 align="center">Unstructable</h1>
 
@@ -5,7 +6,7 @@ Unstructable is a DIY site that allows users to create and share projects with o
 
 ___
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/splash%20page.png "Unstructable Splash Page")
+![splash_page](https://user-images.githubusercontent.com/73361653/119686235-225bd880-be14-11eb-9505-cb6611a6c220.png)
 
 Unstructable was build with a combination of Ruby/Rails and PSQL on the backend and React/Redux/Javascript on the front. Styling is done mainly is SCSS, and AWS is used in hosting project's associated images.
 
