@@ -1,5 +1,6 @@
 
 
+
 # README
 <h1 align="center">Unstructable</h1>
 
@@ -27,7 +28,7 @@ User account validations and and basic security measures are in place.
 * Minimum password length
 * Password hashing
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/user_auth.png "Unstructable Login errors")
+![user_auth](https://user-images.githubusercontent.com/73361653/119686644-8aaaba00-be14-11eb-8b18-e897e7b444b1.png)
 
 Pictured below is the Demo Login functionality on the site allowing visitors to access the full funtionality to the site without having to create a user account.
 
