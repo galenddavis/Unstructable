@@ -55,12 +55,11 @@ handleSubmit(event) {
 
 Once signed in, users have the ability to create their own projects. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/projectCreation.PNG)
 ![projectCreation](https://user-images.githubusercontent.com/73361653/119686785-add56980-be14-11eb-85ae-ea058b4d7c21.PNG)
 
 Upon titling the new projects, the backend creates the project and immediately creates the first default step that every project shares. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/newproject.PNG)
+![newproject](https://user-images.githubusercontent.com/73361653/119686896-c2b1fd00-be14-11eb-8330-bf7adf848069.PNG)
 
 ``` ruby
 def create
@@ -78,7 +77,7 @@ end
 
 Once projects have been created, new steps may be added and edited. Upon creation, steps are imediately saved to the database, and upon editing they are updated. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/addingSteps.PNG)
+![addingSteps](https://user-images.githubusercontent.com/73361653/119686967-cf365580-be14-11eb-96f1-5eac6b3aec59.PNG)
 
 ``` javascript
 addStep() {
@@ -95,7 +94,7 @@ addStep() {
 
 Upon creation of a project, we redirect to the project show page, and if the user has not uploaded an image, a default image is provided via jbuilder. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/projectShow.PNG)
+![projectShow](https://user-images.githubusercontent.com/73361653/119687032-deb59e80-be14-11eb-997d-2cc1d0000691.PNG)
 
 ``` javascript
 if @project.title_photo.attached?
@@ -109,14 +108,13 @@ end
 
 Once you have logged in, you also have the ability to comment on other's projects. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/commenting.PNG)
-
+![commenting](https://user-images.githubusercontent.com/73361653/119687075-e5dcac80-be14-11eb-9557-14bbae1cef8a.PNG)
 
 ### Categories
 
 Beyond just the basic index that you get on the entry page, there are also indexes filtered by categories. 
 
-![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/category.PNG)
+![category](https://user-images.githubusercontent.com/73361653/119687114-f12fd800-be14-11eb-817a-c4de8536b574.PNG)
 
 ``` javascript
 export const requestProjects = (category = null) => dispatch => {
