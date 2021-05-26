@@ -1,6 +1,7 @@
 
 
 
+
 # README
 <h1 align="center">Unstructable</h1>
 
@@ -55,6 +56,7 @@ handleSubmit(event) {
 Once signed in, users have the ability to create their own projects. 
 
 ![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/projectCreation.PNG)
+![projectCreation](https://user-images.githubusercontent.com/73361653/119686785-add56980-be14-11eb-85ae-ea058b4d7c21.PNG)
 
 Upon titling the new projects, the backend creates the project and immediately creates the first default step that every project shares. 
 
