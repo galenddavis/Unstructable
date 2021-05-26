@@ -1,4 +1,5 @@
 
+
 # README
 <h1 align="center">Unstructable</h1>
 
@@ -20,7 +21,7 @@ Unstructable was build with a combination of Ruby/Rails and PSQL on the backend 
 
 When the user first hits the site, they will have virtually unlimited access to the site's projects, but in order to begin commenting or creating projects of their own, they will need to create an account of thier own. 
   
-  ![alt text](https://github.com/galenddavis/project_images/blob/main/unstructable/login.png "Unstructable Login Page")
+![login](https://user-images.githubusercontent.com/73361653/119686590-76ff5380-be14-11eb-9410-8c0eb4d14eab.png)
   
 User account validations and and basic security measures are in place.
 * Minimum password length
